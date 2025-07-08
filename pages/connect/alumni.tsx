@@ -12,37 +12,149 @@ const AlumniConnect: React.FC = () => {
 
   const featuredAlumni = [
     {
-      name: "Dr. Priya Sharma",
-      designation: "Chief Medical Officer, AIIMS Delhi",
-      graduationYear: "2010",
-      image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=300",
-      achievement: "Leading COVID-19 research initiatives",
-      location: "New Delhi, India"
+      id: 1,
+      name: "Dr. Bhaskar Babu G",
+      position: "Director General",
+      department: "administration",
+      qualification: "Ph.D. in Education Administration",
+      experience: "25 years",
+      specialization: "Educational Leadership, Rural Education Policy",
+      image:
+        "https://getmycollege.in/wp-content/uploads/2025/06/Principal-Photo-for-Principals-Message-1024x846.jpeg",
+      email: "director@kreis.kar.nic.in",
+      phone: "+91 80 2234 5678",
+      achievements: [
+        "Padma Shri Awardee",
+        "National Education Excellence Award",
+        "25+ Research Publications",
+      ],
     },
     {
-      name: "Rajesh Kumar",
-      designation: "IAS Officer, Karnataka Cadre",
-      graduationYear: "2008",
-      image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=300",
-      achievement: "Implementing rural development programs",
-      location: "Bangalore, Karnataka"
+      id: 2,
+      name: "Mr. Subramanyam S A",
+      position: "Academic Director",
+      department: "academics",
+      qualification: "M.Ed., Ph.D. in Curriculum Development",
+      experience: "20 years",
+      specialization: "Curriculum Design, Teacher Training",
+      image:
+        "https://getmycollege.in/wp-content/uploads/2025/06/20250619_1232_Raghavendras-School-Lecture_simple_compose_01jy3fshf1e4vb03asy97ss8dn.png?auto=compress&cs=tinysrgb&w=300",
+      email: "academic@kreis.kar.nic.in",
+      phone: "+91 80 2234 5679",
+      achievements: [
+        "Best Teacher Award",
+        "Curriculum Innovation Award",
+        "Educational Research Excellence",
+      ],
     },
     {
-      name: "Anita Reddy",
-      designation: "Software Engineer, Google",
-      graduationYear: "2015",
-      image: "https://images.pexels.com/photos/1181519/pexels-photo-1181519.jpeg?auto=compress&cs=tinysrgb&w=300",
-      achievement: "Leading AI/ML product development",
-      location: "Mountain View, California"
+      id: 3,
+      name: "Mr. Ananda V",
+      position: "Head of Science Department",
+      department: "science",
+      qualification: "M.Sc. Physics, Ph.D. in Science Education",
+      experience: "18 years",
+      specialization: "Physics, Science Methodology, Laboratory Management",
+      image:
+        "https://getmycollege.in/wp-content/uploads/2025/06/profile-placeholder.jpg?auto=compress&cs=tinysrgb&w=300",
+      email: "science@kreis.kar.nic.in",
+      phone: "+91 80 2234 5680",
+      achievements: [
+        "Science Teacher Excellence Award",
+        "Innovation in Science Teaching",
+        "Student Mentorship Award",
+      ],
     },
     {
-      name: "Suresh Babu",
-      designation: "Entrepreneur & CEO, AgriTech Solutions",
-      graduationYear: "2012",
-      image: "https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=300",
-      achievement: "Revolutionizing farming with technology",
-      location: "Hyderabad, Telangana"
-    }
+      id: 4,
+      name: "Mr. Raghavendra B",
+      position: "Kannada Language Coordinator",
+      department: "languages",
+      qualification: "M.A. Kannada Literature, B.Ed.",
+      experience: "15 years",
+      specialization: "Kannada Literature, Language Pedagogy",
+      image:
+        "https://getmycollege.in/wp-content/uploads/2025/06/20250619_1232_Raghavendras-School-Lecture_simple_compose_01jy3fshf2fahtbn2cxs30mq6d.png",
+      email: "kannada@kreis.kar.nic.in",
+      phone: "+91 80 2234 5681",
+      achievements: [
+        "State Language Teacher Award",
+        "Cultural Heritage Promotion",
+        "Literary Contribution Award",
+      ],
+    },
+    {
+      id: 5,
+      name: "Mr.  Suresh Hegde",
+      position: "Mathematics Coordinator",
+      department: "science",
+      qualification: "M.Sc. Mathematics, B.Ed.",
+      experience: "16 years",
+      specialization: "Advanced Mathematics, Problem Solving Techniques",
+      image:
+        "https://getmycollege.in/wp-content/uploads/2025/06/profile-placeholder.jpg?auto=compress&cs=tinysrgb&w=300",
+      email: "mathematics@kreis.kar.nic.in",
+      phone: "+91 80 2234 5682",
+      achievements: [
+        "Mathematics Excellence Award",
+        "Student Competition Mentor",
+        "Innovative Teaching Methods",
+      ],
+    },
+    {
+      id: 6,
+      name: "Dr. Rachani B G",
+      position: "Student Counselor",
+      department: "counseling",
+      qualification: "M.A. Psychology, Ph.D. in Counseling Psychology",
+      experience: "12 years",
+      specialization: "Adolescent Psychology, Career Guidance",
+      image:
+        "https://getmycollege.in/wp-content/uploads/2025/06/woman.jpg?auto=compress&cs=tinysrgb&w=300",
+      email: "counseling@kreis.kar.nic.in",
+      phone: "+91 80 2234 5683",
+      achievements: [
+        "Best Counselor Award",
+        "Student Welfare Excellence",
+        "Mental Health Advocacy",
+      ],
+    },
+    {
+      id: 7,
+      name: "Dr. Shailaja",
+      position: "Physical Education Director",
+      department: "sports",
+      qualification: "M.P.Ed., Sports Coaching Certification",
+      experience: "14 years",
+      specialization: "Sports Training, Physical Fitness, Athletic Development",
+      image:
+        "https://getmycollege.in/wp-content/uploads/2025/06/woman.jpg?auto=compress&cs=tinysrgb&w=300",
+      email: "sports@kreis.kar.nic.in",
+      phone: "+91 80 2234 5684",
+      achievements: [
+        "State Sports Excellence Award",
+        "Athletic Training Certification",
+        "Youth Development Award",
+      ],
+    },
+    {
+      id: 8,
+      name: "Mrs. Lakshmi Desai",
+      position: "Social Science Coordinator",
+      department: "social",
+      qualification: "M.A. History, M.A. Political Science, B.Ed.",
+      experience: "17 years",
+      specialization: "Indian History, Civics, Social Studies Methodology",
+      image:
+        "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=300",
+      email: "socialscience@kreis.kar.nic.in",
+      phone: "+91 80 2234 5685",
+      achievements: [
+        "History Teaching Excellence",
+        "Social Awareness Programs",
+        "Community Engagement Award",
+      ],
+    },
   ];
 
   const benefits = [
@@ -131,16 +243,16 @@ const AlumniConnect: React.FC = () => {
                       className="w-full h-64 object-cover"
                     />
                     <div className="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      Class of {alumni.graduationYear}
+                      Class of 2025
                     </div>
                   </div>
                   <div className="p-6">
                     <h3 className="text-xl font-bold text-gray-900 mb-2">{alumni.name}</h3>
-                    <p className="text-blue-600 font-semibold mb-3">{alumni.designation}</p>
-                    <p className="text-gray-600 text-sm mb-3">{alumni.achievement}</p>
+                    <p className="text-blue-600 font-semibold mb-3"></p>
+                    <p className="text-gray-600 text-sm mb-3"></p>
                     <div className="flex items-center text-gray-500 text-sm">
                       <MapPin className="h-4 w-4 mr-1" />
-                      {alumni.location}
+                     Bengaluru
                     </div>
                   </div>
                 </div>
@@ -198,7 +310,7 @@ const AlumniConnect: React.FC = () => {
                     />
                     <div>
                       <h4 className="font-semibold text-gray-900">{alumni.name}</h4>
-                      <p className="text-blue-600 text-sm">Class of {alumni.graduationYear}</p>
+                      <p className="text-blue-600 text-sm">Class of 2025</p>
                       <div className="flex mt-1">
                         {[...Array(5)].map((_, i) => (
                           <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />

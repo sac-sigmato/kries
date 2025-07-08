@@ -142,29 +142,33 @@ export const mockHomeSections: HomeSection[] = [
 
 export const mockSliderItems: HomeSlider[] = [
   {
-    id: '1',
-    title: 'KREIS - Transforming Rural Education',
-    subtitle: 'Since 1999',
-    description: 'Karnataka Residential Educational Institutions Society operates 821 schools across the state, providing quality education to SC, ST and BC rural students through our residential school system.',
-    image_url: 'https://images.pexels.com/photos/1595391/pexels-photo-1595391.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    button_text: 'About KREIS',
-    button_url: '/about',
+    id: "1",
+    title: "KREIS - Transforming Rural Education",
+    subtitle: "Since 1999",
+    description:
+      "Karnataka Residential Educational Institutions Society operates 821 schools across the state, providing quality education to SC, ST and BC rural students through our residential school system.",
+    image_url:
+      "https://getmycollege.in/wp-content/uploads/2025/06/School-Main-Block-Pic-2.png",
+    button_text: "About KREIS",
+    button_url: "/about",
     order_index: 1,
     is_active: true,
     created_at: new Date().toISOString(),
-    updated_at: new Date().toISOString()
+    updated_at: new Date().toISOString(),
   },
   {
-    id: '2',
-    title: 'Residential Schools for Rural Development',
-    subtitle: 'Modeled after Jawahar Navodaya Vidyalaya',
-    description: 'Our schools provide quality education for socially and educationally backward communities, helping students pursue higher studies and bringing them to the mainstream of society.',
-    image_url: 'https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    button_text: 'School Programs',
-    button_url: '/admissions',
+    id: "2",
+    title: "Residential Schools for Rural Development",
+    subtitle: "Modeled after Jawahar Navodaya Vidyalaya",
+    description:
+      "Our schools provide quality education for socially and educationally backward communities, helping students pursue higher studies and bringing them to the mainstream of society.",
+    image_url:
+      "https://getmycollege.in/wp-content/uploads/2025/06/481123898_1158153019438079_2864866343096138457_n.jpg",
+    button_text: "School Programs",
+    button_url: "/admissions",
     order_index: 2,
     is_active: true,
     created_at: new Date().toISOString(),
-    updated_at: new Date().toISOString()
-  }
+    updated_at: new Date().toISOString(),
+  },
 ];

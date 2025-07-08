@@ -111,13 +111,13 @@ const Header: React.FC = () => {
             <div className="flex justify-between items-center h-16">
               {/* Government Logo */}
               <div className="flex items-center">
-                <img 
+                {/* <img 
                   src="https://getmycollege.in/wp-content/uploads/2025/06/Screenshot-2025-06-12-131427.jpg" 
                   alt="Government of Karnataka" 
                   className="h-12 mr-3"
-                />
+                /> */}
               </div>
-              
+
               {/* Left side - Connect Pages */}
               <div className="flex items-center space-x-6">
                 {connectPages.map((page) => (
@@ -125,9 +125,11 @@ const Header: React.FC = () => {
                     key={page.path}
                     href={page.path}
                     className={`text-sm font-medium transition-colors hover:text-blue-600 ${
-                      router.pathname === page.path || (router.pathname.startsWith('/achievements') && page.path === '/achievements')
-                        ? 'text-blue-600'
-                        : 'text-gray-700'
+                      router.pathname === page.path ||
+                      (router.pathname.startsWith("/achievements") &&
+                        page.path === "/achievements")
+                        ? "text-blue-600"
+                        : "text-gray-700"
                     }`}
                   >
                     {page.label[language]}
@@ -163,9 +165,8 @@ const Header: React.FC = () => {
                   title="Switch language"
                 >
                   <Globe className="h-3 w-3" />
-                  <span>{language === 'en' ? 'ಕನ್ನಡ' : 'English'}</span>
+                  <span>{language === "en" ? "ಕನ್ನಡ" : "English"}</span>
                 </button>
-
 
                 {/* Login Dropdown */}
                 <div className="relative">
@@ -174,7 +175,7 @@ const Header: React.FC = () => {
                     className="flex items-center space-x-1 text-xs text-gray-600 hover:text-gray-800 transition-colors px-3 py-2 rounded hover:bg-gray-200"
                   >
                     <LogIn className="h-3 w-3" />
-                    <span>{language === 'en' ? 'Login' : 'ಲಾಗಿನ್'}</span>
+                    <span>{language === "en" ? "Login" : "ಲಾಗಿನ್"}</span>
                     <ChevronDown className="h-3 w-3" />
                   </button>
 
@@ -191,8 +192,12 @@ const Header: React.FC = () => {
                             <div className="flex items-center space-x-3">
                               <item.icon className={`h-4 w-4 ${item.color}`} />
                               <div>
-                                <div className="font-medium">{item.label[language]}</div>
-                                <div className="text-xs text-gray-500">{item.description[language]}</div>
+                                <div className="font-medium">
+                                  {item.label[language]}
+                                </div>
+                                <div className="text-xs text-gray-500">
+                                  {item.description[language]}
+                                </div>
                               </div>
                             </div>
                           </Link>
@@ -208,22 +213,23 @@ const Header: React.FC = () => {
 
         {/* Main header */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <Link href="/" className="flex items-center space-x-3">
+          <div className="flex justify-between items-center h-22 py-2">
+            <Link href="/" className="flex items-center space-x-4">
               <div className="flex-shrink-0">
                 <img
                   src="/KREIS copy.jpg"
                   alt="School Logo"
-                  className="h-16 w-16 rounded-full object-cover border-2 border-blue-600"
+                  className="h-20 w-20 rounded-full object-cover border-2 border-blue-600"
                 />
               </div>
               <div className="flex flex-col">
-                <span className="text-xl font-bold text-gray-900">Kittur Rani Chennamma</span>
+                <span className="text-xl font-bold text-gray-900">
+                  Kittur Rani Chennamma
+                </span>
                 <span className="text-sm text-gray-600 hidden sm:block">
-                  {language === 'en' 
-                    ? 'Residential School, Balepura, Devanahalli'
-                    : 'ವಸತಿ ಶಾಲೆ, ಬಾಲೇಪುರ, ದೇವನಹಳ್ಳಿ'
-                  }
+                  {language === "en"
+                    ? "Residential School, Balepura, Devanahalli"
+                    : "ವಸತಿ ಶಾಲೆ, ಬಾಲೇಪುರ, ದೇವನಹಳ್ಳಿ"}
                 </span>
               </div>
             </Link>
@@ -232,60 +238,101 @@ const Header: React.FC = () => {
             <nav className="hidden lg:flex space-x-8">
               {navItems.map((item) => (
                 <div key={item.path} className="relative group">
-                  {item.path === '/schools' ? (
+                  {item.path === "/schools" ? (
                     <>
-                      <div className={`text-sm font-medium transition-colors hover:text-blue-600 relative flex items-center ${
-                        router.pathname.startsWith('/schools') ? 'text-blue-600' : 'text-gray-700'
-                      }`}>
+                      <div
+                        className={`text-sm font-medium transition-colors hover:text-blue-600 relative flex items-center ${
+                          router.pathname.startsWith("/schools")
+                            ? "text-blue-600"
+                            : "text-gray-700"
+                        }`}
+                      >
                         {item.label[language]}
                         <ChevronDown className="ml-1 h-4 w-4" />
                       </div>
                       <div className="absolute left-0 mt-2 w-64 bg-white rounded-md shadow-lg border border-gray-200 z-50 hidden group-hover:block">
                         <div className="py-1">
-                          <Link href="/schools" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                          <Link
+                            href="/schools"
+                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          >
                             School Overview
                           </Link>
-                          <Link href="/schools/facility" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                          <Link
+                            href="/schools/facility"
+                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          >
                             School Facility
                           </Link>
-                          <Link href="/schools/statistics" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                          <Link
+                            href="/schools/statistics"
+                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          >
                             Academic Insights
                           </Link>
-                          <Link href="/schools/hostel" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                          <Link
+                            href="/schools/hostel"
+                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          >
                             Hostel & Canteen
                           </Link>
-                          <Link href="/schools/development" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                          <Link
+                            href="/schools/development"
+                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          >
                             Student Development Program
                           </Link>
-                          <Link href="/schools/amenities" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                          <Link
+                            href="/schools/amenities"
+                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          >
                             Amenities
                           </Link>
                         </div>
                       </div>
                     </>
-                  ) : item.path === '/achievements' ? (
+                  ) : item.path === "/achievements" ? (
                     <>
-                      <div className={`text-sm font-medium transition-colors hover:text-blue-600 relative flex items-center ${
-                        router.pathname.startsWith('/achievements') ? 'text-blue-600' : 'text-gray-700'
-                      }`}>
+                      <div
+                        className={`text-sm font-medium transition-colors hover:text-blue-600 relative flex items-center ${
+                          router.pathname.startsWith("/achievements")
+                            ? "text-blue-600"
+                            : "text-gray-700"
+                        }`}
+                      >
                         Achievements
                         <ChevronDown className="ml-1 h-4 w-4" />
                       </div>
                       <div className="absolute left-0 mt-2 w-64 bg-white rounded-md shadow-lg border border-gray-200 z-50 hidden group-hover:block">
                         <div className="py-1">
-                          <Link href="/achievements" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                          <Link
+                            href="/achievements"
+                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          >
                             All Achievements
                           </Link>
-                          <Link href="/achievements/academic" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                          <Link
+                            href="/achievements/academic"
+                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          >
                             Academic Achievements
                           </Link>
-                          <Link href="/achievements/sports" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                          <Link
+                            href="/achievements/sports"
+                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          >
                             Sports & Physical Achievements
                           </Link>
-                          <Link href="/achievements/cultural" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                          <Link
+                            href="/achievements/cultural"
+                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          >
                             Cultural Achievements
                           </Link>
-                          <Link href="/achievements/social" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                          <Link
+                            href="/achievements/social"
+                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          >
                             Social Initiative Activities
                           </Link>
                         </div>
@@ -296,9 +343,9 @@ const Header: React.FC = () => {
                       href={item.path}
                       className={`text-sm font-medium transition-colors hover:text-blue-600 relative ${
                         router.pathname === item.path
-                          ? 'text-blue-600'
-                          : 'text-gray-700'
-                      } ${item.isFlashing ? 'animate-pulse' : ''}`}
+                          ? "text-blue-600"
+                          : "text-gray-700"
+                      } ${item.isFlashing ? "animate-pulse" : ""}`}
                     >
                       {item.label[language]}
                       {item.isFlashing && (
@@ -329,15 +376,17 @@ const Header: React.FC = () => {
               <div className="flex flex-col space-y-2">
                 {/* Connect Pages for Mobile */}
                 <div className="border-b border-gray-200 pb-2 mb-2">
-                  <p className="px-3 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">Connect</p>
+                  <p className="px-3 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                    Connect
+                  </p>
                   {connectPages.map((page) => (
                     <Link
                       key={page.path}
                       href={page.path}
                       className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
                         router.pathname === page.path
-                          ? 'text-blue-600 bg-blue-50'
-                          : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+                          ? "text-blue-600 bg-blue-50"
+                          : "text-gray-700 hover:text-blue-600 hover:bg-gray-50"
                       }`}
                       onClick={() => setIsMenuOpen(false)}
                     >
@@ -345,70 +394,107 @@ const Header: React.FC = () => {
                     </Link>
                   ))}
                 </div>
-                
+
                 {/* Main Navigation for Mobile */}
                 {navItems.map((item) => (
                   <Link
                     key={item.path}
-                    href={item.path === '/schools' ? '/schools/facility' : item.path}
+                    href={
+                      item.path === "/schools" ? "/schools/facility" : item.path
+                    }
                     className={`block px-3 py-2 rounded-md text-base font-medium transition-colors relative ${
                       router.pathname === item.path
-                        ? 'text-blue-600 bg-blue-50'
-                        : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
-                    } ${item.isFlashing ? 'animate-pulse' : ''}`}
+                        ? "text-blue-600 bg-blue-50"
+                        : "text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+                    } ${item.isFlashing ? "animate-pulse" : ""}`}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.label[language]}
                     {item.isFlashing && (
                       <span className="absolute top-2 right-2 h-2 w-2 bg-red-500 rounded-full animate-ping"></span>
                     )}
-                    {item.path === '/schools' && (
+                    {item.path === "/schools" && (
                       <div className="mt-2 ml-4 space-y-1">
-                        <Link href="/schools" className="block px-3 py-1 text-sm text-gray-600 hover:text-blue-600">
+                        <Link
+                          href="/schools"
+                          className="block px-3 py-1 text-sm text-gray-600 hover:text-blue-600"
+                        >
                           School Overview
                         </Link>
-                        <Link href="/schools/facility" className="block px-3 py-1 text-sm text-gray-600 hover:text-blue-600">
+                        <Link
+                          href="/schools/facility"
+                          className="block px-3 py-1 text-sm text-gray-600 hover:text-blue-600"
+                        >
                           School Facility
                         </Link>
-                        <Link href="/schools/statistics" className="block px-3 py-1 text-sm text-gray-600 hover:text-blue-600">
+                        <Link
+                          href="/schools/statistics"
+                          className="block px-3 py-1 text-sm text-gray-600 hover:text-blue-600"
+                        >
                           Academic Insights
                         </Link>
-                        <Link href="/schools/hostel" className="block px-3 py-1 text-sm text-gray-600 hover:text-blue-600">
+                        <Link
+                          href="/schools/hostel"
+                          className="block px-3 py-1 text-sm text-gray-600 hover:text-blue-600"
+                        >
                           Hostel & Canteen
                         </Link>
-                        <Link href="/schools/development" className="block px-3 py-1 text-sm text-gray-600 hover:text-blue-600">
+                        <Link
+                          href="/schools/development"
+                          className="block px-3 py-1 text-sm text-gray-600 hover:text-blue-600"
+                        >
                           Student Development Program
                         </Link>
-                        <Link href="/schools/amenities" className="block px-3 py-1 text-sm text-gray-600 hover:text-blue-600">
+                        <Link
+                          href="/schools/amenities"
+                          className="block px-3 py-1 text-sm text-gray-600 hover:text-blue-600"
+                        >
                           Amenities
                         </Link>
                       </div>
                     )}
-                    {item.path === '/achievements' && (
+                    {item.path === "/achievements" && (
                       <div className="mt-2 ml-4 space-y-1">
-                        <Link href="/achievements" className="block px-3 py-1 text-sm text-gray-600 hover:text-blue-600">
+                        <Link
+                          href="/achievements"
+                          className="block px-3 py-1 text-sm text-gray-600 hover:text-blue-600"
+                        >
                           All Achievements
                         </Link>
-                        <Link href="/achievements/academic" className="block px-3 py-1 text-sm text-gray-600 hover:text-blue-600">
+                        <Link
+                          href="/achievements/academic"
+                          className="block px-3 py-1 text-sm text-gray-600 hover:text-blue-600"
+                        >
                           Academic Achievements
                         </Link>
-                        <Link href="/achievements/sports" className="block px-3 py-1 text-sm text-gray-600 hover:text-blue-600">
+                        <Link
+                          href="/achievements/sports"
+                          className="block px-3 py-1 text-sm text-gray-600 hover:text-blue-600"
+                        >
                           Sports & Physical Achievements
                         </Link>
-                        <Link href="/achievements/cultural" className="block px-3 py-1 text-sm text-gray-600 hover:text-blue-600">
+                        <Link
+                          href="/achievements/cultural"
+                          className="block px-3 py-1 text-sm text-gray-600 hover:text-blue-600"
+                        >
                           Cultural Achievements
                         </Link>
-                        <Link href="/achievements/social" className="block px-3 py-1 text-sm text-gray-600 hover:text-blue-600">
+                        <Link
+                          href="/achievements/social"
+                          className="block px-3 py-1 text-sm text-gray-600 hover:text-blue-600"
+                        >
                           Social Initiative Activities
                         </Link>
                       </div>
                     )}
                   </Link>
                 ))}
-                
+
                 {/* Login Options for Mobile */}
                 <div className="border-t border-gray-200 pt-2 mt-2">
-                  <p className="px-3 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">Login</p>
+                  <p className="px-3 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                    Login
+                  </p>
                   {loginMenuItems.map((item, index) => (
                     <Link
                       key={index}
@@ -437,35 +523,31 @@ const Header: React.FC = () => {
               <span className="flex items-center space-x-2">
                 <span className="animate-pulse">🔴</span>
                 <span className="font-semibold text-sm">
-                  {language === 'en' ? 'BREAKING NEWS:' : 'ತಾಜಾ ಸುದ್ದಿ:'}
+                  {language === "en" ? "BREAKING NEWS:" : "ತಾಜಾ ಸುದ್ದಿ:"}
                 </span>
                 <span className="text-sm">
-                  {language === 'en' 
-                    ? 'SSLC Results 2024 declared! Check your results now' 
-                    : 'SSLC ಫಲಿತಾಂಶಗಳು 2024 ಪ್ರಕಟವಾಗಿದೆ! ಈಗಲೇ ಪರಿಶೀಲಿಸಿ'
-                  }
+                  {language === "en"
+                    ? "SSLC Results 2024 declared! Check your results now"
+                    : "SSLC ಫಲಿತಾಂಶಗಳು 2024 ಪ್ರಕಟವಾಗಿದೆ! ಈಗಲೇ ಪರಿಶೀಲಿಸಿ"}
                 </span>
               </span>
               <span className="text-sm">•</span>
               <span className="text-sm">
-                {language === 'en' 
-                  ? 'New admissions open for Academic Year 2024-25' 
-                  : 'ಶೈಕ್ಷಣಿಕ ವರ್ಷ 2024-25 ಗೆ ಹೊಸ ಪ್ರವೇಶಗಳು ತೆರೆದಿವೆ'
-                }
+                {language === "en"
+                  ? "New admissions open for Academic Year 2024-25"
+                  : "ಶೈಕ್ಷಣಿಕ ವರ್ಷ 2024-25 ಗೆ ಹೊಸ ಪ್ರವೇಶಗಳು ತೆರೆದಿವೆ"}
               </span>
               <span className="text-sm">•</span>
               <span className="text-sm">
-                {language === 'en' 
-                  ? 'Alumni Connect portal now live - Register today!' 
-                  : 'ಹಳೆಯ ವಿದ್ಯಾರ್ಥಿ ಸಂಪರ್ಕ ಪೋರ್ಟಲ್ ಈಗ ಲೈವ್ - ಇಂದೇ ನೋಂದಾಯಿಸಿ!'
-                }
+                {language === "en"
+                  ? "Alumni Connect portal now live - Register today!"
+                  : "ಹಳೆಯ ವಿದ್ಯಾರ್ಥಿ ಸಂಪರ್ಕ ಪೋರ್ಟಲ್ ಈಗ ಲೈವ್ - ಇಂದೇ ನೋಂದಾಯಿಸಿ!"}
               </span>
               <span className="text-sm">•</span>
               <span className="text-sm">
-                {language === 'en' 
-                  ? 'CSR partnerships available - Join our mission' 
-                  : 'CSR ಪಾಲುದಾರಿಕೆಗಳು ಲಭ್ಯ - ನಮ್ಮ ಮಿಷನ್‌ಗೆ ಸೇರಿ'
-                }
+                {language === "en"
+                  ? "CSR partnerships available - Join our mission"
+                  : "CSR ಪಾಲುದಾರಿಕೆಗಳು ಲಭ್ಯ - ನಮ್ಮ ಮಿಷನ್‌ಗೆ ಸೇರಿ"}
               </span>
             </span>
           </div>

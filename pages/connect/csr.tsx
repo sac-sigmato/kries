@@ -98,7 +98,7 @@ const CSRConnect: React.FC = () => {
               </div>
               <div className="relative">
                 <img
-                  src="https://images.pexels.com/photos/1595391/pexels-photo-1595391.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  src="https://getmycollege.in/wp-content/uploads/2025/06/481659797_1158152906104757_7907473054770689485_n-1024x576.jpg?auto=compress&cs=tinysrgb&w=800"
                   alt="Students in classroom"
                   className="rounded-lg shadow-2xl"
                 />

@@ -72,7 +72,9 @@ const About: React.FC = () => {
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">About KREIS</h1>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-              Karnataka Residential Educational Institutions Society (KREIS) - Empowering rural students through quality residential education since 1999.
+              Karnataka Residential Educational Institutions Society (KREIS) -
+              Empowering rural students through quality residential education
+              since 1999.
             </p>
           </div>
         </div>
@@ -83,17 +85,27 @@ const About: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Our Story</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                Our Story
+              </h2>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                The Government of Karnataka launched KREIS in October 1999 with the objective of promoting educational development of various classes of rural children in Karnataka. We operate 821 Morarji Desai, Kittur Rani Chennamma, Dr. B R Ambedkar, Atal Bihari Vajpayee, Smt. Indira Gandhi, and Masti Venkatesha Iyengar Residential Schools and Pre University colleges.
+                The Government of Karnataka launched KREIS in October 1999 with
+                the objective of promoting educational development of various
+                classes of rural children in Karnataka. We operate 821 Morarji
+                Desai, Kittur Rani Chennamma, Dr. B R Ambedkar, Atal Bihari
+                Vajpayee, Smt. Indira Gandhi, and Masti Venkatesha Iyengar
+                Residential Schools and Pre University colleges.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Our residential schools work in co-education from 6th to 10th grade with 250 students per school (50 per class). We ensure 50% seats are reserved for girls, promoting gender equality in education.
+                Our residential schools work in co-education from 6th to 10th
+                grade with 250 students per school (50 per class). We ensure 50%
+                seats are reserved for girls, promoting gender equality in
+                education.
               </p>
             </div>
             <div className="relative">
               <img
-                src="https://images.pexels.com/photos/1595391/pexels-photo-1595391.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src="https://getmycollege.in/wp-content/uploads/2025/06/School-Main-Block-Pic-1-1024x768.png?auto=compress&cs=tinysrgb&w=800"
                 alt="Students in classroom"
                 className="rounded-lg shadow-xl"
               />
@@ -121,54 +133,78 @@ const About: React.FC = () => {
               <div className="bg-blue-100 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
                 <Globe className="h-8 w-8 text-blue-600" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Mission</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                Our Mission
+              </h3>
               <p className="text-gray-600 leading-relaxed">
-                To provide quality residential education to socially and educationally backward rural communities, helping them pursue higher studies and bringing them to the mainstream of society.
+                To provide quality residential education to socially and
+                educationally backward rural communities, helping them pursue
+                higher studies and bringing them to the mainstream of society.
               </p>
               <div className="mt-6 space-y-3">
                 <div className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-blue-600 mt-1 mr-3" />
-                  <p className="text-gray-600">Provide quality education to rural students</p>
+                  <p className="text-gray-600">
+                    Provide quality education to rural students
+                  </p>
                 </div>
                 <div className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-blue-600 mt-1 mr-3" />
-                  <p className="text-gray-600">Ensure gender equality with 50% reservation for girls</p>
+                  <p className="text-gray-600">
+                    Ensure gender equality with 50% reservation for girls
+                  </p>
                 </div>
                 <div className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-blue-600 mt-1 mr-3" />
-                  <p className="text-gray-600">Create opportunities for higher education</p>
+                  <p className="text-gray-600">
+                    Create opportunities for higher education
+                  </p>
                 </div>
                 <div className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-blue-600 mt-1 mr-3" />
-                  <p className="text-gray-600">Develop well-rounded individuals through holistic education</p>
+                  <p className="text-gray-600">
+                    Develop well-rounded individuals through holistic education
+                  </p>
                 </div>
               </div>
             </div>
-            
+
             <div className="bg-white p-8 rounded-xl shadow-lg">
               <div className="bg-green-100 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
                 <Award className="h-8 w-8 text-green-600" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Vision</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                Our Vision
+              </h3>
               <p className="text-gray-600 leading-relaxed">
-                To be the premier educational institution network that transforms rural communities through education, creating leaders who contribute to society's progress and development.
+                To be the premier educational institution network that
+                transforms rural communities through education, creating leaders
+                who contribute to society's progress and development.
               </p>
               <div className="mt-6 space-y-3">
                 <div className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-green-600 mt-1 mr-3" />
-                  <p className="text-gray-600">Establish centers of educational excellence in rural areas</p>
+                  <p className="text-gray-600">
+                    Establish centers of educational excellence in rural areas
+                  </p>
                 </div>
                 <div className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-green-600 mt-1 mr-3" />
-                  <p className="text-gray-600">Bridge the urban-rural education quality gap</p>
+                  <p className="text-gray-600">
+                    Bridge the urban-rural education quality gap
+                  </p>
                 </div>
                 <div className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-green-600 mt-1 mr-3" />
-                  <p className="text-gray-600">Foster innovation and critical thinking in students</p>
+                  <p className="text-gray-600">
+                    Foster innovation and critical thinking in students
+                  </p>
                 </div>
                 <div className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-green-600 mt-1 mr-3" />
-                  <p className="text-gray-600">Create a sustainable model for rural education development</p>
+                  <p className="text-gray-600">
+                    Create a sustainable model for rural education development
+                  </p>
                 </div>
               </div>
             </div>
@@ -184,16 +220,21 @@ const About: React.FC = () => {
               Our Impact in Numbers
             </h2>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-              Over decades of excellence, we've built a legacy of success and achievement.
+              Over decades of excellence, we've built a legacy of success and
+              achievement.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {[
-              { icon: Users, number: "821", label: "Residential Schools & Colleges" },
+              {
+                icon: Users,
+                number: "821",
+                label: "Residential Schools & Colleges",
+              },
               { icon: Award, number: "250", label: "Students Per School" },
               { icon: Globe, number: "50%", label: "Seats Reserved for Girls" },
-              { icon: BookOpen, number: "25+", label: "Years of Service" }
+              { icon: BookOpen, number: "25+", label: "Years of Service" },
             ].map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="bg-white bg-opacity-20 p-4 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
@@ -215,7 +256,8 @@ const About: React.FC = () => {
               Our Residential Schools
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              KREIS operates various types of residential schools across Karnataka, each with a specific focus and mission.
+              KREIS operates various types of residential schools across
+              Karnataka, each with a specific focus and mission.
             </p>
           </div>
 
@@ -223,34 +265,46 @@ const About: React.FC = () => {
             {[
               {
                 title: "Morarji Desai Residential Schools",
-                description: "Co-education from 6th to 10th grade with 50 students per class",
-                image: "https://images.pexels.com/photos/1595391/pexels-photo-1595391.jpeg?auto=compress&cs=tinysrgb&w=400"
+                description:
+                  "Co-education from 6th to 10th grade with 50 students per class",
+                image:
+                  "https://getmycollege.in/wp-content/uploads/2025/06/School-Lab-4.jpg?auto=compress&cs=tinysrgb&w=400",
               },
               {
                 title: "Kittur Rani Chennamma Schools",
-                description: "Quality education for SC, ST and BC rural students",
-                image: "https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=400"
+                description:
+                  "Quality education for SC, ST and BC rural students",
+                image:
+                  "https://getmycollege.in/wp-content/uploads/2025/06/School-Classroom-Pic.png?auto=compress&cs=tinysrgb&w=400",
               },
               {
                 title: "Dr. B R Ambedkar Schools",
-                description: "Empowering socially and educationally backward communities",
-                image: "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=400"
+                description:
+                  "Empowering socially and educationally backward communities",
+                image:
+                  "https://getmycollege.in/wp-content/uploads/2025/06/Gallery-Pic-2.png?auto=compress&cs=tinysrgb&w=400",
               },
               {
                 title: "Atal Bihari Vajpayee Schools",
-                description: "Residential education modeled after Jawahar Navodaya Vidyalaya",
-                image: "https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&cs=tinysrgb&w=400"
+                description:
+                  "Residential education modeled after Jawahar Navodaya Vidyalaya",
+                image:
+                  "https://getmycollege.in/wp-content/uploads/2025/06/School-Lab-3.jpg?auto=compress&cs=tinysrgb&w=400",
               },
               {
                 title: "Smt. Indira Gandhi Schools",
-                description: "50% seats reserved for girls promoting gender equality",
-                image: "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=400"
+                description:
+                  "50% seats reserved for girls promoting gender equality",
+                image:
+                  "https://getmycollege.in/wp-content/uploads/2025/06/School-Lab-2.jpg?auto=compress&cs=tinysrgb&w=400",
               },
               {
                 title: "Pre University Colleges",
-                description: "Continuing education beyond 10th grade for rural students",
-                image: "https://images.pexels.com/photos/1205651/pexels-photo-1205651.jpeg?auto=compress&cs=tinysrgb&w=400"
-              }
+                description:
+                  "Continuing education beyond 10th grade for rural students",
+                image:
+                  "https://getmycollege.in/wp-content/uploads/2025/06/School-Lab-1.jpg?auto=compress&cs=tinysrgb&w=400",
+              },
             ].map((school, index) => (
               <div key={index} className="group cursor-pointer">
                 <div className="relative overflow-hidden rounded-lg mb-4">
@@ -261,7 +315,9 @@ const About: React.FC = () => {
                   />
                   <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity duration-300"></div>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">{school.title}</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  {school.title}
+                </h3>
                 <p className="text-gray-600 text-sm">{school.description}</p>
               </div>
             ))}
@@ -273,12 +329,15 @@ const About: React.FC = () => {
       <section className="py-20 bg-gray-50" id="faculty">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Faculty</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Our Faculty
+            </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Meet our dedicated team of educators committed to excellence in rural education.
+              Meet our dedicated team of educators committed to excellence in
+              rural education.
             </p>
           </div>
-          
+
           {/* Department Filter */}
           <div className="flex flex-wrap justify-center gap-4 mb-12">
             {departments.map((department) => (
@@ -287,15 +346,15 @@ const About: React.FC = () => {
                 onClick={() => setSelectedDepartment(department.id)}
                 className={`px-6 py-2 rounded-full font-medium transition-colors ${
                   selectedDepartment === department.id
-                    ? 'bg-blue-600 text-white'
-                    : 'bg-white text-gray-700 hover:bg-blue-50'
+                    ? "bg-blue-600 text-white"
+                    : "bg-white text-gray-700 hover:bg-blue-50"
                 }`}
               >
                 {department.name}
               </button>
             ))}
           </div>
-          
+
           {loading ? (
             <div className="flex items-center justify-center h-64">
               <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-600"></div>
@@ -303,10 +362,16 @@ const About: React.FC = () => {
           ) : filteredFaculty.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredFaculty.map((faculty) => (
-                <div key={faculty.id} className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden">
+                <div
+                  key={faculty.id}
+                  className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden"
+                >
                   <div className="relative">
                     <img
-                      src={faculty.image_url || "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=300"}
+                      src={
+                        faculty.image_url ||
+                        "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=300"
+                      }
                       alt={faculty.name}
                       className="w-full h-48 object-cover"
                     />
@@ -316,12 +381,18 @@ const About: React.FC = () => {
                       </span>
                     </div>
                   </div>
-                  
+
                   <div className="p-6">
-                    <h3 className="text-xl font-bold text-gray-900 mb-1">{faculty.name}</h3>
-                    <p className="text-blue-600 font-semibold mb-2">{faculty.position}</p>
-                    <p className="text-gray-600 text-sm mb-3">{faculty.qualification}</p>
-                    
+                    <h3 className="text-xl font-bold text-gray-900 mb-1">
+                      {faculty.name}
+                    </h3>
+                    <p className="text-blue-600 font-semibold mb-2">
+                      {faculty.position}
+                    </p>
+                    <p className="text-gray-600 text-sm mb-3">
+                      {faculty.qualification}
+                    </p>
+
                     <div className="space-y-2 mb-4">
                       <div className="flex items-center text-sm text-gray-600">
                         <GraduationCap className="h-4 w-4 mr-2" />
@@ -333,29 +404,42 @@ const About: React.FC = () => {
                       </div>
                     </div>
 
-                    {faculty.achievements && faculty.achievements.length > 0 && (
-                      <div className="mb-4">
-                        <h4 className="font-semibold text-gray-900 mb-2 text-sm">Key Achievements:</h4>
-                        <div className="space-y-1">
-                          {faculty.achievements.slice(0, 2).map((achievement, index) => (
-                            <div key={index} className="flex items-center text-xs text-gray-600">
-                              <Award className="h-3 w-3 mr-2 text-yellow-500" />
-                              {achievement}
-                            </div>
-                          ))}
-                          {faculty.achievements.length > 2 && (
-                            <p className="text-xs text-gray-500">+{faculty.achievements.length - 2} more</p>
-                          )}
+                    {faculty.achievements &&
+                      faculty.achievements.length > 0 && (
+                        <div className="mb-4">
+                          <h4 className="font-semibold text-gray-900 mb-2 text-sm">
+                            Key Achievements:
+                          </h4>
+                          <div className="space-y-1">
+                            {faculty.achievements
+                              .slice(0, 2)
+                              .map((achievement, index) => (
+                                <div
+                                  key={index}
+                                  className="flex items-center text-xs text-gray-600"
+                                >
+                                  <Award className="h-3 w-3 mr-2 text-yellow-500" />
+                                  {achievement}
+                                </div>
+                              ))}
+                            {faculty.achievements.length > 2 && (
+                              <p className="text-xs text-gray-500">
+                                +{faculty.achievements.length - 2} more
+                              </p>
+                            )}
+                          </div>
                         </div>
-                      </div>
-                    )}
-                    
+                      )}
+
                     {(faculty.email || faculty.phone) && (
                       <div className="border-t pt-4 space-y-2">
                         {faculty.email && (
                           <div className="flex items-center text-sm text-gray-600">
                             <Mail className="h-4 w-4 mr-2" />
-                            <a href={`mailto:${faculty.email}`} className="hover:text-blue-600 transition-colors">
+                            <a
+                              href={`mailto:${faculty.email}`}
+                              className="hover:text-blue-600 transition-colors"
+                            >
                               {faculty.email}
                             </a>
                           </div>
@@ -363,7 +447,10 @@ const About: React.FC = () => {
                         {faculty.phone && (
                           <div className="flex items-center text-sm text-gray-600">
                             <Phone className="h-4 w-4 mr-2" />
-                            <a href={`tel:${faculty.phone}`} className="hover:text-blue-600 transition-colors">
+                            <a
+                              href={`tel:${faculty.phone}`}
+                              className="hover:text-blue-600 transition-colors"
+                            >
                               {faculty.phone}
                             </a>
                           </div>
@@ -377,11 +464,13 @@ const About: React.FC = () => {
           ) : (
             <div className="text-center py-12">
               <GraduationCap className="h-12 w-12 text-gray-400 mx-auto mb-4" />
-              <h3 className="text-lg font-medium text-gray-900 mb-2">No faculty members found</h3>
+              <h3 className="text-lg font-medium text-gray-900 mb-2">
+                No faculty members found
+              </h3>
               <p className="text-gray-600">
-                {selectedDepartment !== 'all'
-                  ? 'Try selecting a different department.'
-                  : 'Faculty information will be added soon.'}
+                {selectedDepartment !== "all"
+                  ? "Try selecting a different department."
+                  : "Faculty information will be added soon."}
               </p>
             </div>
           )}
@@ -392,57 +481,78 @@ const About: React.FC = () => {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Journey</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Our Journey
+            </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From our founding to the present day, KREIS has continuously evolved to better serve rural students.
+              From our founding to the present day, KREIS has continuously
+              evolved to better serve rural students.
             </p>
           </div>
-          
+
           <div className="relative">
             {/* Timeline Line */}
             <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-blue-200"></div>
-            
+
             <div className="space-y-12">
               {[
                 {
                   year: "1999",
                   title: "Foundation of KREIS",
-                  description: "KREIS was established by the Government of Karnataka to promote educational development of rural children."
+                  description:
+                    "KREIS was established by the Government of Karnataka to promote educational development of rural children.",
                 },
                 {
                   year: "2005",
                   title: "Expansion Phase",
-                  description: "Expanded to 250 residential schools across Karnataka, reaching more rural communities."
+                  description:
+                    "Expanded to 250 residential schools across Karnataka, reaching more rural communities.",
                 },
                 {
                   year: "2010",
                   title: "Introduction of PU Colleges",
-                  description: "Started Pre-University colleges to provide continued education for 10th grade graduates."
+                  description:
+                    "Started Pre-University colleges to provide continued education for 10th grade graduates.",
                 },
                 {
                   year: "2015",
                   title: "Digital Learning Initiative",
-                  description: "Implemented digital classrooms and computer labs across all residential schools."
+                  description:
+                    "Implemented digital classrooms and computer labs across all residential schools.",
                 },
                 {
                   year: "2020",
                   title: "Pandemic Response",
-                  description: "Successfully adapted to remote learning during COVID-19 while ensuring student welfare."
+                  description:
+                    "Successfully adapted to remote learning during COVID-19 while ensuring student welfare.",
                 },
                 {
                   year: "2024",
                   title: "Present Day",
-                  description: "Operating 821 residential institutions with a focus on quality education and student development."
-                }
+                  description:
+                    "Operating 821 residential institutions with a focus on quality education and student development.",
+                },
               ].map((milestone, index) => (
                 <div key={index} className="relative">
-                  <div className={`flex items-center justify-${index % 2 === 0 ? 'start' : 'end'} md:justify-center`}>
-                    <div className={`md:w-1/2 ${index % 2 === 0 ? 'md:pr-12 text-right' : 'md:pl-12 text-left'}`}>
+                  <div
+                    className={`flex items-center justify-${
+                      index % 2 === 0 ? "start" : "end"
+                    } md:justify-center`}
+                  >
+                    <div
+                      className={`md:w-1/2 ${
+                        index % 2 === 0
+                          ? "md:pr-12 text-right"
+                          : "md:pl-12 text-left"
+                      }`}
+                    >
                       <div className="bg-white p-6 rounded-lg shadow-md">
                         <div className="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-bold mb-3">
                           {milestone.year}
                         </div>
-                        <h3 className="text-xl font-bold text-gray-900 mb-2">{milestone.title}</h3>
+                        <h3 className="text-xl font-bold text-gray-900 mb-2">
+                          {milestone.title}
+                        </h3>
                         <p className="text-gray-600">{milestone.description}</p>
                       </div>
                     </div>
@@ -461,50 +571,66 @@ const About: React.FC = () => {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Core Values</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Our Core Values
+            </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              The principles that guide our approach to education and student development.
+              The principles that guide our approach to education and student
+              development.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
                 title: "Excellence",
-                description: "We strive for excellence in all aspects of education, from teaching methods to infrastructure.",
-                color: "bg-blue-100 text-blue-600"
+                description:
+                  "We strive for excellence in all aspects of education, from teaching methods to infrastructure.",
+                color: "bg-blue-100 text-blue-600",
               },
               {
                 title: "Inclusivity",
-                description: "We ensure equal opportunities for all students regardless of their background or gender.",
-                color: "bg-green-100 text-green-600"
+                description:
+                  "We ensure equal opportunities for all students regardless of their background or gender.",
+                color: "bg-green-100 text-green-600",
               },
               {
                 title: "Innovation",
-                description: "We embrace innovative teaching methods and technologies to enhance learning outcomes.",
-                color: "bg-purple-100 text-purple-600"
+                description:
+                  "We embrace innovative teaching methods and technologies to enhance learning outcomes.",
+                color: "bg-purple-100 text-purple-600",
               },
               {
                 title: "Integrity",
-                description: "We uphold the highest standards of integrity and ethics in all our operations.",
-                color: "bg-yellow-100 text-yellow-600"
+                description:
+                  "We uphold the highest standards of integrity and ethics in all our operations.",
+                color: "bg-yellow-100 text-yellow-600",
               },
               {
                 title: "Empowerment",
-                description: "We empower students with knowledge, skills, and values to succeed in life.",
-                color: "bg-red-100 text-red-600"
+                description:
+                  "We empower students with knowledge, skills, and values to succeed in life.",
+                color: "bg-red-100 text-red-600",
               },
               {
                 title: "Community",
-                description: "We foster a sense of community and belonging among students, staff, and stakeholders.",
-                color: "bg-indigo-100 text-indigo-600"
-              }
+                description:
+                  "We foster a sense of community and belonging among students, staff, and stakeholders.",
+                color: "bg-indigo-100 text-indigo-600",
+              },
             ].map((value, index) => (
-              <div key={index} className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-                <div className={`p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6 ${value.color}`}>
+              <div
+                key={index}
+                className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
+              >
+                <div
+                  className={`p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6 ${value.color}`}
+                >
                   <span className="text-2xl font-bold">{index + 1}</span>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{value.title}</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  {value.title}
+                </h3>
                 <p className="text-gray-600">{value.description}</p>
               </div>
             ))}
@@ -517,11 +643,14 @@ const About: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Get in Touch</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                Get in Touch
+              </h2>
               <p className="text-xl text-blue-100 mb-8">
-                Have questions about KREIS or interested in supporting our mission? We'd love to hear from you.
+                Have questions about KREIS or interested in supporting our
+                mission? We'd love to hear from you.
               </p>
-              
+
               <div className="space-y-4">
                 <div className="flex items-center">
                   <Phone className="h-5 w-5 mr-3" />
@@ -536,12 +665,12 @@ const About: React.FC = () => {
                   <span>KREIS Bhavan, Bangalore, Karnataka 560001, India</span>
                 </div>
               </div>
-              
+
               <button className="mt-8 bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors inline-flex items-center">
                 Contact Us
               </button>
             </div>
-            
+
             <div className="bg-white p-8 rounded-xl text-gray-900">
               <h3 className="text-2xl font-bold mb-6">Send us a Message</h3>
               <form className="space-y-4">

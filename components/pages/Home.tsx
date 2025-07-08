@@ -121,7 +121,7 @@ const Home: React.FC = () => {
               <div
                 key={slide._id}
                 className={`absolute inset-0 transition-opacity duration-1000 ${
-                  index === currentSlide ? 'opacity-100' : 'opacity-0'
+                  index === currentSlide ? "opacity-100" : "opacity-0"
                 }`}
               >
                 <div
@@ -132,10 +132,16 @@ const Home: React.FC = () => {
                   <div className="relative h-full flex items-center justify-center text-white">
                     <div className="max-w-4xl mx-auto px-4 text-center">
                       {slide.subtitle && (
-                        <p className="text-xl text-blue-200 mb-4">{slide.subtitle}</p>
+                        <p className="text-xl text-blue-200 mb-4">
+                          {slide.subtitle}
+                        </p>
                       )}
-                      <h1 className="text-4xl md:text-6xl font-bold mb-6">{slide.title}</h1>
-                      <p className="text-xl mb-8 max-w-3xl mx-auto">{slide.description}</p>
+                      <h1 className="text-4xl md:text-6xl font-bold mb-6">
+                        {slide.title}
+                      </h1>
+                      <p className="text-xl mb-8 max-w-3xl mx-auto">
+                        {slide.description}
+                      </p>
                       {slide.button_text && slide.button_url && (
                         <Link
                           href={slide.button_url}
@@ -150,7 +156,7 @@ const Home: React.FC = () => {
                 </div>
               </div>
             ))}
-            
+
             {/* Slider Indicators */}
             {sliderItems.length > 1 && (
               <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2">
@@ -159,7 +165,9 @@ const Home: React.FC = () => {
                     key={index}
                     onClick={() => setCurrentSlide(index)}
                     className={`w-3 h-3 rounded-full transition-colors ${
-                      index === currentSlide ? 'bg-white' : 'bg-white bg-opacity-50'
+                      index === currentSlide
+                        ? "bg-white"
+                        : "bg-white bg-opacity-50"
                     }`}
                   />
                 ))}
@@ -173,12 +181,13 @@ const Home: React.FC = () => {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div>
                   <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
-                    Karnataka Residential Educational 
+                    Karnataka Residential Educational
                     <span className="text-blue-300"> Institutions Society</span>
                   </h1>
                   <p className="text-xl text-blue-100 mb-8 leading-relaxed">
-                    Promoting educational development of rural children across Karnataka through 
-                    quality residential education for SC, ST and BC communities since 1999.
+                    Promoting educational development of rural children across
+                    Karnataka through quality residential education for SC, ST
+                    and BC communities since 1999.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4">
                     <Link
@@ -208,8 +217,10 @@ const Home: React.FC = () => {
                         <Users className="h-6 w-6" />
                       </div>
                       <div>
-                        <p className="text-2xl font-bold text-gray-900">10,000+</p>
-                       <p className="text-gray-600">Rural Students</p>
+                        <p className="text-2xl font-bold text-gray-900">
+                          10,000+
+                        </p>
+                        <p className="text-gray-600">Rural Students</p>
                       </div>
                     </div>
                   </div>
@@ -226,80 +237,114 @@ const Home: React.FC = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
               <div className="text-teal-500 mb-4 flex justify-center">
-                <svg className="w-16 h-16" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                <svg
+                  className="w-16 h-16"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
                 </svg>
               </div>
               <h3 className="text-4xl font-bold text-gray-900 mb-2">15 Acre</h3>
               <p className="text-gray-600">of Campus</p>
             </div>
-            
+
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
               <div className="text-blue-500 mb-4 flex justify-center">
-                <svg className="w-16 h-16" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+                <svg
+                  className="w-16 h-16"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
                 </svg>
               </div>
               <h3 className="text-4xl font-bold text-gray-900 mb-2">1000+</h3>
               <p className="text-gray-600">Students Studying</p>
             </div>
-            
+
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
               <div className="text-teal-500 mb-4 flex justify-center">
-                <svg className="w-16 h-16" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                <svg
+                  className="w-16 h-16"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
                 </svg>
               </div>
               <h3 className="text-4xl font-bold text-gray-900 mb-2">35+</h3>
               <p className="text-gray-600">Education Heroes</p>
             </div>
-            
+
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
               <div className="text-blue-500 mb-4 flex justify-center">
-                <svg className="w-16 h-16" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+                <svg
+                  className="w-16 h-16"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z" />
                 </svg>
               </div>
               <h3 className="text-4xl font-bold text-gray-900 mb-2">200+</h3>
               <p className="text-gray-600">Alumni Network</p>
             </div>
           </div>
-          
+
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-6">
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
               <div className="text-yellow-500 mb-4 flex justify-center">
-                <svg className="w-16 h-16" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
+                <svg
+                  className="w-16 h-16"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z" />
                 </svg>
               </div>
               <h3 className="text-4xl font-bold text-gray-900 mb-2">100%</h3>
-              <p className="text-gray-600">Free Education with Food & Lodging</p>
+              <p className="text-gray-600">
+                Free Education with Food & Lodging
+              </p>
             </div>
-            
+
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
               <div className="text-blue-500 mb-4 flex justify-center">
-                <svg className="w-16 h-16" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                <svg
+                  className="w-16 h-16"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
                 </svg>
               </div>
               <h3 className="text-4xl font-bold text-gray-900 mb-2">91%</h3>
               <p className="text-gray-600">Passing Percentage</p>
             </div>
-            
+
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
               <div className="text-yellow-500 mb-4 flex justify-center">
-                <svg className="w-16 h-16" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/>
+                <svg
+                  className="w-16 h-16"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z" />
                 </svg>
               </div>
               <h3 className="text-4xl font-bold text-gray-900 mb-2">100%</h3>
               <p className="text-gray-600">Girl Safe Environment</p>
             </div>
-            
+
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
               <div className="text-teal-500 mb-4 flex justify-center">
-                <svg className="w-16 h-16" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M16 13h-3V3h-2v10H8l4 4 4-4zM4 19v2h16v-2H4z"/>
+                <svg
+                  className="w-16 h-16"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M16 13h-3V3h-2v10H8l4 4 4-4zM4 19v2h16v-2H4z" />
                 </svg>
               </div>
               <h3 className="text-4xl font-bold text-gray-900 mb-2">4+</h3>
@@ -309,8 +354,62 @@ const Home: React.FC = () => {
         </div>
       </section>
 
+
+      {/* Ministers Section */}
+      <section className="py-12 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+            Our Leadership
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                name: "SRI SIDDARAMAIAH",
+                position: "Hon'ble Chief Minister",
+                image: "/CM1.webp",
+              },
+              {
+                name: "SRI D. K. SHIVAKUMAR",
+                position: "Hon'ble Deputy Chief Minister",
+                image: "/CM2.webp",
+              },
+              {
+                name: "DR. H. C. MAHADEVAPPA",
+                position: "Hon'ble Social Welfare Department Minister",
+                image: "/CM3.webp",
+              },
+              {
+                name: "SRI. SHIVARAJ TANGADAGI",
+                position: "Minister for Backward Class Development",
+                image: "/CM4.webp",
+              },
+            ].map((leader, index) => (
+              <div
+                key={index}
+                className="flex flex-col md:flex-row items-center bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow"
+              >
+                <div className="flex-shrink-0 mb-4 md:mb-0 md:mr-6">
+                  <img
+                    src={leader.image}
+                    alt={leader.name}
+                    className="w-24 h-24 rounded-full object-cover border-4 border-blue-100"
+                  />
+                </div>
+                <div className="text-center md:text-left">
+                  <h3 className="text-lg font-bold text-gray-900 mb-1">
+                    {leader.name}
+                  </h3>
+                  <p className="text-blue-600 font-medium text-sm">
+                    {leader.position}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
       {/* Dynamic Sections */}
-      {sections.map((section) => renderSection(section))}
+      {/* {sections.map((section) => renderSection(section))} */}
 
       {/* Fallback sections if no sections are configured */}
       {sections.length === 0 && (
@@ -323,7 +422,8 @@ const Home: React.FC = () => {
                   Why Choose KREIS Schools?
                 </h2>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                  We provide quality residential education specifically designed for rural SC, ST and BC students across Karnataka.
+                  We provide quality residential education specifically designed
+                  for rural SC, ST and BC students across Karnataka.
                 </p>
               </div>
 
@@ -332,9 +432,12 @@ const Home: React.FC = () => {
                   <div className="bg-blue-600 text-white p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
                     <BookOpen className="h-8 w-8" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Residential Education</h3>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                    Residential Education
+                  </h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Co-educational residential schools from 6th to 10th grade, modeled after Jawahar Navodaya Vidyalaya system.
+                    Co-educational residential schools from 6th to 10th grade,
+                    modeled after Jawahar Navodaya Vidyalaya system.
                   </p>
                 </div>
 
@@ -342,9 +445,12 @@ const Home: React.FC = () => {
                   <div className="bg-green-600 text-white p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
                     <Users className="h-8 w-8" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Rural Focus</h3>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                    Rural Focus
+                  </h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Specifically designed for socially and educationally backward rural communities across Karnataka.
+                    Specifically designed for socially and educationally
+                    backward rural communities across Karnataka.
                   </p>
                 </div>
 
@@ -352,9 +458,12 @@ const Home: React.FC = () => {
                   <div className="bg-purple-600 text-white p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
                     <Award className="h-8 w-8" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Gender Equality</h3>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                    Gender Equality
+                  </h3>
                   <p className="text-gray-600 leading-relaxed">
-                    50% seats reserved for girls in all our schools, promoting gender equality in rural education.
+                    50% seats reserved for girls in all our schools, promoting
+                    gender equality in rural education.
                   </p>
                 </div>
               </div>
@@ -368,7 +477,9 @@ const Home: React.FC = () => {
                 Join KREIS Schools
               </h2>
               <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-                Empowering rural students through quality residential education. Join our mission to bring rural children to the mainstream of society.
+                Empowering rural students through quality residential education.
+                Join our mission to bring rural children to the mainstream of
+                society.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
@@ -389,24 +500,37 @@ const Home: React.FC = () => {
           </section>
         </>
       )}
-      
+
       {/* Food Quality & Transparency Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Food Quality & Transparency</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                Food Quality & Transparency
+              </h2>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                The Social Welfare Department of Karnataka is taking a bold step towards transparency, accountability, and social audit by ensuring meal quality and hostels is closely monitored. This initiative enhances public trust and provides real-time insights into student nutrition, ensuring that meals served in residential schools and hostels meet the highest standards of quality and hygiene.
+                The Social Welfare Department of Karnataka is taking a bold step
+                towards transparency, accountability, and social audit by
+                ensuring meal quality and hostels is closely monitored. This
+                initiative enhances public trust and provides real-time insights
+                into student nutrition, ensuring that meals served in
+                residential schools and hostels meet the highest standards of
+                quality and hygiene.
               </p>
-              <a 
-                href="https://x.com/kreiskrcrs661" 
-                target="_blank" 
+              <a
+                href="https://x.com/kreiskrcrs661"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800"
               >
                 Follow our Food Transparency Updates
-                <svg className="ml-2 w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <svg
+                  className="ml-2 w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
                   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
                 </svg>
               </a>
@@ -417,15 +541,15 @@ const Home: React.FC = () => {
                   <div className="absolute inset-0 flex items-center">
                     <div className="flex animate-scroll space-x-4 whitespace-nowrap px-4">
                       {[
-                        "https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&w=600",
-                        "https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=600",
-                        "https://images.pexels.com/photos/1640772/pexels-photo-1640772.jpeg?auto=compress&cs=tinysrgb&w=600",
-                        "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        "https://getmycollege.in/wp-content/uploads/2025/06/School-Hostel-Canteen-Pic.jpg?auto=compress&cs=tinysrgb&w=600",
+                        "https://getmycollege.in/wp-content/uploads/2025/06/School-Hostel-Pic.jpg?auto=compress&cs=tinysrgb&w=600",
+                        "https://getmycollege.in/wp-content/uploads/2025/06/School-Lab-3.jpg?auto=compress&cs=tinysrgb&w=600",
+                        "https://getmycollege.in/wp-content/uploads/2025/06/Student-Achievement-Pic.png?auto=compress&cs=tinysrgb&w=600",
                       ].map((img, index) => (
-                        <img 
+                        <img
                           key={index}
-                          src={img} 
-                          alt={`Food quality ${index + 1}`} 
+                          src={img}
+                          alt={`Food quality ${index + 1}`}
                           className="h-80 w-80 object-cover rounded-lg"
                         />
                       ))}
