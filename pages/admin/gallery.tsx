@@ -255,7 +255,7 @@ const AdminGalleryPage: React.FC = () => {
             <h2 className="text-xl font-semibold text-gray-900 mb-4">Albums</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               {albums.map((album) => (
-                <div key={album._id} className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow">
+                <div key={album.id} className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow">
                   {album.cover_image && (
                     <img
                       src={album.cover_image}
@@ -269,7 +269,7 @@ const AdminGalleryPage: React.FC = () => {
                     <div className="flex items-center justify-between">
                       <span className="text-xs text-gray-500">{album.item_count} photos</span>
                       <button
-                        onClick={() => handleDeleteAlbum(album._id)}
+                        onClick={() => handleDeleteAlbum(album.id)}
                         className="text-red-600 hover:text-red-800"
                       >
                         <Trash2 className="h-4 w-4" />
@@ -293,7 +293,7 @@ const AdminGalleryPage: React.FC = () => {
                 >
                   <option value="">All Albums</option>
                   {albums.map((album) => (
-                    <option key={album._id} value={album.name}>{album.name}</option>
+                    <option key={album.id} value={album.name}>{album.name}</option>
                   ))}
                 </select>
               </div>
@@ -453,7 +453,7 @@ const AdminGalleryPage: React.FC = () => {
                     >
                       <option value="">No Album</option>
                       {albums.map((album) => (
-                        <option key={album._id} value={album.name}>{album.name}</option>
+                        <option key={album.id} value={album.name}>{album.name}</option>
                       ))}
                     </select>
                   </div>
@@ -513,7 +513,6 @@ const AdminGalleryPage: React.FC = () => {
                       {categories.find(c => c.value === item.category)?.label || item.category}
                     </span>
                     <button
-                      onClick={() => handleDeleteImage(item._id)}
                       onClick={() => handleDeleteImage(item.id)}
                       className="text-red-600 hover:text-red-800"
                     >
