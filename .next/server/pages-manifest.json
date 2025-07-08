@@ -1,0 +1,14 @@
+{
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js",
+  "/": "pages/index.js",
+  "/api/auth/me": "pages/api/auth/me.js",
+  "/api/blogs": "pages/api/blogs.js",
+  "/api/contact-info": "pages/api/contact-info.js",
+  "/api/home-slider": "pages/api/home-slider.js",
+  "/api/home-sections": "pages/api/home-sections.js",
+  "/api/footer-logos": "pages/api/footer-logos.js",
+  "/api/events": "pages/api/events.js",
+  "/api/gallery": "pages/api/gallery.js"
+}
