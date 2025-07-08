@@ -107,8 +107,8 @@ const Header: React.FC = () => {
       <header className="bg-white shadow-lg sticky top-0 z-50">
         {/* Top utility bar */}
         <div className="bg-gray-100 border-b border-gray-200">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between items-center h-16">
+          <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-end items-center h-10">
               {/* Government Logo */}
               <div className="flex items-center">
                 {/* <img 
@@ -119,7 +119,7 @@ const Header: React.FC = () => {
               </div>
 
               {/* Left side - Connect Pages */}
-              <div className="flex items-center space-x-6">
+              <div className="flex items-center space-x-6 mr-8">
                 {connectPages.map((page) => (
                   <Link
                     key={page.path}
@@ -139,7 +139,7 @@ const Header: React.FC = () => {
 
               {/* Right side - Controls and Login */}
               <div className="flex items-center space-x-4">
-                {/* Font Size Controls */}
+                {/* Font Size Controls */}  
                 <div className="flex items-center space-x-2">
                   <button
                     onClick={decreaseFontSize}
@@ -212,7 +212,7 @@ const Header: React.FC = () => {
         </div>
 
         {/* Main header */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-22 py-2">
             <Link href="/" className="flex items-center space-x-4">
               <div className="flex-shrink-0">
@@ -241,7 +241,7 @@ const Header: React.FC = () => {
                   {item.path === "/schools" ? (
                     <>
                       <div
-                        className={`text-sm font-medium transition-colors hover:text-blue-600 relative flex items-center ${
+                        className={`text-lg font-medium transition-colors hover:text-blue-600 relative flex items-center ${
                           router.pathname.startsWith("/schools")
                             ? "text-blue-600"
                             : "text-gray-700"
@@ -294,7 +294,7 @@ const Header: React.FC = () => {
                   ) : item.path === "/achievements" ? (
                     <>
                       <div
-                        className={`text-sm font-medium transition-colors hover:text-blue-600 relative flex items-center ${
+                        className={`text-lg font-medium transition-colors hover:text-blue-600 relative flex items-center ${
                           router.pathname.startsWith("/achievements")
                             ? "text-blue-600"
                             : "text-gray-700"
@@ -341,7 +341,7 @@ const Header: React.FC = () => {
                   ) : (
                     <Link
                       href={item.path}
-                      className={`text-sm font-medium transition-colors hover:text-blue-600 relative ${
+                      className={`text-lg font-medium transition-colors hover:text-blue-600 relative ${
                         router.pathname === item.path
                           ? "text-blue-600"
                           : "text-gray-700"

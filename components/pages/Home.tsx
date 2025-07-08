@@ -233,7 +233,7 @@ const Home: React.FC = () => {
 
       {/* Campus Statistics Section */}
       <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[80%] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
               <div className="text-teal-500 mb-4 flex justify-center">
@@ -354,10 +354,9 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-
       {/* Ministers Section */}
       <section className="py-12 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[80%] mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
             Our Leadership
           </h2>
@@ -408,15 +407,16 @@ const Home: React.FC = () => {
           </div>
         </div>
       </section>
+
       {/* Dynamic Sections */}
-      {/* {sections.map((section) => renderSection(section))} */}
+      {sections.map((section) => renderSection(section))}
 
       {/* Fallback sections if no sections are configured */}
       {sections.length === 0 && (
         <>
           {/* Features Section */}
           <section className="py-20 bg-gray-50">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-[80%] mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-16">
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                   Why Choose KREIS Schools?
