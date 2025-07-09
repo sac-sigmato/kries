@@ -1,1 +1,17 @@
-{"/_app":"pages/_app.js","/_document":"pages/_document.js","/_error":"pages/_error.js","/about":"pages/about.html","/achievements/academic":"pages/achievements/academic.html","/achievements/cultural":"pages/achievements/cultural.html","/achievements":"pages/achievements.html","/achievements/social":"pages/achievements/social.html","/admin/alerts":"pages/admin/alerts.html","/admin/blogs":"pages/admin/blogs.html","/achievements/sports":"pages/achievements/sports.html","/admin/cms/about":"pages/admin/cms/about.html","/admin/cms/faculty/[id]":"pages/admin/cms/faculty/[id].html","/admin/cms/faculty":"pages/admin/cms/faculty.html","/admin/cms":"pages/admin/cms.html","/admin/content":"pages/admin/content.html","/admin/events":"pages/admin/events.html","/admin/home":"pages/admin/home.html","/admin/gallery":"pages/admin/gallery.html","/admin":"pages/admin.html","/admin/login":"pages/admin/login.html","/admin/sections/[sectionName]":"pages/admin/sections/[sectionName].html","/admin/results":"pages/admin/results.html","/admin/settings":"pages/admin/settings.html","/admin/users":"pages/admin/users.html","/admissions":"pages/admissions.html","/api/albums":"pages/api/albums.js","/api/auth/login":"pages/api/auth/login.js","/api/auth/logout":"pages/api/auth/logout.js","/api/blogs":"pages/api/blogs.js","/api/contact-info":"pages/api/contact-info.js","/api/auth/me":"pages/api/auth/me.js","/api/email-alerts":"pages/api/email-alerts.js","/api/email-alerts/send":"pages/api/email-alerts/send.js","/api/faculty":"pages/api/faculty.js","/api/events":"pages/api/events.js","/api/footer-logos":"pages/api/footer-logos.js","/api/gallery":"pages/api/gallery.js","/api/home-sections":"pages/api/home-sections.js","/api/results":"pages/api/results.js","/api/home-slider":"pages/api/home-slider.js","/api/seed-data":"pages/api/seed-data.js","/api/students":"pages/api/students.js","/api/setup-admin":"pages/api/setup-admin.js","/blog/[slug]":"pages/blog/[slug].html","/blog":"pages/blog.html","/connect/alumni":"pages/connect/alumni.html","/connect/csr":"pages/connect/csr.html","/connect/mentor":"pages/connect/mentor.html","/contact":"pages/contact.html","/faculty":"pages/faculty.html","/events":"pages/events.html","/gallery":"pages/gallery.html","/":"pages/index.html","/login/alumni":"pages/login/alumni.html","/login/csr":"pages/login/csr.html","/login/mentor":"pages/login/mentor.html","/programs":"pages/programs.html","/results":"pages/results.html","/schools":"pages/schools.html","/schools/amenities":"pages/schools/amenities.html","/schools/development":"pages/schools/development.html","/schools/facility":"pages/schools/facility.html","/schools/statistics":"pages/schools/statistics.html","/schools/hostel":"pages/schools/hostel.html","/404":"pages/404.html"}
+{
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js",
+  "/admin/cms": "pages/admin/cms.js",
+  "/": "pages/index.js",
+  "/admin": "pages/admin.js",
+  "/api/home-slider": "pages/api/home-slider.js",
+  "/api/home-sections": "pages/api/home-sections.js",
+  "/api/campus-stats": "pages/api/campus-stats.js",
+  "/api/auth/me": "pages/api/auth/me.js",
+  "/api/contact-info": "pages/api/contact-info.js",
+  "/api/footer-logos": "pages/api/footer-logos.js",
+  "/api/blogs": "pages/api/blogs.js",
+  "/api/events": "pages/api/events.js",
+  "/api/gallery": "pages/api/gallery.js"
+}

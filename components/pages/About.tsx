@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { Users, Award, Globe, BookOpen, CheckCircle, Calendar, MapPin, Phone, Mail, GraduationCap } from 'lucide-react';
 
 interface FacultyMember {
-  id: string;
+  id: number;
   name: string;
   position: string;
   department: string;
@@ -11,12 +11,11 @@ interface FacultyMember {
   experience: string;
   specialization: string;
   image_url?: string;
+  image?: string;
   email?: string;
   phone?: string;
   achievements: string[];
   bio?: string;
-  order_index: number;
-  is_active: boolean;
 }
 
 const About: React.FC = () => {
@@ -46,7 +45,156 @@ const About: React.FC = () => {
       const response = await fetch('/api/faculty');
       if (response.ok) {
         const data = await response.json();
-        setFacultyMembers(data);
+
+        setFacultyMembers([
+          {
+            id: 1,
+            name: "Dr. Bhaskar Babu G",
+            position: "Director General",
+            department: "administration",
+            qualification: "Ph.D. in Education Administration",
+            experience: "25 years",
+            specialization: "Educational Leadership, Rural Education Policy",
+            image:
+              "https://getmycollege.in/wp-content/uploads/2025/06/Principal-Photo-for-Principals-Message-1024x846.jpeg",
+            email: "director@kreis.kar.nic.in",
+            phone: "+91 80 2234 5678",
+            achievements: [
+              "Padma Shri Awardee",
+              "National Education Excellence Award",
+              "25+ Research Publications",
+            ],
+          },
+          {
+            id: 2,
+            name: "Mr. Subramanyam S A",
+            position: "Academic Director",
+            department: "academics",
+            qualification: "M.Ed., Ph.D. in Curriculum Development",
+            experience: "20 years",
+            specialization: "Curriculum Design, Teacher Training",
+            image:
+              "https://getmycollege.in/wp-content/uploads/2025/06/20250619_1232_Raghavendras-School-Lecture_simple_compose_01jy3fshf1e4vb03asy97ss8dn.png?auto=compress&cs=tinysrgb&w=300",
+            email: "academic@kreis.kar.nic.in",
+            phone: "+91 80 2234 5679",
+            achievements: [
+              "Best Teacher Award",
+              "Curriculum Innovation Award",
+              "Educational Research Excellence",
+            ],
+          },
+          {
+            id: 3,
+            name: "Mr. Ananda V",
+            position: "Head of Science Department",
+            department: "science",
+            qualification: "M.Sc. Physics, Ph.D. in Science Education",
+            experience: "18 years",
+            specialization:
+              "Physics, Science Methodology, Laboratory Management",
+            image:
+              "https://getmycollege.in/wp-content/uploads/2025/06/profile-placeholder.jpg?auto=compress&cs=tinysrgb&w=300",
+            email: "science@kreis.kar.nic.in",
+            phone: "+91 80 2234 5680",
+            achievements: [
+              "Science Teacher Excellence Award",
+              "Innovation in Science Teaching",
+              "Student Mentorship Award",
+            ],
+          },
+          {
+            id: 4,
+            name: "Mr. Raghavendra B",
+            position: "Kannada Language Coordinator",
+            department: "languages",
+            qualification: "M.A. Kannada Literature, B.Ed.",
+            experience: "15 years",
+            specialization: "Kannada Literature, Language Pedagogy",
+            image:
+              "https://getmycollege.in/wp-content/uploads/2025/06/20250619_1232_Raghavendras-School-Lecture_simple_compose_01jy3fshf2fahtbn2cxs30mq6d.png",
+            email: "kannada@kreis.kar.nic.in",
+            phone: "+91 80 2234 5681",
+            achievements: [
+              "State Language Teacher Award",
+              "Cultural Heritage Promotion",
+              "Literary Contribution Award",
+            ],
+          },
+          {
+            id: 5,
+            name: "Mr.  Suresh Hegde",
+            position: "Mathematics Coordinator",
+            department: "science",
+            qualification: "M.Sc. Mathematics, B.Ed.",
+            experience: "16 years",
+            specialization: "Advanced Mathematics, Problem Solving Techniques",
+            image:
+              "https://getmycollege.in/wp-content/uploads/2025/06/profile-placeholder.jpg?auto=compress&cs=tinysrgb&w=300",
+            email: "mathematics@kreis.kar.nic.in",
+            phone: "+91 80 2234 5682",
+            achievements: [
+              "Mathematics Excellence Award",
+              "Student Competition Mentor",
+              "Innovative Teaching Methods",
+            ],
+          },
+          {
+            id: 6,
+            name: "Dr. Rachani B G",
+            position: "Student Counselor",
+            department: "counseling",
+            qualification: "M.A. Psychology, Ph.D. in Counseling Psychology",
+            experience: "12 years",
+            specialization: "Adolescent Psychology, Career Guidance",
+            image:
+              "https://getmycollege.in/wp-content/uploads/2025/06/woman.jpg?auto=compress&cs=tinysrgb&w=300",
+            email: "counseling@kreis.kar.nic.in",
+            phone: "+91 80 2234 5683",
+            achievements: [
+              "Best Counselor Award",
+              "Student Welfare Excellence",
+              "Mental Health Advocacy",
+            ],
+          },
+          {
+            id: 7,
+            name: "Dr. Shailaja",
+            position: "Physical Education Director",
+            department: "sports",
+            qualification: "M.P.Ed., Sports Coaching Certification",
+            experience: "14 years",
+            specialization:
+              "Sports Training, Physical Fitness, Athletic Development",
+            image:
+              "https://getmycollege.in/wp-content/uploads/2025/06/woman.jpg?auto=compress&cs=tinysrgb&w=300",
+            email: "sports@kreis.kar.nic.in",
+            phone: "+91 80 2234 5684",
+            achievements: [
+              "State Sports Excellence Award",
+              "Athletic Training Certification",
+              "Youth Development Award",
+            ],
+          },
+          {
+            id: 8,
+            name: "Mrs. Lakshmi Desai",
+            position: "Social Science Coordinator",
+            department: "social",
+            qualification: "M.A. History, M.A. Political Science, B.Ed.",
+            experience: "17 years",
+            specialization:
+              "Indian History, Civics, Social Studies Methodology",
+            image:
+              "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=300",
+            email: "socialscience@kreis.kar.nic.in",
+            phone: "+91 80 2234 5685",
+            achievements: [
+              "History Teaching Excellence",
+              "Social Awareness Programs",
+              "Community Engagement Award",
+            ],
+          },
+        ]);
       }
     } catch (error) {
       console.error('Error fetching faculty members:', error);
@@ -369,7 +517,7 @@ const About: React.FC = () => {
                   <div className="relative">
                     <img
                       src={
-                        faculty.image_url ||
+                        faculty.image ||
                         "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=300"
                       }
                       alt={faculty.name}

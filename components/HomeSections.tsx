@@ -47,8 +47,12 @@ export const AboutPreviewSection: React.FC<SectionProps> = ({ section }) => (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">{section.title}</h2>
-          <p className="text-lg text-gray-600 mb-8 leading-relaxed">{section.content}</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            {section.title}
+          </h2>
+          <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+            {section.content}
+          </p>
           {section.button_text && section.button_url && (
             <Link
               href={section.button_url}
@@ -61,7 +65,9 @@ export const AboutPreviewSection: React.FC<SectionProps> = ({ section }) => (
         </div>
         <div className="relative">
           <img
-            src={section.image_url || 'https://images.pexels.com/photos/1595391/pexels-photo-1595391.jpeg?auto=compress&cs=tinysrgb&w=800'}
+            src={
+              "https://getmycollege.in/wp-content/uploads/2025/06/School-Main-Block-Pic-2.png?auto=compress&cs=tinysrgb&w=800"
+            }
             alt={section.title}
             className="rounded-lg shadow-xl"
           />
@@ -286,42 +292,57 @@ export const CampusFacilitiesSection: React.FC<SectionProps> = ({ section }) => 
   <section className="py-20 bg-white">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="text-center mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{section.title}</h2>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto">{section.content}</p>
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          {section.title}
+        </h2>
+        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          {section.content}
+        </p>
       </div>
-      
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {[
           {
             title: "Morarji Desai Residential Schools",
-            description: "Co-education from 6th to 10th grade with 50 students per class",
-            image: "https://images.pexels.com/photos/1595391/pexels-photo-1595391.jpeg?auto=compress&cs=tinysrgb&w=400"
+            description:
+              "Co-education from 6th to 10th grade with 50 students per class",
+            image:
+              "https://getmycollege.in/wp-content/uploads/2025/06/School-Lab-4.jpg?auto=compress&cs=tinysrgb&w=400",
           },
           {
             title: "Kittur Rani Chennamma Schools",
             description: "Quality education for SC, ST and BC rural students",
-            image: "https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=400"
+            image:
+              "https://getmycollege.in/wp-content/uploads/2025/06/School-Classroom-Pic.png?auto=compress&cs=tinysrgb&w=400",
           },
           {
             title: "Dr. B R Ambedkar Schools",
-            description: "Empowering socially and educationally backward communities",
-            image: "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=400"
+            description:
+              "Empowering socially and educationally backward communities",
+            image:
+              "https://getmycollege.in/wp-content/uploads/2025/06/Gallery-Pic-2.png?auto=compress&cs=tinysrgb&w=400",
           },
           {
             title: "Atal Bihari Vajpayee Schools",
-            description: "Residential education modeled after Jawahar Navodaya Vidyalaya",
-            image: "https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&cs=tinysrgb&w=400"
+            description:
+              "Residential education modeled after Jawahar Navodaya Vidyalaya",
+            image:
+              "https://getmycollege.in/wp-content/uploads/2025/06/School-Lab-3.jpg?auto=compress&cs=tinysrgb&w=400",
           },
           {
             title: "Smt. Indira Gandhi Schools",
-            description: "50% seats reserved for girls promoting gender equality",
-            image: "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=400"
+            description:
+              "50% seats reserved for girls promoting gender equality",
+            image:
+              "https://getmycollege.in/wp-content/uploads/2025/06/School-Lab-2.jpg?auto=compress&cs=tinysrgb&w=400",
           },
           {
             title: "Pre University Colleges",
-            description: "Continuing education beyond 10th grade for rural students",
-            image: "https://images.pexels.com/photos/1205651/pexels-photo-1205651.jpeg?auto=compress&cs=tinysrgb&w=400"
-          }
+            description:
+              "Continuing education beyond 10th grade for rural students",
+            image:
+              "https://getmycollege.in/wp-content/uploads/2025/06/School-Lab-1.jpg?auto=compress&cs=tinysrgb&w=400",
+          },
         ].map((facility, index) => (
           <div key={index} className="group cursor-pointer">
             <div className="relative overflow-hidden rounded-lg mb-4">
@@ -332,7 +353,9 @@ export const CampusFacilitiesSection: React.FC<SectionProps> = ({ section }) => 
               />
               <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity duration-300"></div>
             </div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">{facility.title}</h3>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">
+              {facility.title}
+            </h3>
             <p className="text-gray-600 text-sm">{facility.description}</p>
           </div>
         ))}
@@ -535,38 +558,53 @@ export const SchoolFacilitySection: React.FC<SectionProps> = ({ section }) => (
   <section className="py-20 bg-white">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="text-center mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{section.title}</h2>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto">{section.content}</p>
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          {section.title}
+        </h2>
+        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          {section.content}
+        </p>
       </div>
-      
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {[
           {
             title: "Infrastructure",
-            description: "Modern buildings with well-ventilated classrooms, administrative blocks, and residential quarters designed for optimal learning environment.",
-            image: "https://images.pexels.com/photos/1595391/pexels-photo-1595391.jpeg?auto=compress&cs=tinysrgb&w=400",
-            icon: "🏢"
+            description:
+              "Modern buildings with well-ventilated classrooms, administrative blocks, and residential quarters designed for optimal learning environment.",
+            image:
+              "https://getmycollege.in/wp-content/uploads/2025/06/School-Main-Block-Pic-1-1024x768.png?auto=compress&cs=tinysrgb&w=400",
+            icon: "🏢",
           },
           {
             title: "Laboratories",
-            description: "Well-equipped science laboratories, computer labs, and language labs with modern equipment for hands-on learning experiences.",
-            image: "https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=400",
-            icon: "🔬"
+            description:
+              "Well-equipped science laboratories, computer labs, and language labs with modern equipment for hands-on learning experiences.",
+            image:
+              "https://getmycollege.in/wp-content/uploads/2025/06/School-Lab-2.jpg?auto=compress&cs=tinysrgb&w=400",
+            icon: "🔬",
           },
           {
             title: "Hostel & Canteen",
-            description: "Comfortable residential facilities with nutritious meals, separate hostels for boys and girls with proper supervision and care.",
-            image: "https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&cs=tinysrgb&w=400",
-            icon: "🏠"
+            description:
+              "Comfortable residential facilities with nutritious meals, separate hostels for boys and girls with proper supervision and care.",
+            image:
+              "https://getmycollege.in/wp-content/uploads/2025/06/School-Hostel-Canteen-Pic.jpg?auto=compress&cs=tinysrgb&w=400",
+            icon: "🏠",
           },
           {
             title: "Open Air Auditorium & Playground",
-            description: "Spacious playgrounds for sports activities and open-air auditoriums for cultural events, assemblies, and community gatherings.",
-            image: "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=400",
-            icon: "🏟️"
-          }
+            description:
+              "Spacious playgrounds for sports activities and open-air auditoriums for cultural events, assemblies, and community gatherings.",
+            image:
+              "https://getmycollege.in/wp-content/uploads/2025/06/481123898_1158153019438079_2864866343096138457_n.jpg?auto=compress&cs=tinysrgb&w=400",
+            icon: "🏟️",
+          },
         ].map((facility, index) => (
-          <div key={index} className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden group">
+          <div
+            key={index}
+            className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden group"
+          >
             <div className="relative overflow-hidden">
               <img
                 src={facility.image}
@@ -578,13 +616,17 @@ export const SchoolFacilitySection: React.FC<SectionProps> = ({ section }) => (
               </div>
             </div>
             <div className="p-6">
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">{facility.title}</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">{facility.description}</p>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                {facility.title}
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                {facility.description}
+              </p>
             </div>
           </div>
         ))}
       </div>
-      
+
       {/* Additional Facility Details */}
       <div className="mt-16 bg-blue-50 rounded-2xl p-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -592,22 +634,37 @@ export const SchoolFacilitySection: React.FC<SectionProps> = ({ section }) => (
             <div className="bg-blue-600 text-white p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
               <span className="text-2xl">📚</span>
             </div>
-            <h4 className="text-lg font-semibold text-gray-900 mb-2">Library Facilities</h4>
-            <p className="text-gray-600 text-sm">Well-stocked libraries with books in multiple languages, reference materials, and digital resources for comprehensive learning.</p>
+            <h4 className="text-lg font-semibold text-gray-900 mb-2">
+              Library Facilities
+            </h4>
+            <p className="text-gray-600 text-sm">
+              Well-stocked libraries with books in multiple languages, reference
+              materials, and digital resources for comprehensive learning.
+            </p>
           </div>
           <div className="text-center">
             <div className="bg-green-600 text-white p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
               <span className="text-2xl">🏥</span>
             </div>
-            <h4 className="text-lg font-semibold text-gray-900 mb-2">Medical Facilities</h4>
-            <p className="text-gray-600 text-sm">On-campus medical facilities with qualified staff to ensure student health and well-being at all times.</p>
+            <h4 className="text-lg font-semibold text-gray-900 mb-2">
+              Medical Facilities
+            </h4>
+            <p className="text-gray-600 text-sm">
+              On-campus medical facilities with qualified staff to ensure
+              student health and well-being at all times.
+            </p>
           </div>
           <div className="text-center">
             <div className="bg-purple-600 text-white p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
               <span className="text-2xl">🔒</span>
             </div>
-            <h4 className="text-lg font-semibold text-gray-900 mb-2">Security & Safety</h4>
-            <p className="text-gray-600 text-sm">24/7 security arrangements with CCTV surveillance and safety protocols to ensure a secure learning environment.</p>
+            <h4 className="text-lg font-semibold text-gray-900 mb-2">
+              Security & Safety
+            </h4>
+            <p className="text-gray-600 text-sm">
+              24/7 security arrangements with CCTV surveillance and safety
+              protocols to ensure a secure learning environment.
+            </p>
           </div>
         </div>
       </div>
