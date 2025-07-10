@@ -154,7 +154,7 @@ const Amenities: React.FC = () => {
         <section className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-blue-50 rounded-xl p-8">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Quality Assurance</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">100% Quality Assurance</h2>
               <p className="text-lg text-gray-600 mb-8">
                 All items provided to students undergo strict quality checks to ensure durability, comfort, and suitability for daily use. We partner with reputable suppliers who meet our quality standards.
               </p>

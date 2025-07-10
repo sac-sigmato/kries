@@ -42,9 +42,10 @@ const Header: React.FC = () => {
   const navItems = [
     { path: '/', label: { en: 'Home', kn: 'ಮುಖ್ಯ' } },
     { path: '/about', label: { en: 'About', kn: 'ನಮ್ಮ ಬಗ್ಗೆ' } },
-    { path: '/schools', label: { en: 'Schools', kn: 'ಶಾಲೆಗಳು' } },
-    { path: '/faculty', label: { en: 'Faculty', kn: 'ಅಧ್ಯಾಪಕರು' } },
-    { path: '/admissions', label: { en: 'Admissions', kn: 'ಪ್ರವೇಶ' } },
+    { path: '/schools', label: { en: 'Academics', kn: 'ಶಾಲೆಗಳು' } },
+    { path: '/school-facilities', label: { en: 'School Facilities', kn: 'ಪ್ರವೇಶ' } },
+    
+    // { path: '/admissions', label: { en: 'Admissions', kn: 'ಪ್ರವೇಶ' } },
     { path: '/events', label: { en: 'Events', kn: 'ಕಾರ್ಯಕ್ರಮಗಳು' } },
     { path: '/results', label: { en: 'Results', kn: 'ಫಲಿತಾಂಶಗಳು' }, isFlashing: true },
     { path: '/gallery', label: { en: 'Gallery', kn: 'ಗ್ಯಾಲರಿ' } },
@@ -293,6 +294,35 @@ const Header: React.FC = () => {
                       </div>
                       <div className="absolute left-0 mt-2 w-64 bg-white rounded-md shadow-lg border border-gray-200 z-50 hidden group-hover:block">
                         <div className="py-1">
+
+                        <Link
+                            href="/schools/statistics"
+                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          >
+                            Academic Insights
+                          </Link>
+                          <Link
+                            href="/schools/development"
+                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          >
+                            Student Development Program
+                          </Link>
+                         
+                          <Link
+                            href="/schools/achievements"
+                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          >
+                            Achievements & Activities
+                          </Link>
+
+                          <Link
+                            href="/schools/calendarofevents"
+                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          >
+                            Calendar of Events
+                          </Link>
+
+
                           <Link
                             href="/schools"
                             className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
@@ -305,24 +335,14 @@ const Header: React.FC = () => {
                           >
                             School Facility
                           </Link>
-                          <Link
-                            href="/schools/statistics"
-                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                          >
-                            Academic Insights
-                          </Link>
+                         
                           <Link
                             href="/schools/hostel"
                             className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                           >
                             Hostel & Canteen
                           </Link>
-                          <Link
-                            href="/schools/development"
-                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                          >
-                            Student Development Program
-                          </Link>
+                         
                           <Link
                             href="/schools/amenities"
                             className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
@@ -378,7 +398,55 @@ const Header: React.FC = () => {
                         </div>
                       </div>
                     </>
-                  ) : (
+                  ) 
+                  
+                  : item.path === "/school-facilities" ? (
+                    <>
+                      <div
+                        className={`text-lg font-medium transition-colors hover:text-blue-600 relative flex items-center ${router.pathname.startsWith("/school-facilities")
+                          ? "text-blue-600"
+                          : "text-gray-700"
+                          }`}
+                      >
+                        {item.label[language]}
+                        <ChevronDown className="ml-1 h-4 w-4" />
+                      </div>
+                      <div className="absolute left-0 mt-2 w-64 bg-white rounded-md shadow-lg border border-gray-200 z-50 hidden group-hover:block">
+                        <div className="py-1">
+
+                       
+                         
+
+                          {/* <Link
+                            href="/schools"
+                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          >
+                            School Overview
+                          </Link> */}
+                          <Link
+                            href="/schools/facility"
+                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          >
+                          Infrastructure                          
+                          </Link>
+                         
+                          <Link
+                            href="/schools/hostel"
+                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          >
+                            Hostel & Canteen
+                          </Link>
+                         
+                          <Link
+                            href="/schools/amenities"
+                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          >
+                            Amenities
+                          </Link>
+                        </div>
+                      </div>
+                    </>
+                    ): (
                     <Link
                       href={item.path}
                       className={`text-lg font-medium transition-colors hover:text-blue-600 relative ${router.pathname === item.path

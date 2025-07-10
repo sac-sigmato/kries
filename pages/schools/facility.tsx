@@ -37,7 +37,7 @@ const SchoolFacility: React.FC = () => {
         <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <h1 className="text-4xl md:text-6xl font-bold mb-6">School Facility</h1>
+              <h1 className="text-4xl md:text-6xl font-bold mb-6">Infrastructure</h1>
               <p className="text-xl text-blue-100 max-w-3xl mx-auto">
                 Our state-of-the-art facilities provide an optimal environment for learning and development.
               </p>

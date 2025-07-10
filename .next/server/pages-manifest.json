@@ -2,6 +2,11 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/about": "pages/about.js",
-  "/admin/cms": "pages/admin/cms.js"
+  "/admin/login": "pages/admin/login.js",
+  "/schools/amenities": "pages/schools/amenities.js",
+  "/results": "pages/results.js",
+  "/schools/facility": "pages/schools/facility.js",
+  "/api/results": "pages/api/results.js",
+  "/api/contact-info": "pages/api/contact-info.js",
+  "/api/footer-logos": "pages/api/footer-logos.js"
 }

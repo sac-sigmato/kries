@@ -80,7 +80,7 @@ const StudentStatistics: React.FC = () => {
                     <th className="py-3 px-6 text-left">Total Students</th>
                     <th className="py-3 px-6 text-left">Boys</th>
                     <th className="py-3 px-6 text-left">Girls</th>
-                    <th className="py-3 px-6 text-left">Gender Ratio</th>
+                  
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200">
@@ -94,7 +94,7 @@ const StudentStatistics: React.FC = () => {
                       </td>
                       <td className="py-4 px-6">{classData.boys}</td>
                       <td className="py-4 px-6">{classData.girls}</td>
-                      <td className="py-4 px-6">{classData.boys}:{classData.girls}</td>
+                     
                     </tr>
                   ))}
                   <tr className="bg-gray-50 font-semibold">
@@ -102,7 +102,7 @@ const StudentStatistics: React.FC = () => {
                     <td className="py-4 px-6">{academicData.totalStudents}</td>
                     <td className="py-4 px-6">{academicData.classDistribution.reduce((sum, item) => sum + item.boys, 0)}</td>
                     <td className="py-4 px-6">{academicData.classDistribution.reduce((sum, item) => sum + item.girls, 0)}</td>
-                    <td className="py-4 px-6">50:50</td>
+                   
                   </tr>
                 </tbody>
               </table>
@@ -149,8 +149,7 @@ const StudentStatistics: React.FC = () => {
                     <th className="py-3 px-6 text-left">Academic Year</th>
                     <th className="py-3 px-6 text-left">Pass Percentage</th>
                     <th className="py-3 px-6 text-left">Distinction</th>
-                    <th className="py-3 px-6 text-left">First Class</th>
-                    <th className="py-3 px-6 text-left">Second Class</th>
+                   
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200">
@@ -166,8 +165,7 @@ const StudentStatistics: React.FC = () => {
                         </div>
                       </td>
                       <td className="py-4 px-6">{result.distinction}</td>
-                      <td className="py-4 px-6">{result.firstClass}</td>
-                      <td className="py-4 px-6">{result.secondClass}</td>
+                     
                     </tr>
                   ))}
                 </tbody>
