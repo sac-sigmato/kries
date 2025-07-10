@@ -5,7 +5,7 @@ let footerLogos: any[] = [
   {
     _id: '1',
     name: 'Government of Karnataka',
-    image_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Government_of_Karnataka_Logo.svg/200px-Government_of_Karnataka_Logo.svg.png',
+    image_url: 'https://getmycollege.in/wp-content/uploads/2025/06/Meity_logo.png',
     website_url: 'https://www.karnataka.gov.in',
     description: 'Official website of Government of Karnataka',
     is_active: true,
@@ -15,7 +15,7 @@ let footerLogos: any[] = [
   {
     _id: '2',
     name: 'Ministry of Education',
-    image_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Government_of_India_logo.svg/200px-Government_of_India_logo.svg.png',
+    image_url: 'https://getmycollege.in/wp-content/uploads/2025/06/digital-india-logo.png',
     website_url: 'https://www.education.gov.in',
     description: 'Ministry of Education, Government of India',
     is_active: true,
@@ -25,7 +25,7 @@ let footerLogos: any[] = [
   {
     _id: '3',
     name: 'Sarva Shiksha Abhiyan',
-    image_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Emblem_of_India.svg/200px-Emblem_of_India.svg.png',
+    image_url: 'https://getmycollege.in/wp-content/uploads/2025/06/data-gov-logo.png',
     website_url: 'https://samagra.education.gov.in',
     description: 'Sarva Shiksha Abhiyan - Education for All',
     is_active: true,
