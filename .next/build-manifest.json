@@ -27,15 +27,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/admin/login.js"
     ],
-    "/results": [
+    "/connect/csr": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/results.js"
-    ],
-    "/schools/amenities": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/schools/amenities.js"
+      "static/chunks/pages/connect/csr.js"
     ]
   },
   "ampFirstPages": []

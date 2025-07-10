@@ -113,7 +113,7 @@ const Results: React.FC = () => {
             <div className="text-center">
               <h1 className="text-4xl md:text-6xl font-bold mb-6">Student Results</h1>
               <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-                View examination results and academic performance of KREIS students.
+              Student results for "Kittur Rani Chennamma Residential School, Balepura.
               </p>
             </div>
           </div>
@@ -139,7 +139,8 @@ const Results: React.FC = () => {
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">Student Results</h1>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-              View examination results and academic performance of KREIS students.
+            Student results for "Kittur Rani Chennamma Residential School, Balepura" from grade 6th through 10th have been successfully shared with their parents.
+ 
             </p>
           </div>
         </div>

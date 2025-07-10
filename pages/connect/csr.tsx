@@ -1,14 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Layout from '../../components/Layout';
 import { Building, Users, Award, TrendingUp, Heart, CheckCircle, Target, Globe, Handshake, ArrowRight } from 'lucide-react';
 
+
 const CSRConnect: React.FC = () => {
   const impactStats = [
-    { icon: Building, number: "50+", label: "Corporate Partners" },
-    { icon: Users, number: "10,000+", label: "Students Benefited" },
-    { icon: Award, number: "₹5 Cr+", label: "CSR Investment" },
+    { icon: Building, number: "5+", label: "Corporate Partners" },
+    { icon: Users, number: "1,250+", label: "Students Benefited" },
+    { icon: Award, number: "10 Lakhs+", label: "CSR Investment" },
     { icon: TrendingUp, number: "95%", label: "Impact Success Rate" }
   ];
+
+  const [showModal, setShowModal] = useState(false);
+
 
   const csrOpportunities = [
     {
@@ -74,6 +78,8 @@ const CSRConnect: React.FC = () => {
     }
   ];
 
+
+  
   return (
     <Layout>
       <div className="bg-white">
@@ -87,13 +93,22 @@ const CSRConnect: React.FC = () => {
                   Partner with KREIS to create lasting impact in rural education. Transform lives through strategic CSR investments that deliver measurable social outcomes.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <button className="bg-white text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-green-50 transition-colors flex items-center justify-center">
-                    Become a Partner
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </button>
-                  <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-green-600 transition-colors">
-                    Download Brochure
-                  </button>
+                <button
+  onClick={() => setShowModal(true)}
+  className="bg-white text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-green-50 transition-colors flex items-center justify-center"
+>
+  Become a Partner
+  <ArrowRight className="ml-2 h-5 w-5" />
+</button>
+
+                  <a
+  href="/ATG_Certificate_for_CSR.pdf"
+  download
+  className="inline-block border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-green-600 transition-colors"
+>
+  Download ATG Certificate
+</a>
+
                 </div>
               </div>
               <div className="relative">
@@ -139,6 +154,10 @@ const CSRConnect: React.FC = () => {
           </div>
         </section>
 
+
+
+        
+
         {/* CSR Opportunities */}
         <section className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -147,7 +166,7 @@ const CSRConnect: React.FC = () => {
                 CSR Investment Opportunities
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Choose from our carefully designed CSR programs that align with your company's values and create meaningful impact.
+              Choose from the below requirements to invest that align with your company's values and create meaningful impact
               </p>
             </div>
 
@@ -212,6 +231,91 @@ const CSRConnect: React.FC = () => {
                     <p className="text-sm text-gray-600">Active Partners</p>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+
+        {/* Principal Contribution Section */}
+        <section className="py-20 px-6 max-w-5xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-center">Principal Contribution</h2>
+          <p className="text-lg text-gray-700 mb-8 text-center">Empowering Change through Leadership</p>
+
+          <p className="text-gray-600 mb-6">Under the dynamic leadership and unwavering commitment of the Principal, the transformation journey of Kittur Rani Chennamma Residential School, Balepura has witnessed remarkable progress...</p>
+
+          <ul className="space-y-4 text-gray-700 list-disc pl-5">
+            <li><strong>Strategic Vision and Planning:</strong> Identified core needs and aligned with CSR goals.</li>
+            <li><strong>Effective Implementation:</strong> Personally ensured project quality and timely execution.</li>
+            <li><strong>Focus on Holistic Development:</strong> Emphasized academics, co-curricular, and wellness equally.</li>
+            <li><strong>Sustainability and Long-Term Impact:</strong> Initiatives are future-proof and sustainable.</li>
+          </ul>
+        </section>
+
+        {/* CSR Needs Section */}
+        <section className="py-20 px-6 bg-gray-50">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-center">Key CSR Requirements</h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-xl font-semibold text-green-700 mb-2">Infrastructure Development</h3>
+                <ul className="list-disc pl-5 space-y-1 text-gray-700">
+                  <li>Science & Computer Labs</li>
+                  <li>Smart Classes & Digital Learning Zones</li>
+                  <li>Library Setup</li>
+                  <li>Dormitory Upgrades</li>
+                  <li>Sanitation & Drinking Water System</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-green-700 mb-2">Educational Resources</h3>
+                <ul className="list-disc pl-5 space-y-1 text-gray-700">
+                  <li>Smart Boards, Projectors, Tablets</li>
+                  <li>Books, Stationery, STEM Kits</li>
+                  <li>Teacher Training Workshops</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-green-700 mb-2">Health & Nutrition</h3>
+                <ul className="list-disc pl-5 space-y-1 text-gray-700">
+                  <li>Health Check-Up Camps (Dental, Eye, General)</li>
+                  <li>Mental Health & Wellness Programs</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-green-700 mb-2">Sustainability</h3>
+                <ul className="list-disc pl-5 space-y-1 text-gray-700">
+                  <li>Solar Panels</li>
+                  <li>Rainwater Harvesting</li>
+                  <li>Waste Management Units</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CSR Activities Section */}
+        <section className="py-20 px-6">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-center">Recent CSR Initiatives</h2>
+
+            <div className="space-y-12">
+              <div>
+                <h3 className="text-xl font-bold text-green-700 mb-2">STEM Laboratory by Collins Aerospace</h3>
+                <p className="text-gray-700">A modern STEM Lab installed through Collins Aerospace with strong support from Principal Bhaskar Babu, enabling innovation and science-based learning.</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-green-700 mb-2">3,000 Saplings Plantation by Pai Foundation</h3>
+                <p className="text-gray-700">Pai Foundation funded a large-scale tree plantation across the campus, reinforcing environmental commitment and Principal-led community involvement.</p>
+              </div>
+            </div>
+
+            <div className="text-center mt-12">
+              <p className="text-gray-800 text-lg">Let’s build a future where every girl has access to equal opportunity and dignified learning.</p>
+              <div className="mt-4">
+                <p className="text-green-700 font-semibold">📧 csrconnect@kitturschool.org | 📞 +91-94482 27951</p>
               </div>
             </div>
           </div>
@@ -295,7 +399,7 @@ const CSRConnect: React.FC = () => {
                 Schedule a Meeting
               </button>
               <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-green-600 transition-colors">
-                Download CSR Catalog
+              Contribute
               </button>
             </div>
             <div className="mt-8 text-green-100">
@@ -304,6 +408,50 @@ const CSRConnect: React.FC = () => {
           </div>
         </section>
       </div>
+
+      {showModal && (
+  <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
+    <div className="bg-white rounded-lg shadow-xl p-8 max-w-md w-full relative">
+      <button
+        onClick={() => setShowModal(false)}
+        className="absolute top-3 right-3 text-gray-500 hover:text-gray-700"
+      >
+        ✕
+      </button>
+      <h2 className="text-2xl font-bold mb-4 text-green-700">CSR Partnership Registration</h2>
+      <form className="space-y-4">
+        <div>
+          <label className="block text-sm font-medium text-gray-700">Company Name</label>
+          <input type="text" className="w-full border border-gray-300 rounded-md p-2" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-gray-700">Contact Person</label>
+          <input type="text" className="w-full border border-gray-300 rounded-md p-2" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-gray-700">Email</label>
+          <input type="email" className="w-full border border-gray-300 rounded-md p-2" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-gray-700">Phone</label>
+          <input type="tel" className="w-full border border-gray-300 rounded-md p-2" />
+        </div>
+        <button
+          type="submit"
+          className="w-full bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+
+  
+
+
+)}
+
+
     </Layout>
   );
 };

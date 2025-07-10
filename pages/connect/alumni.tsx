@@ -4,10 +4,10 @@ import { GraduationCap, Users, Award, TrendingUp, MapPin, Briefcase, Heart, Star
 
 const AlumniConnect: React.FC = () => {
   const alumniStats = [
-    { icon: Users, number: "5,000+", label: "Alumni Worldwide" },
-    { icon: Briefcase, number: "85%", label: "Employment Rate" },
+    { icon: Users, number: "120+", label: "Alumni Worldwide" },
+    { icon: Briefcase, number: "98%", label: "Employment Rate" },
     { icon: Award, number: "200+", label: "Industry Leaders" },
-    { icon: Heart, number: "50+", label: "Mentors Active" }
+    { icon: Heart, number: "10+", label: "Mentors Active" }
   ];
 
   const featuredAlumni = [
@@ -196,9 +196,9 @@ const AlumniConnect: React.FC = () => {
                 <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
                   Join Alumni Network
                 </button>
-                <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+                {/* <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
                   Update Your Profile
-                </button>
+                </button> */}
               </div>
             </div>
           </div>
@@ -288,7 +288,7 @@ const AlumniConnect: React.FC = () => {
         </section>
 
         {/* Success Stories Section */}
-        <section className="py-20">
+        {/* <section className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -325,7 +325,7 @@ const AlumniConnect: React.FC = () => {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* CTA Section */}
         <section className="py-20 bg-blue-600 text-white">
@@ -341,7 +341,7 @@ const AlumniConnect: React.FC = () => {
                 Register Now
               </button>
               <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
-                Learn More
+              Contribute
               </button>
             </div>
           </div>
