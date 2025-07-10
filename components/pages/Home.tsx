@@ -660,7 +660,7 @@ const Home: React.FC = () => {
                 quality and hygiene.
               </p>
               <a
-                href="https://x.com/KitturuRani837"
+                href="https://x.com/kreiskrcrs661"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800"
@@ -703,9 +703,9 @@ const Home: React.FC = () => {
                   className="twitter-timeline"
                   data-theme="light"
                   data-height="500"
-                  href="https://x.com/KitturuRani837"
+                  href="https://x.com/kreiskrcrs661"
                 >
-                  Tweets by @KitturuRani837
+                  Tweets by @kreiskrcrs661
                 </a>
               </div>
 
