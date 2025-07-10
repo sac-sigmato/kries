@@ -323,32 +323,8 @@ const Header: React.FC = () => {
                           </Link>
 
 
-                          <Link
-                            href="/schools"
-                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                          >
-                            School Overview
-                          </Link>
-                          <Link
-                            href="/schools/facility"
-                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                          >
-                            School Facility
-                          </Link>
+                        
                          
-                          <Link
-                            href="/schools/hostel"
-                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                          >
-                            Hostel & Canteen
-                          </Link>
-                         
-                          <Link
-                            href="/schools/amenities"
-                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                          >
-                            Amenities
-                          </Link>
                         </div>
                       </div>
                     </>
