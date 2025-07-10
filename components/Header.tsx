@@ -14,8 +14,8 @@ interface AppContextType {
 const AppContext = createContext<AppContextType>({
   language: 'en',
   fontSize: 16,
-  setLanguage: () => {},
-  setFontSize: () => {},
+  setLanguage: () => { },
+  setFontSize: () => { },
 });
 
 export const useAppContext = () => useContext(AppContext);
@@ -36,16 +36,18 @@ const Header: React.FC = () => {
   const [showLoginDropdown, setShowLoginDropdown] = useState(false);
   const router = useRouter();
   const { language, fontSize, setLanguage, setFontSize } = useAppContext();
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+
 
   const navItems = [
-    { path: '/', label: { en: 'Home', kn: 'ಮುಖ್ಯ' } },  
+    { path: '/', label: { en: 'Home', kn: 'ಮುಖ್ಯ' } },
     { path: '/about', label: { en: 'About', kn: 'ನಮ್ಮ ಬಗ್ಗೆ' } },
     { path: '/schools', label: { en: 'Schools', kn: 'ಶಾಲೆಗಳು' } },
     { path: '/faculty', label: { en: 'Faculty', kn: 'ಅಧ್ಯಾಪಕರು' } },
     { path: '/admissions', label: { en: 'Admissions', kn: 'ಪ್ರವೇಶ' } },
     { path: '/events', label: { en: 'Events', kn: 'ಕಾರ್ಯಕ್ರಮಗಳು' } },
     { path: '/results', label: { en: 'Results', kn: 'ಫಲಿತಾಂಶಗಳು' }, isFlashing: true },
-    { path: '/gallery', label: { en: 'Gallery', kn: 'ಗ್ಯಾಲರಿ' } },    
+    { path: '/gallery', label: { en: 'Gallery', kn: 'ಗ್ಯಾಲರಿ' } },
     { path: '/contact', label: { en: 'Contact', kn: 'ಸಂಪರ್ಕ' } },
   ];
 
@@ -57,29 +59,29 @@ const Header: React.FC = () => {
   ];
 
   const loginMenuItems = [
-    { 
-      label: { en: 'Alumni Login', kn: 'ಹಳೆಯ ವಿದ್ಯಾರ್ಥಿ ಲಾಗಿನ್' }, 
+    {
+      label: { en: 'Alumni Login', kn: 'ಹಳೆಯ ವಿದ್ಯಾರ್ಥಿ ಲಾಗಿನ್' },
       href: '/login/alumni',
       icon: Users,
       color: 'text-blue-600',
       description: { en: 'Former Students', kn: 'ಹಳೆಯ ವಿದ್ಯಾರ್ಥಿಗಳು' }
     },
-    { 
-      label: { en: 'CSR Login', kn: 'CSR ಲಾಗಿನ್' }, 
+    {
+      label: { en: 'CSR Login', kn: 'CSR ಲಾಗಿನ್' },
       href: '/login/csr',
       icon: Briefcase,
       color: 'text-green-600',
       description: { en: 'Corporate Partners', kn: 'ಕಾರ್ಪೊರೇಟ್ ಪಾಲುದಾರರು' }
     },
-    { 
-      label: { en: 'Mentor Login', kn: 'ಮಾರ್ಗದರ್ಶಕ ಲಾಗಿನ್' }, 
+    {
+      label: { en: 'Mentor Login', kn: 'ಮಾರ್ಗದರ್ಶಕ ಲಾಗಿನ್' },
       href: '/login/mentor',
       icon: Heart,
       color: 'text-purple-600',
       description: { en: 'Student Mentors', kn: 'ವಿದ್ಯಾರ್ಥಿ ಮಾರ್ಗದರ್ಶಕರು' }
     },
-    { 
-      label: { en: 'Admin Login', kn: 'ಆಡಳಿತ ಲಾಗಿನ್' }, 
+    {
+      label: { en: 'Admin Login', kn: 'ಆಡಳಿತ ಲಾಗಿನ್' },
       href: '/admin/login',
       icon: LogIn,
       color: 'text-gray-600',
@@ -124,13 +126,12 @@ const Header: React.FC = () => {
                   <Link
                     key={page.path}
                     href={page.path}
-                    className={`text-sm font-medium transition-colors hover:text-blue-600 ${
-                      router.pathname === page.path ||
+                    className={`text-sm font-medium transition-colors hover:text-blue-600 ${router.pathname === page.path ||
                       (router.pathname.startsWith("/achievements") &&
                         page.path === "/achievements")
-                        ? "text-blue-600"
-                        : "text-gray-700"
-                    }`}
+                      ? "text-blue-600"
+                      : "text-gray-700"
+                      }`}
                   >
                     {page.label[language]}
                   </Link>
@@ -139,7 +140,7 @@ const Header: React.FC = () => {
 
               {/* Right side - Controls and Login */}
               <div className="flex items-center space-x-4">
-                {/* Font Size Controls */}  
+                {/* Font Size Controls */}
                 <div className="flex items-center space-x-2">
                   <button
                     onClick={decreaseFontSize}
@@ -237,15 +238,55 @@ const Header: React.FC = () => {
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex space-x-8">
               {navItems.map((item) => (
-                <div key={item.path} className="relative group">
-                  {item.path === "/schools" ? (
+                <div
+                  key={item.path}
+                  className="relative group"
+                  onMouseEnter={() => setOpenDropdown(item.path)}
+                  onMouseLeave={() => setOpenDropdown(null)}
+                 
+                  style={{ paddingBottom: "20px",paddingTop: "20px" }} 
+                >
+                  {item.path === "/about" ? (
                     <>
                       <div
-                        className={`text-lg font-medium transition-colors hover:text-blue-600 relative flex items-center ${
-                          router.pathname.startsWith("/schools")
-                            ? "text-blue-600"
-                            : "text-gray-700"
-                        }`}
+                        className={`text-lg font-medium transition-colors hover:text-blue-600 relative flex items-center ${router.pathname.startsWith("/about")
+                          ? "text-blue-600"
+                          : "text-gray-700"
+                          }`}
+                      >
+                        {item.label[language]}
+                        <ChevronDown className="ml-1 h-4 w-4" />
+                      </div>
+                      <div className="absolute left-0 mt-2 w-64 bg-white rounded-md shadow-lg border border-gray-200 z-50 hidden group-hover:block">
+                        <div className="py-1">
+                          <Link
+                            href="/about/kreis"
+                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          >
+                            About KREIS
+                          </Link>
+                          <Link
+                            href="/about/school"
+                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          >
+                            About School
+                          </Link>
+                          <Link
+                            href="/about/faculties"
+                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          >
+                            About Faculties
+                          </Link>
+                        </div>
+                      </div>
+                    </>
+                  ) : item.path === "/schools" ? (
+                    <>
+                      <div
+                        className={`text-lg font-medium transition-colors hover:text-blue-600 relative flex items-center ${router.pathname.startsWith("/schools")
+                          ? "text-blue-600"
+                          : "text-gray-700"
+                          }`}
                       >
                         {item.label[language]}
                         <ChevronDown className="ml-1 h-4 w-4" />
@@ -294,11 +335,10 @@ const Header: React.FC = () => {
                   ) : item.path === "/achievements" ? (
                     <>
                       <div
-                        className={`text-lg font-medium transition-colors hover:text-blue-600 relative flex items-center ${
-                          router.pathname.startsWith("/achievements")
-                            ? "text-blue-600"
-                            : "text-gray-700"
-                        }`}
+                        className={`text-lg font-medium transition-colors hover:text-blue-600 relative flex items-center ${router.pathname.startsWith("/achievements")
+                          ? "text-blue-600"
+                          : "text-gray-700"
+                          }`}
                       >
                         Achievements
                         <ChevronDown className="ml-1 h-4 w-4" />
@@ -341,11 +381,10 @@ const Header: React.FC = () => {
                   ) : (
                     <Link
                       href={item.path}
-                      className={`text-lg font-medium transition-colors hover:text-blue-600 relative ${
-                        router.pathname === item.path
-                          ? "text-blue-600"
-                          : "text-gray-700"
-                      } ${item.isFlashing ? "animate-pulse" : ""}`}
+                      className={`text-lg font-medium transition-colors hover:text-blue-600 relative ${router.pathname === item.path
+                        ? "text-blue-600"
+                        : "text-gray-700"
+                        } ${item.isFlashing ? "animate-pulse" : ""}`}
                     >
                       {item.label[language]}
                       {item.isFlashing && (
@@ -383,11 +422,10 @@ const Header: React.FC = () => {
                     <Link
                       key={page.path}
                       href={page.path}
-                      className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
-                        router.pathname === page.path
-                          ? "text-blue-600 bg-blue-50"
-                          : "text-gray-700 hover:text-blue-600 hover:bg-gray-50"
-                      }`}
+                      className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${router.pathname === page.path
+                        ? "text-blue-600 bg-blue-50"
+                        : "text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+                        }`}
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {page.label[language]}
@@ -402,11 +440,10 @@ const Header: React.FC = () => {
                     href={
                       item.path === "/schools" ? "/schools/facility" : item.path
                     }
-                    className={`block px-3 py-2 rounded-md text-base font-medium transition-colors relative ${
-                      router.pathname === item.path
-                        ? "text-blue-600 bg-blue-50"
-                        : "text-gray-700 hover:text-blue-600 hover:bg-gray-50"
-                    } ${item.isFlashing ? "animate-pulse" : ""}`}
+                    className={`block px-3 py-2 rounded-md text-base font-medium transition-colors relative ${router.pathname === item.path
+                      ? "text-blue-600 bg-blue-50"
+                      : "text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+                      } ${item.isFlashing ? "animate-pulse" : ""}`}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.label[language]}

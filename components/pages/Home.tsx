@@ -89,20 +89,20 @@ const Home: React.FC = () => {
         return <ProgramsHighlightSection key={section._id} section={section} />;
       case 'leadership':
         return <LeadershipSection key={section._id} section={section} />;
-      case 'achievements':
-        return <StatisticsSection key={section._id} section={section} />;
+      // case 'achievements':
+      //   return <StatisticsSection key={section._id} section={section} />;
       case 'testimonials':
         return <TestimonialsSection key={section._id} section={section} />;
-      case 'facilities':
-        return <CampusFacilitiesSection key={section._id} section={section} />;
+      // case 'facilities':
+      //   return <CampusFacilitiesSection key={section._id} section={section} />;
       case 'news_events':
         return <NewsEventsSection key={section._id} section={section} />;
       case 'contact_section':
         return <ContactSection key={section._id} section={section} />;
       case 'school_facility':
         return <SchoolFacilitySection key={section._id} section={section} />;
-      case 'achievements_activities':
-        return <AchievementsActivitiesSection key={section._id} section={section} />;
+      // case 'achievements_activities':
+      //   return <AchievementsActivitiesSection key={section._id} section={section} />;
     }
   };
 
@@ -581,11 +581,11 @@ const Home: React.FC = () => {
 
       {/* Ministers Section */}
       <section className="py-12 bg-white">
-        <div className="max-w-[80%] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[95%] mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
             Our Leadership
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
             {[
               {
                 name: "SRI SIDDARAMAIAH",
@@ -612,7 +612,7 @@ const Home: React.FC = () => {
                 key={index}
                 className="flex flex-col md:flex-row items-center bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow"
               >
-                <div className="flex-shrink-0 mb-4 md:mb-0 md:mr-6">
+                <div className="flex-shrink-0 mb-4 md:mb-0 md:mr-3">
                   <img
                     src={leader.image}
                     alt={leader.name}
@@ -620,7 +620,7 @@ const Home: React.FC = () => {
                   />
                 </div>
                 <div className="text-center md:text-left">
-                  <h3 className="text-lg font-bold text-gray-900 mb-1">
+                  <h3 className="text-md font-bold text-gray-900 mb-1">
                     {leader.name}
                   </h3>
                   <p className="text-blue-600 font-medium text-sm">

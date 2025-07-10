@@ -77,7 +77,7 @@ export const AboutPreviewSection: React.FC<SectionProps> = ({ section }) => (
                 <Users className="h-6 w-6" />
               </div>
               <div>
-                <p className="text-2xl font-bold text-gray-900">10,000+</p>
+                <p className="text-2xl font-bold text-gray-900">1,500+</p>
                 <p className="text-gray-600">Happy Students</p>
               </div>
             </div>
@@ -733,24 +733,24 @@ export const AchievementsActivitiesSection: React.FC<SectionProps> = ({ section 
           <div className="space-y-4">
             <div className="bg-green-50 p-4 rounded-lg">
               <div className="flex items-center justify-between mb-2">
-                <span className="text-2xl font-bold text-green-600">95%</span>
+                <span className="text-2xl font-bold text-green-600">100%</span>
                 <span className="text-green-600 text-sm font-medium">Pass Rate</span>
               </div>
               <p className="text-gray-600 text-sm">Overall pass percentage in SSLC examinations</p>
             </div>
             <div className="bg-blue-50 p-4 rounded-lg">
               <div className="flex items-center justify-between mb-2">
-                <span className="text-2xl font-bold text-blue-600">85%</span>
+                <span className="text-2xl font-bold text-blue-600">95%</span>
                 <span className="text-blue-600 text-sm font-medium">Higher Education</span>
               </div>
               <p className="text-gray-600 text-sm">Students pursuing higher education after 10th grade</p>
             </div>
             <div className="bg-purple-50 p-4 rounded-lg">
               <div className="flex items-center justify-between mb-2">
-                <span className="text-2xl font-bold text-purple-600">500+</span>
-                <span className="text-purple-600 text-sm font-medium">Graduates</span>
+                <span className="text-2xl font-bold text-purple-600">17+</span>
+                <span className="text-purple-600 text-sm font-medium">Distinctions</span>
               </div>
-              <p className="text-gray-600 text-sm">Annual graduates from all KREIS schools</p>
+              <p className="text-gray-600 text-sm">Distinction from KRCRS, Balepura School</p>
             </div>
           </div>
         </div>
