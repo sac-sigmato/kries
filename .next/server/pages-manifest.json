@@ -2,11 +2,12 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/": "pages/index.js",
-  "/api/campus-stats": "pages/api/campus-stats.js",
-  "/api/home-slider": "pages/api/home-slider.js",
-  "/api/home-sections": "pages/api/home-sections.js",
+  "/gallery": "pages/gallery.js",
+  "/admin/settings": "pages/admin/settings.js",
   "/api/contact-info": "pages/api/contact-info.js",
   "/api/footer-logos": "pages/api/footer-logos.js",
-  "/schools/calendarofevents": "pages/schools/calendarofevents.js"
+  "/about/kreis": "pages/about/kreis.js",
+  "/api/faculty": "pages/api/faculty.js",
+  "/api/results": "pages/api/results.js",
+  "/results": "pages/results.js"
 }

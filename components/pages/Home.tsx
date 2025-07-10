@@ -33,6 +33,12 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     fetchHomeData();
+
+    const script = document.createElement("script");
+  script.setAttribute("src", "https://platform.twitter.com/widgets.js");
+  script.setAttribute("async", "true");
+  document.getElementById("twitter-embed")?.appendChild(script);
+  
   }, []);
 
   const nextSlide = useCallback(() => {
@@ -654,7 +660,7 @@ const Home: React.FC = () => {
                 quality and hygiene.
               </p>
               <a
-                href="https://x.com/kreiskrcrs661"
+                href="https://x.com/KitturuRani837"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800"
@@ -672,7 +678,7 @@ const Home: React.FC = () => {
             </div>
             <div className="relative">
               <div className="overflow-hidden rounded-lg shadow-lg">
-                <div className="relative h-80 overflow-hidden">
+                {/* <div className="relative h-80 overflow-hidden">
                   <div className="absolute inset-0 flex items-center">
                     <div className="flex animate-scroll space-x-4 whitespace-nowrap px-4">
                       {[
@@ -690,7 +696,19 @@ const Home: React.FC = () => {
                       ))}
                     </div>
                   </div>
-                </div>
+                </div> */}
+
+              <div id="twitter-embed" className="overflow-hidden rounded-lg shadow-lg h-[500px] overflow-y-auto">
+                <a
+                  className="twitter-timeline"
+                  data-theme="light"
+                  data-height="500"
+                  href="https://x.com/KitturuRani837"
+                >
+                  Tweets by @KitturuRani837
+                </a>
+              </div>
+
               </div>
             </div>
           </div>
