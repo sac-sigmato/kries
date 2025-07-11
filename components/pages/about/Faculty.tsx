@@ -20,42 +20,42 @@ const facultyMembers = [
     designation: 'Senior Teacher',
     subject: 'Mathematics',
     qualification: 'M.Sc., B.Ed',
-    image: 'https://getmycollege.in/wp-content/uploads/2025/06/profile-placeholder.jpg',
+    image: '/al6.webp',
   },
   {
     name: 'Rachani B G',
     designation: 'Senior Teacher',
     subject: 'Science',
     qualification: 'M.Sc., B.Ed',
-    image: 'https://getmycollege.in/wp-content/uploads/2025/06/woman.jpg',
+    image: '/al1.webp',
   },
   {
     name: 'Shailaja',
     designation: 'Teacher',
     subject: 'Computers',
     qualification: 'MCA',
-    image: 'https://getmycollege.in/wp-content/uploads/2025/06/woman.jpg',
+    image: '/al5.webp',
   },
   {
     name: 'Madhavi',
     designation: 'Teacher',
     subject: 'Painting & Drawing',
     qualification: 'MVA',
-    image: 'https://images.pexels.com/photos/2381069/pexels-photo-2381069.jpeg?auto=compress&cs=tinysrgb&w=300',
+    image: '/al2.webp',
   },
   {
     name: 'Vindyashree M H',
     designation: 'Computer Operator',
     subject: '',
     qualification: 'B.Sc.',
-    image: 'https://getmycollege.in/wp-content/uploads/2025/06/profile-placeholder.jpg',
+    image: '/al11.webp',
   },
   {
     name: 'Pushpa N M',
     designation: 'Care Taker / Nurse',
     subject: '',
     qualification: 'GNM',
-    image: 'https://images.pexels.com/photos/5452296/pexels-photo-5452296.jpeg?auto=compress&cs=tinysrgb&w=300',
+    image: '/al22.webp',
   },
 ];
 
@@ -93,7 +93,7 @@ const Faculty: React.FC = () => {
       {/* Faculty Cards */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {facultyMembers.map((member, index) => (
               <div
                 key={index}
@@ -102,7 +102,7 @@ const Faculty: React.FC = () => {
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-64 object-cover"
+                  className="w-full h-64 object-cover object-top"
                 />
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-900">{member.name}</h3>
