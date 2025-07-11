@@ -5,8 +5,8 @@
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/gb_I03OcmOCK8mYXpPNiD/_buildManifest.js",
-    "static/gb_I03OcmOCK8mYXpPNiD/_ssgManifest.js"
+    "static/SNzBe2pmoFeoOQVpkNlP3/_buildManifest.js",
+    "static/SNzBe2pmoFeoOQVpkNlP3/_ssgManifest.js"
   ],
   "rootMainFiles": [],
   "pages": {
@@ -22,7 +22,7 @@
       "static/chunks/webpack-fa3b601c4ba67973.js",
       "static/chunks/framework-840cff9d6bb95703.js",
       "static/chunks/main-c433c1ab786ffc9c.js",
-      "static/css/a02c3ed48d67a567.css",
+      "static/css/ad81befd73f08c8d.css",
       "static/chunks/pages/_app-e3a7c6202f2d5886.js"
     ],
     "/_error": [
@@ -134,7 +134,8 @@
       "static/chunks/webpack-fa3b601c4ba67973.js",
       "static/chunks/framework-840cff9d6bb95703.js",
       "static/chunks/main-c433c1ab786ffc9c.js",
-      "static/chunks/pages/admin/cms/csr-50726a697d49372f.js"
+      "static/chunks/8346-ddc8bcb682cdf76d.js",
+      "static/chunks/pages/admin/cms/csr-5b03cab6e2a352c9.js"
     ],
     "/admin/cms/faculty": [
       "static/chunks/webpack-fa3b601c4ba67973.js",
