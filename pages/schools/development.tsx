@@ -10,7 +10,7 @@ const StudentDevelopment: React.FC = () => {
         "We believe that English is not just a subject—it’s a skill for life. Our structured English Training programme enhances communication abilities, vocabulary, grammar, and fluency through interactive sessions, storytelling, and language games.",
       icon: BookOpen,
       color: "bg-blue-100 text-blue-600",
-      image: "https://images.pexels.com/photos/4145195/pexels-photo-4145195.jpeg?auto=compress&cs=tinysrgb&w=600"
+      image: "/sc1.jpg"
     },
     {
       title: "Computer Training",
@@ -18,7 +18,7 @@ const StudentDevelopment: React.FC = () => {
         "Our Computer Training module equips students with essential digital literacy and hands-on exposure to technology. Students learn typing, internet usage, MS Office, and gain confidence in using computers for real-world problem-solving.",
       icon: Code,
       color: "bg-green-100 text-green-600",
-      image: "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=600"
+      image: "/cl.jpeg"
     },
     {
       title: "Career Guidance Sessions",
