@@ -6,12 +6,12 @@ const StudentStatistics: React.FC = () => {
   // Sample data for academic insights
   const academicData = {
     totalStudents: 250,
-    classDistribution: [
-      { class: "6th", students: 50, boys: 25, girls: 25 },
-      { class: "7th", students: 50, boys: 25, girls: 25 },
-      { class: "8th", students: 50, boys: 25, girls: 25 },
-      { class: "9th", students: 50, boys: 25, girls: 25 },
-      { class: "10th", students: 50, boys: 25, girls: 25 }
+    classDistribution : [
+      { class: "6th", students: 50, boys: 25, girls: 25, url: "/6th Grade.pdf" },
+      { class: "7th", students: 50, boys: 25, girls: 25, url: "/7th Grade.pdf" },
+      { class: "8th", students: 50, boys: 25, girls: 25, url: "/8th Grade.pdf" },
+      { class: "9th", students: 50, boys: 25, girls: 25, url: "/9th Grade.pdf" },
+      { class: "10th", students: 50, boys: 25, girls: 25, url: "/10th Grade.pdf" }
     ],
     sslcResults: [
       { year: "2023-24", passPercentage: 98.5, distinction: 35, firstClass: 12, secondClass: 3 },
@@ -51,7 +51,7 @@ const StudentStatistics: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               {[
                 { icon: Users, number: academicData.totalStudents, label: "Total Students" },
-                { icon: Award, number: "50:50", label: "Boys to Girls Ratio" },
+                { icon: Award, number: "100%", label: "Attendance" },
                 { icon: TrendingUp, number: `${academicData.sslcResults[0].passPercentage}%`, label: "SSLC Pass Rate" },
                 { icon: Star, number: academicData.sslcResults[0].distinction, label: "Distinctions" }
               ].map((stat, index) => (
@@ -78,8 +78,7 @@ const StudentStatistics: React.FC = () => {
                   <tr>
                     <th className="py-3 px-6 text-left">Class</th>
                     <th className="py-3 px-6 text-left">Total Students</th>
-                    <th className="py-3 px-6 text-left">Boys</th>
-                    <th className="py-3 px-6 text-left">Girls</th>
+                   
                   
                   </tr>
                 </thead>
@@ -88,20 +87,18 @@ const StudentStatistics: React.FC = () => {
                     <tr key={index} className="hover:bg-gray-50">
                       <td className="py-4 px-6 font-medium">{classData.class}</td>
                       <td className="py-4 px-6">
-                        <a href="#" className="text-blue-600 hover:text-blue-800 font-medium">
+                        <a href={classData.url} target='_blank' className="text-blue-600 hover:text-blue-800 font-medium">
                           {classData.students}
                         </a>
                       </td>
-                      <td className="py-4 px-6">{classData.boys}</td>
-                      <td className="py-4 px-6">{classData.girls}</td>
+                     
+                     
                      
                     </tr>
                   ))}
                   <tr className="bg-gray-50 font-semibold">
                     <td className="py-4 px-6">Total</td>
                     <td className="py-4 px-6">{academicData.totalStudents}</td>
-                    <td className="py-4 px-6">{academicData.classDistribution.reduce((sum, item) => sum + item.boys, 0)}</td>
-                    <td className="py-4 px-6">{academicData.classDistribution.reduce((sum, item) => sum + item.girls, 0)}</td>
                    
                   </tr>
                 </tbody>
