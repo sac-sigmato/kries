@@ -26,7 +26,7 @@ const StudentDevelopment: React.FC = () => {
         "We organize regular Career Guidance Sessions led by experts, alumni, and counsellors to help students identify interests, strengths, and higher education opportunities through interactive talks and one-on-one mentoring.",
       icon: Briefcase,
       color: "bg-purple-100 text-purple-600",
-      image: "https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg?auto=compress&cs=tinysrgb&w=600"
+      image: "/G6.jpg"
     },
     {
       title: "Personality Development",

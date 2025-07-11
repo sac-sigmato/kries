@@ -87,7 +87,7 @@ const AdminCMS: React.FC = () => {
       icon: BarChart,
       color: "bg-yellow-100 text-yellow-600",
       link: "/admin/cms/csr",
-      type: "inline",
+      type: "link",
     },
   ];
 

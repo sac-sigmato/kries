@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Layout from '../../components/Layout';
 import { Building, Users, Award, TrendingUp, Heart, CheckCircle, Target, Globe, Handshake, ArrowRight } from 'lucide-react';
+import { supabase } from '@/lib/supabase-client';
 
 
 const CSRConnect: React.FC = () => {
@@ -12,38 +13,24 @@ const CSRConnect: React.FC = () => {
   ];
 
   const [showModal, setShowModal] = useState(false);
+  const [csrOpportunities, setCsrOpportunities] = useState<any[]>([]);
 
 
-  const csrOpportunities = [
-    {
-      icon: Target,
-      title: "Education Infrastructure",
-      description: "Support building modern classrooms, laboratories, and digital learning centers",
-      investment: "₹10-50 Lakhs",
-      impact: "500+ students per facility"
-    },
-    {
-      icon: Globe,
-      title: "Digital Learning Initiative",
-      description: "Provide tablets, computers, and internet connectivity for digital education",
-      investment: "₹5-25 Lakhs",
-      impact: "1000+ students digitally empowered"
-    },
-    {
-      icon: Users,
-      title: "Teacher Training Programs",
-      description: "Enhance teaching quality through professional development and skill training",
-      investment: "₹2-10 Lakhs",
-      impact: "100+ teachers trained annually"
-    },
-    {
-      icon: Heart,
-      title: "Student Scholarships",
-      description: "Support meritorious students from economically disadvantaged backgrounds",
-      investment: "₹1-5 Lakhs",
-      impact: "50+ students supported per year"
+  useEffect(() => {
+    fetchCsrOpportunities();
+  }, []);
+
+  const fetchCsrOpportunities = async () => {
+    const { data, error } = await supabase
+      .from('csr_opportunities')
+      .select('*')
+      .order('created_at', { ascending: false });
+
+    if (!error) {
+      setCsrOpportunities(data || []);
     }
-  ];
+  };
+
 
   const partnershipBenefits = [
     "Brand visibility through school infrastructure naming rights",
@@ -166,7 +153,7 @@ const CSRConnect: React.FC = () => {
                 CSR Investment Opportunities
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Choose from the below requirements to invest that align with your company's values and create meaningful impact
+                Choose from the below requirements to invest that align with your company's values and create meaningful impact
               </p>
             </div>
 
@@ -174,8 +161,8 @@ const CSRConnect: React.FC = () => {
               {csrOpportunities.map((opportunity, index) => (
                 <div key={index} className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow p-8">
                   <div className="flex items-start space-x-4">
-                    <div className="bg-green-100 p-3 rounded-full">
-                      <opportunity.icon className="h-8 w-8 text-green-600" />
+                    <div className="bg-green-100 p-3 rounded-full text-2xl">
+                      {opportunity.icon}
                     </div>
                     <div className="flex-1">
                       <h3 className="text-xl font-bold text-gray-900 mb-3">{opportunity.title}</h3>
@@ -220,7 +207,7 @@ const CSRConnect: React.FC = () => {
               </div>
               <div className="relative">
                 <img
-                  src="https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&cs=tinysrgb&w=600"
+                  src="/st1.jpeg"
                   alt="Corporate partnership"
                   className="rounded-lg shadow-xl"
                 />
@@ -272,74 +259,151 @@ const CSRConnect: React.FC = () => {
 
         {/* CSR Needs Section */}
         <section className="py-20 px-6 bg-gray-50">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-center">Key CSR Requirements</h2>
+  <div className="max-w-6xl mx-auto">
+    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
+      Key CSR Requirements
+    </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-xl font-semibold text-green-700 mb-2">Infrastructure Development</h3>
-                <ul className="list-disc pl-5 space-y-1 text-gray-700">
-                  <li>Science & Computer Labs</li>
-                  <li>Smart Classes & Digital Learning Zones</li>
-                  <li>Library Setup</li>
-                  <li>Dormitory Upgrades</li>
-                  <li>Sanitation & Drinking Water System</li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-green-700 mb-2">Educational Resources</h3>
-                <ul className="list-disc pl-5 space-y-1 text-gray-700">
-                  <li>Smart Boards, Projectors, Tablets</li>
-                  <li>Books, Stationery, STEM Kits</li>
-                  <li>Teacher Training Workshops</li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-green-700 mb-2">Health & Nutrition</h3>
-                <ul className="list-disc pl-5 space-y-1 text-gray-700">
-                  <li>Health Check-Up Camps (Dental, Eye, General)</li>
-                  <li>Mental Health & Wellness Programs</li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-green-700 mb-2">Sustainability</h3>
-                <ul className="list-disc pl-5 space-y-1 text-gray-700">
-                  <li>Solar Panels</li>
-                  <li>Rainwater Harvesting</li>
-                  <li>Waste Management Units</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+      {/* Card 1 */}
+      <div className="relative bg-white rounded-xl shadow-md p-6 overflow-hidden border border-gray-200">
+        <h3 className="text-xl font-semibold text-green-700 mb-3">Infrastructure Development</h3>
+        <ul className="list-disc pl-5 space-y-1 text-gray-700 relative z-10">
+          <li>Science & Computer Labs</li>
+          <li>Smart Classes & Digital Learning Zones</li>
+          <li>Library Setup</li>
+          <li>Dormitory Upgrades</li>
+          <li>Sanitation & Drinking Water System</li>
+        </ul>
+        <img
+          src="/gp1.jpeg"
+          alt="Infrastructure"
+          className="absolute bottom-0 right-0 w-40 h-40 rounded-full object-cover opacity-80 z-0 transform translate-x-6 translate-y-6 pointer-events-none"
+        />
+      </div>
+
+      {/* Card 2 */}
+      <div className="relative bg-white rounded-xl shadow-md p-6 overflow-hidden border border-gray-200">
+        <h3 className="text-xl font-semibold text-green-700 mb-3">Educational Resources</h3>
+        <ul className="list-disc pl-5 space-y-1 text-gray-700 relative z-10">
+          <li>Smart Boards, Projectors, Tablets</li>
+          <li>Books, Stationery, STEM Kits</li>
+          <li>Teacher Training Workshops</li>
+        </ul>
+        <img
+          src="/g2.jpeg"
+          alt="Education"
+          className="absolute bottom-0 right-0 w-40 h-40 rounded-full object-cover opacity-80 z-0 transform translate-x-6 translate-y-6 pointer-events-none"
+        />
+      </div>
+
+      {/* Card 3 */}
+      <div className="relative bg-white rounded-xl shadow-md p-6 overflow-hidden border border-gray-200">
+        <h3 className="text-xl font-semibold text-green-700 mb-3">Health & Nutrition</h3>
+        <ul className="list-disc pl-5 space-y-1 text-gray-700 relative z-10">
+          <li>Health Check-Up Camps (Dental, Eye, General)</li>
+          <li>Mental Health & Wellness Programs</li>
+        </ul>
+        <img
+          src="/gl3.jpg"
+          alt="Health"
+          className="absolute bottom-0 right-0 w-40 h-40 rounded-full object-cover opacity-80 z-0 transform translate-x-6 translate-y-6 pointer-events-none"
+        />
+      </div>
+
+      {/* Card 4 */}
+      <div className="relative bg-white rounded-xl shadow-md p-6 overflow-hidden border border-gray-200">
+        <h3 className="text-xl font-semibold text-green-700 mb-3">Sustainability</h3>
+        <ul className="list-disc pl-5 space-y-1 text-gray-700 relative z-10">
+          <li>Solar Panels</li>
+          <li>Rainwater Harvesting</li>
+          <li>Waste Management Units</li>
+        </ul>
+        <img
+          src="/sc-4.jpg"
+          alt="Sustainability"
+          className="absolute bottom-0 right-0 w-40 h-40 rounded-full object-cover opacity-80 z-0 transform translate-x-6 translate-y-6 pointer-events-none"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
 
         {/* CSR Activities Section */}
-        <section className="py-20 px-6">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-center">Recent CSR Initiatives</h2>
+        <section className="py-20 px-6 bg-gray-50">
+  <div className="max-w-6xl mx-auto space-y-20">
+    <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-8">
+      CSR Activities & Initiatives
+    </h2>
 
-            <div className="space-y-12">
-              <div>
-                <h3 className="text-xl font-bold text-green-700 mb-2">STEM Laboratory by Collins Aerospace</h3>
-                <p className="text-gray-700">A modern STEM Lab installed through Collins Aerospace with strong support from Principal Bhaskar Babu, enabling innovation and science-based learning.</p>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-green-700 mb-2">3,000 Saplings Plantation by Pai Foundation</h3>
-                <p className="text-gray-700">Pai Foundation funded a large-scale tree plantation across the campus, reinforcing environmental commitment and Principal-led community involvement.</p>
-              </div>
-            </div>
+    {/* STEM Laboratory Section */}
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      {/* Left Content */}
+      <div>
+        <h3 className="text-2xl font-bold text-green-700 mb-4">STEM Laboratory</h3>
+        <p className="text-gray-700 mb-4">
+          A state-of-the-art STEM Laboratory has been successfully installed at Kittur Rani Chennamma Residential School, Balepura, under the CSR initiative of <strong>Collins Aerospace</strong>.
+        </p>
+        <p className="text-gray-700 mb-4">
+          This significant milestone was made possible through the proactive approach and persistent efforts of the beloved Principal, <strong>Bhaskar Babu</strong>, who has shown exceptional personal interest in reaching out to various companies and encouraging CSR involvement for the holistic development of the school.
+        </p>
+        <p className="text-gray-700">
+          His unwavering dedication has played a pivotal role in transforming the school premises and equipping students with modern, hands-on learning facilities to nurture innovation and scientific thinking.
+        </p>
+      </div>
 
-            <div className="text-center mt-12">
-              <p className="text-gray-800 text-lg">Let’s build a future where every girl has access to equal opportunity and dignified learning.</p>
-              <div className="mt-4">
-                <p className="text-green-700 font-semibold">📧 csrconnect@kitturschool.org | 📞 +91-94482 27951</p>
-              </div>
-            </div>
-          </div>
-        </section>
+      {/* Right Image */}
+      <div className="relative">
+        <img
+          src="/STEM-Lab-1.jpeg" // 🔄 Replace with actual path
+          alt="STEM Lab"
+          className="rounded-xl shadow-lg object-cover w-full h-80"
+        />
+      </div>
+    </div>
+
+    {/* Plantation Section */}
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      {/* Left Image */}
+      <div className="relative order-2 md:order-1">
+        <img
+          src="/CSR-Plant-Sapling-Initiative.jpeg" // 🔄 Replace with actual path
+          alt="Tree Plantation"
+          className="rounded-xl shadow-lg object-cover w-full h-80"
+        />
+      </div>
+
+      {/* Right Content */}
+      <div className="order-1 md:order-2">
+        <h3 className="text-2xl font-bold text-green-700 mb-4">CSR 3,000 Plant Sapling Initiative</h3>
+        <p className="text-gray-700 mb-4">
+          Under the CSR initiative of the <strong>Pai Foundation</strong>, a significant tree plantation drive was carried out with the successful planting of 3,000 saplings across the campus.
+        </p>
+        <p className="text-gray-700 mb-4">
+          This impactful event reflects the Foundation’s commitment to environmental sustainability and community development, with immense support from Principal <strong>Bhaskar Babu</strong>.
+        </p>
+        <p className="text-gray-700">
+          His visionary leadership continues to inspire staff and students to work towards a better, greener future.
+        </p>
+      </div>
+    </div>
+
+    {/* Contact CTA */}
+    <div className="text-center mt-16">
+      <p className="text-lg text-gray-800">
+        Let’s build a future where every girl has access to equal opportunity and dignified learning.
+      </p>
+      <p className="text-green-700 font-semibold mt-4">
+        📧 csrconnect@kitturschool.org &nbsp; | &nbsp; 📞 +91-94482 27951
+      </p>
+    </div>
+  </div>
+</section>
+
 
         {/* Success Stories */}
-        <section className="py-20">
+        {/* <section className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -369,7 +433,7 @@ const CSRConnect: React.FC = () => {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* How It Works */}
         <section className="py-20 bg-gray-50">
@@ -467,6 +531,45 @@ const CSRConnect: React.FC = () => {
 
 
 )}
+
+
+{showModal && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
+            <div className="bg-white rounded-lg shadow-xl p-8 max-w-md w-full relative">
+              <button
+                onClick={() => setShowModal(false)}
+                className="absolute top-3 right-3 text-gray-500 hover:text-gray-700"
+              >
+                ✕
+              </button>
+              <h2 className="text-2xl font-bold mb-4 text-green-700">CSR Partnership Registration</h2>
+              <form className="space-y-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700">Company Name</label>
+                  <input type="text" className="w-full border border-gray-300 rounded-md p-2" />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700">Contact Person</label>
+                  <input type="text" className="w-full border border-gray-300 rounded-md p-2" />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700">Email</label>
+                  <input type="email" className="w-full border border-gray-300 rounded-md p-2" />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700">Phone</label>
+                  <input type="tel" className="w-full border border-gray-300 rounded-md p-2" />
+                </div>
+                <button
+                  type="submit"
+                  className="w-full bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700"
+                >
+                  Submit
+                </button>
+              </form>
+            </div>
+          </div>
+        )}
 
 
     </Layout>
