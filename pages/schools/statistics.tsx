@@ -20,8 +20,8 @@ const StudentStatistics: React.FC = () => {
     ],
     toppers: [
       { name: "Priya Sharma", marks: 625, percentage: 98.5, year: "2023-24", photo: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=300" },
-      { name: "Rajesh Kumar", marks: 620, percentage: 97.8, year: "2023-24", photo: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=300" },
-      { name: "Anita Reddy", marks: 618, percentage: 97.5, year: "2023-24", photo: "https://images.pexels.com/photos/1181519/pexels-photo-1181519.jpeg?auto=compress&cs=tinysrgb&w=300" }
+      { name: "Shreya", marks: 620, percentage: 97.8, year: "2023-24", photo: "/al4.webp" },
+      { name: "Anita Reddy", marks: 618, percentage: 97.5, year: "2023-24", photo: "/al5.webp" }
     ],
     competitiveExams: [
       { name: "Suresh Kumar", exam: "JEE Mains", rank: 1245, year: "2023", photo: "https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=300" },
