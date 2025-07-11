@@ -22,20 +22,20 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
+    "/about/kreis": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/about/kreis.js"
+    ],
+    "/achievements/cultural": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/achievements/cultural.js"
+    ],
     "/admin/login": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/admin/login.js"
-    ],
-    "/events": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/events.js"
-    ],
-    "/schools/achievements": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/schools/achievements.js"
     ]
   },
   "ampFirstPages": []
