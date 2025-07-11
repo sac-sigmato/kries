@@ -24,15 +24,15 @@ self.__BUILD_MANIFEST = {
       "static/chunks/main.js",
       "static/chunks/pages/about/kreis.js"
     ],
-    "/admin/login": [
+    "/about/school": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/admin/login.js"
+      "static/chunks/pages/about/school.js"
     ],
-    "/connect/alumni": [
+    "/admin/cms": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/connect/alumni.js"
+      "static/chunks/pages/admin/cms.js"
     ]
   },
   "ampFirstPages": []

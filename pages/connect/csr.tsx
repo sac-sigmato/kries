@@ -239,19 +239,36 @@ const CSRConnect: React.FC = () => {
 
 
         {/* Principal Contribution Section */}
-        <section className="py-20 px-6 max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-center">Principal Contribution</h2>
-          <p className="text-lg text-gray-700 mb-8 text-center">Empowering Change through Leadership</p>
+        <section className="py-20 px-6 max-w-7xl mx-auto">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    {/* Left Image */}
+    <div>
+      <img
+        src="/Principal.jpeg" // Replace with your actual image path
+        alt="Principal"
+        className="w-full rounded-xl shadow-lg object-cover"
+      />
+    </div>
 
-          <p className="text-gray-600 mb-6">Under the dynamic leadership and unwavering commitment of the Principal, the transformation journey of Kittur Rani Chennamma Residential School, Balepura has witnessed remarkable progress...</p>
+    {/* Right Content */}
+    <div>
+      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Principal Contribution</h2>
+      <p className="text-lg text-gray-700 mb-6">Empowering Change through Leadership</p>
 
-          <ul className="space-y-4 text-gray-700 list-disc pl-5">
-            <li><strong>Strategic Vision and Planning:</strong> Identified core needs and aligned with CSR goals.</li>
-            <li><strong>Effective Implementation:</strong> Personally ensured project quality and timely execution.</li>
-            <li><strong>Focus on Holistic Development:</strong> Emphasized academics, co-curricular, and wellness equally.</li>
-            <li><strong>Sustainability and Long-Term Impact:</strong> Initiatives are future-proof and sustainable.</li>
-          </ul>
-        </section>
+      <p className="text-gray-600 mb-6">
+        Under the dynamic leadership and unwavering commitment of the Principal, the transformation journey of Kittur Rani Chennamma Residential School, Balepura has witnessed remarkable progress...
+      </p>
+
+      <ul className="space-y-4 text-gray-700 list-disc pl-5">
+        <li><strong>Strategic Vision and Planning:</strong> Identified core needs and aligned with CSR goals.</li>
+        <li><strong>Effective Implementation:</strong> Personally ensured project quality and timely execution.</li>
+        <li><strong>Focus on Holistic Development:</strong> Emphasized academics, co-curricular, and wellness equally.</li>
+        <li><strong>Sustainability and Long-Term Impact:</strong> Initiatives are future-proof and sustainable.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 
         {/* CSR Needs Section */}
         <section className="py-20 px-6 bg-gray-50">

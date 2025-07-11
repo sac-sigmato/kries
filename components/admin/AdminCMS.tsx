@@ -81,6 +81,14 @@ const AdminCMS: React.FC = () => {
       link: "",
       type: "inline",
     },
+    {
+      title: "CSR Oportunities",
+      description: "Manage and update CSR data",
+      icon: BarChart,
+      color: "bg-yellow-100 text-yellow-600",
+      link: "/admin/cms/csr",
+      type: "inline",
+    },
   ];
 
   return (
