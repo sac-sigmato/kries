@@ -19,6 +19,11 @@ self.__BUILD_MANIFEST = {
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
+    "/about/faculties": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/about/faculties.js"
+    ],
     "/about/kreis": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
@@ -28,11 +33,6 @@ self.__BUILD_MANIFEST = {
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/about/school.js"
-    ],
-    "/admin/cms": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/admin/cms.js"
     ]
   },
   "ampFirstPages": []
