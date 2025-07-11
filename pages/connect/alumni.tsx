@@ -1,26 +1,76 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Layout from '../../components/Layout';
 import { GraduationCap, Users, Award, TrendingUp, MapPin, Briefcase, Heart, Star } from 'lucide-react';
+import { Dialog, Transition } from "@headlessui/react";
+import { Fragment } from "react";
+
 
 const AlumniConnect: React.FC = () => {
+
+  const [showPayment, setShowPayment] = useState(false);
+
+  const AlumniModal = ({ isOpen, onClose, children, title }: {
+    isOpen: boolean;
+    onClose: () => void;
+    title: string;
+    children: React.ReactNode;
+  }) => (
+    <Transition appear show={isOpen} as={Fragment}>
+      <Dialog as="div" className="relative z-50" onClose={onClose}>
+        <Transition.Child
+          as={Fragment}
+          enter="ease-out duration-300"
+          enterFrom="opacity-0"
+          enterTo="opacity-100"
+          leave="ease-in duration-200"
+          leaveFrom="opacity-100"
+          leaveTo="opacity-0"
+        >
+          <div className="fixed inset-0 bg-black/30 backdrop-blur-sm" />
+        </Transition.Child>
+  
+        <div className="fixed inset-0 overflow-y-auto">
+          <div className="flex min-h-full items-center justify-center p-4">
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0 scale-95"
+              enterTo="opacity-100 scale-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100 scale-100"
+              leaveTo="opacity-0 scale-95"
+            >
+              <Dialog.Panel className="w-full max-w-4xl transform overflow-hidden rounded-xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                <Dialog.Title className="text-lg font-bold text-gray-900 mb-4">{title}</Dialog.Title>
+                {children}
+              </Dialog.Panel>
+            </Transition.Child>
+          </div>
+        </div>
+      </Dialog>
+    </Transition>
+  );
+
+  
+
   const alumniStats = [
     { icon: Users, number: "120+", label: "Alumni Worldwide" },
     { icon: Briefcase, number: "98%", label: "Employment Rate" },
     { icon: Award, number: "200+", label: "Industry Leaders" },
     { icon: Heart, number: "10+", label: "Mentors Active" }
   ];
+  const [showForm, setShowForm] = useState(false);
 
   const featuredAlumni = [
     {
       id: 1,
       name: "Dr. Bhaskar Babu G",
       position: "Director General",
-      department: "administration",
+      department: "Administration",
       qualification: "Ph.D. in Education Administration",
       experience: "25 years",
       specialization: "Educational Leadership, Rural Education Policy",
-      image:
-        "https://getmycollege.in/wp-content/uploads/2025/06/Principal-Photo-for-Principals-Message-1024x846.jpeg",
+      image: "/al1.webp",
       email: "director@kreis.kar.nic.in",
       phone: "+91 80 2234 5678",
       achievements: [
@@ -33,12 +83,11 @@ const AlumniConnect: React.FC = () => {
       id: 2,
       name: "Mr. Subramanyam S A",
       position: "Academic Director",
-      department: "academics",
+      department: "Academics",
       qualification: "M.Ed., Ph.D. in Curriculum Development",
       experience: "20 years",
       specialization: "Curriculum Design, Teacher Training",
-      image:
-        "https://getmycollege.in/wp-content/uploads/2025/06/20250619_1232_Raghavendras-School-Lecture_simple_compose_01jy3fshf1e4vb03asy97ss8dn.png?auto=compress&cs=tinysrgb&w=300",
+      image: "/al2.webp",
       email: "academic@kreis.kar.nic.in",
       phone: "+91 80 2234 5679",
       achievements: [
@@ -47,88 +96,84 @@ const AlumniConnect: React.FC = () => {
         "Educational Research Excellence",
       ],
     },
-    {
-      id: 3,
-      name: "Mr. Ananda V",
-      position: "Head of Science Department",
-      department: "science",
-      qualification: "M.Sc. Physics, Ph.D. in Science Education",
-      experience: "18 years",
-      specialization: "Physics, Science Methodology, Laboratory Management",
-      image:
-        "https://getmycollege.in/wp-content/uploads/2025/06/profile-placeholder.jpg?auto=compress&cs=tinysrgb&w=300",
-      email: "science@kreis.kar.nic.in",
-      phone: "+91 80 2234 5680",
-      achievements: [
-        "Science Teacher Excellence Award",
-        "Innovation in Science Teaching",
-        "Student Mentorship Award",
-      ],
-    },
+    
     {
       id: 4,
-      name: "Mr. Raghavendra B",
-      position: "Kannada Language Coordinator",
-      department: "languages",
-      qualification: "M.A. Kannada Literature, B.Ed.",
-      experience: "15 years",
-      specialization: "Kannada Literature, Language Pedagogy",
-      image:
-        "https://getmycollege.in/wp-content/uploads/2025/06/20250619_1232_Raghavendras-School-Lecture_simple_compose_01jy3fshf2fahtbn2cxs30mq6d.png",
-      email: "kannada@kreis.kar.nic.in",
-      phone: "+91 80 2234 5681",
+      name: "Suresh Reddy",
+      position: "Sr Product Manager",
+      department: "Technology",
+      qualification: "MBA, B.Tech",
+      experience: "14 years",
+      specialization: "Product Strategy, SaaS Platforms",
+      image: "/al4.webp",
+      email: "suresh.reddy@microsoft.com",
+      phone: "+91 98765 43210",
       achievements: [
-        "State Language Teacher Award",
-        "Cultural Heritage Promotion",
-        "Literary Contribution Award",
+        "Led Microsoft Azure Product Growth",
+        "Top 100 Tech Influencer (2023)",
+        "ProductCon Speaker",
       ],
     },
     {
       id: 5,
-      name: "Mr.  Suresh Hegde",
-      position: "Mathematics Coordinator",
-      department: "science",
-      qualification: "M.Sc. Mathematics, B.Ed.",
-      experience: "16 years",
-      specialization: "Advanced Mathematics, Problem Solving Techniques",
-      image:
-        "https://getmycollege.in/wp-content/uploads/2025/06/profile-placeholder.jpg?auto=compress&cs=tinysrgb&w=300",
-      email: "mathematics@kreis.kar.nic.in",
-      phone: "+91 80 2234 5682",
+      name: "Priya Sharma",
+      position: "Quality Analyst",
+      department: "IT Services",
+      qualification: "B.E. in Computer Science",
+      experience: "9 years",
+      specialization: "Test Automation, Agile QA",
+      image: "/al5.webp",
+      email: "priya.sharma@infosys.com",
+      phone: "+91 91234 56789",
       achievements: [
-        "Mathematics Excellence Award",
-        "Student Competition Mentor",
-        "Innovative Teaching Methods",
+        "Awarded QA Innovator at Infosys",
+        "Published 3 QA Frameworks",
+        "Speaker at SeleniumConf",
       ],
     },
     {
       id: 6,
-      name: "Dr. Rachani B G",
-      position: "Student Counselor",
-      department: "counseling",
-      qualification: "M.A. Psychology, Ph.D. in Counseling Psychology",
-      experience: "12 years",
-      specialization: "Adolescent Psychology, Career Guidance",
-      image:
-        "https://getmycollege.in/wp-content/uploads/2025/06/woman.jpg?auto=compress&cs=tinysrgb&w=300",
-      email: "counseling@kreis.kar.nic.in",
-      phone: "+91 80 2234 5683",
+      name: "Vikram Joshi",
+      position: "Sales Manager",
+      department: "E-Commerce",
+      qualification: "MBA in Marketing",
+      experience: "11 years",
+      specialization: "Sales Strategy, Team Management",
+      image: "/al6.webp",
+      email: "vikram.joshi@amazon.com",
+      phone: "+91 99887 66554",
       achievements: [
-        "Best Counselor Award",
-        "Student Welfare Excellence",
-        "Mental Health Advocacy",
+        "Amazon Star Performer (2022)",
+        "Scaled B2C Revenue by 300%",
+        "Mentored 15+ Sales Executives",
       ],
     },
     {
       id: 7,
+      name: "Satish Gaokar",
+      position: "Sr Business Manager",
+      department: "Operations",
+      qualification: "MBA, B.Com",
+      experience: "17 years",
+      specialization: "Business Strategy, Operations",
+      image: "/al7.webp",
+      email: "satish.gaokar@qoocer.com",
+      phone: "+91 90909 19191",
+      achievements: [
+        "Launched 4 Business Units",
+        "Process Excellence Leader",
+        "Operational Efficiency Award",
+      ],
+    },
+    {
+      id: 8,
       name: "Dr. Shailaja",
       position: "Physical Education Director",
-      department: "sports",
+      department: "Sports",
       qualification: "M.P.Ed., Sports Coaching Certification",
       experience: "14 years",
       specialization: "Sports Training, Physical Fitness, Athletic Development",
-      image:
-        "https://getmycollege.in/wp-content/uploads/2025/06/woman.jpg?auto=compress&cs=tinysrgb&w=300",
+      image: "/al8.webp",
       email: "sports@kreis.kar.nic.in",
       phone: "+91 80 2234 5684",
       achievements: [
@@ -138,15 +183,14 @@ const AlumniConnect: React.FC = () => {
       ],
     },
     {
-      id: 8,
+      id: 9,
       name: "Mrs. Lakshmi Desai",
       position: "Social Science Coordinator",
-      department: "social",
+      department: "Social Studies",
       qualification: "M.A. History, M.A. Political Science, B.Ed.",
       experience: "17 years",
       specialization: "Indian History, Civics, Social Studies Methodology",
-      image:
-        "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=300",
+      image: "/al9.webp",
       email: "socialscience@kreis.kar.nic.in",
       phone: "+91 80 2234 5685",
       achievements: [
@@ -156,7 +200,7 @@ const AlumniConnect: React.FC = () => {
       ],
     },
   ];
-
+  
   const benefits = [
     {
       icon: Users,
@@ -193,9 +237,13 @@ const AlumniConnect: React.FC = () => {
                 Join our vibrant community of KREIS alumni making a difference worldwide. Connect, mentor, and give back to your alma mater.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
-                  Join Alumni Network
-                </button>
+              <button
+  onClick={() => setShowForm(true)}
+  className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
+>
+  Join Alumni Network
+</button>
+
                 {/* <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
                   Update Your Profile
                 </button> */}
@@ -337,17 +385,201 @@ const AlumniConnect: React.FC = () => {
               Join thousands of KREIS alumni worldwide and be part of our growing community.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
-                Register Now
-              </button>
-              <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
-              Contribute
-              </button>
+            <button
+  onClick={() => setShowForm(true)}
+  className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
+>
+  Join Alumni Network
+</button>
+
+              <button
+  className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors"
+  onClick={() => setShowPayment(true)}
+>
+  Contribute
+</button>
+
             </div>
           </div>
         </section>
       </div>
+
+      <AlumniModal isOpen={showForm} onClose={() => setShowForm(false)} title="Alumni Registration">
+
+      <div className="max-w-5xl mx-auto bg-white p-6 rounded-lg shadow-lg">
+  <form className="space-y-6 max-h-[80vh] overflow-y-auto px-1">
+    {/* Grid Inputs */}
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <input
+        type="text"
+        placeholder="Full Name *"
+        required
+        className="w-full px-4 py-3 border rounded-md border-gray-300 focus:ring-2 focus:ring-blue-500"
+      />
+      <input
+        type="email"
+        placeholder="Email *"
+        required
+        className="w-full px-4 py-3 border rounded-md border-gray-300 focus:ring-2 focus:ring-blue-500"
+      />
+      <input
+        type="tel"
+        placeholder="Phone Number"
+        className="w-full px-4 py-3 border rounded-md border-gray-300 focus:ring-2 focus:ring-blue-500"
+      />
+      <input
+        type="text"
+        placeholder="Qualification"
+        className="w-full px-4 py-3 border rounded-md border-gray-300 focus:ring-2 focus:ring-blue-500"
+      />
+      <input
+        type="text"
+        placeholder="Department / Stream"
+        className="w-full px-4 py-3 border rounded-md border-gray-300 focus:ring-2 focus:ring-blue-500"
+      />
+      <select
+        required
+        className="w-full px-4 py-3 border rounded-md border-gray-300 bg-white focus:ring-2 focus:ring-blue-500"
+      >
+        <option value="">Select Passing Year</option>
+        {Array.from({ length: 30 }, (_, i) => 1995 + i)
+          .reverse()
+          .map((year) => (
+            <option key={year}>{year}</option>
+          ))}
+      </select>
+      <input
+        type="text"
+        placeholder="Current Job Title"
+        className="w-full px-4 py-3 border rounded-md border-gray-300 focus:ring-2 focus:ring-blue-500"
+      />
+      <input
+        type="text"
+        placeholder="Company Name"
+        className="w-full px-4 py-3 border rounded-md border-gray-300 focus:ring-2 focus:ring-blue-500"
+      />
+      <input
+        type="text"
+        placeholder="LinkedIn / Website (optional)"
+        className="w-full px-4 py-3 border rounded-md border-gray-300 focus:ring-2 focus:ring-blue-500"
+      />
+    </div>
+
+    {/* Mentor Question */}
+    <div>
+      <label className="block text-sm font-semibold text-gray-700 mb-2">
+        Would you like to mentor students?
+      </label>
+      <div className="flex gap-6">
+        <label className="inline-flex items-center gap-2">
+          <input type="radio" name="mentor" value="yes" className="accent-blue-600" />
+          Yes
+        </label>
+        <label className="inline-flex items-center gap-2">
+          <input type="radio" name="mentor" value="no" className="accent-blue-600" />
+          No
+        </label>
+      </div>
+    </div>
+
+    {/* Contribution Areas */}
+    <div>
+      <label className="block text-sm font-semibold text-gray-700 mb-2">
+        Areas you'd like to contribute
+      </label>
+      <div className="flex flex-wrap gap-4">
+        <label className="inline-flex items-center gap-2">
+          <input type="checkbox" value="Scholarships" className="accent-blue-600" />
+          Scholarships
+        </label>
+        <label className="inline-flex items-center gap-2">
+          <input type="checkbox" value="Guest Talks" className="accent-blue-600" />
+          Guest Talks
+        </label>
+        <label className="inline-flex items-center gap-2">
+          <input type="checkbox" value="Events" className="accent-blue-600" />
+          Alumni Events
+        </label>
+        <label className="inline-flex items-center gap-2">
+          <input type="checkbox" value="Infrastructure" className="accent-blue-600" />
+          Infrastructure
+        </label>
+      </div>
+    </div>
+
+    {/* Message Box */}
+    <div>
+      <textarea
+        placeholder="Share a message or memory (optional)"
+        rows={3}
+        className="w-full px-4 py-3 border rounded-md border-gray-300 focus:ring-2 focus:ring-blue-500"
+      />
+    </div>
+
+    {/* Submit */}
+    <div className="flex justify-end">
+      <button
+        type="submit"
+        className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-semibold transition"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+</div>
+
+    </AlumniModal>
+
+    <AlumniModal isOpen={showPayment} onClose={() => setShowPayment(false)} title="Contribute to KREIS">
+  <div className="space-y-6 px-1 max-h-[70vh] overflow-y-auto">
+    <p className="text-gray-700">Select a payment method and proceed with your contribution. This is a dummy interface.</p>
+
+    <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+      <div className="border rounded-lg p-4 hover:shadow-lg transition cursor-pointer">
+        <input type="radio" name="payment" id="upi" className="accent-blue-600 mr-2" />
+        <label htmlFor="upi" className="font-medium">UPI</label>
+        <p className="text-sm text-gray-500 mt-2">Pay using PhonePe, GPay, Paytm, etc.</p>
+      </div>
+      <div className="border rounded-lg p-4 hover:shadow-lg transition cursor-pointer">
+        <input type="radio" name="payment" id="card" className="accent-blue-600 mr-2" />
+        <label htmlFor="card" className="font-medium">Credit / Debit Card</label>
+        <p className="text-sm text-gray-500 mt-2">Visa, MasterCard, RuPay supported.</p>
+      </div>
+      <div className="border rounded-lg p-4 hover:shadow-lg transition cursor-pointer">
+        <input type="radio" name="payment" id="netbanking" className="accent-blue-600 mr-2" />
+        <label htmlFor="netbanking" className="font-medium">Net Banking</label>
+        <p className="text-sm text-gray-500 mt-2">All major Indian banks supported.</p>
+      </div>
+    </div>
+
+    <div>
+      <label className="block mb-1 font-semibold text-sm text-gray-700">Contribution Amount</label>
+      <input
+        type="number"
+        placeholder="Enter amount (e.g., 1000)"
+        className="w-full px-4 py-3 border rounded-md border-gray-300 focus:ring-2 focus:ring-blue-500"
+      />
+    </div>
+
+    <div className="flex justify-end">
+      <button
+        className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-semibold transition"
+        onClick={() => {
+          alert("Thank you for your contribution!");
+          setShowPayment(false);
+        }}
+      >
+        Make Payment
+      </button>
+    </div>
+  </div>
+</AlumniModal>
+
+
+
     </Layout>
+
+    
   );
 };
 

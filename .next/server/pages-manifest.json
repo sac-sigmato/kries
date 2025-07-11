@@ -2,10 +2,5 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/admin/login": "pages/admin/login.js",
-  "/api/footer-logos": "pages/api/footer-logos.js",
-  "/about/kreis": "pages/about/kreis.js",
-  "/api/contact-info": "pages/api/contact-info.js",
-  "/api/faculty": "pages/api/faculty.js",
-  "/achievements/cultural": "pages/achievements/cultural.js"
+  "/connect/alumni": "pages/connect/alumni.js"
 }

@@ -24,15 +24,15 @@ self.__BUILD_MANIFEST = {
       "static/chunks/main.js",
       "static/chunks/pages/about/kreis.js"
     ],
-    "/achievements/cultural": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/achievements/cultural.js"
-    ],
     "/admin/login": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/admin/login.js"
+    ],
+    "/connect/alumni": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/connect/alumni.js"
     ]
   },
   "ampFirstPages": []
