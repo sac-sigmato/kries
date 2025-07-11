@@ -4,9 +4,9 @@
   "/_document": "pages/_document.js",
   "/schools/statistics": "pages/schools/statistics.js",
   "/api/auth/me": "pages/api/auth/me.js",
-  "/api/events": "pages/api/events.js",
-  "/api/gallery": "pages/api/gallery.js",
   "/api/contact-info": "pages/api/contact-info.js",
   "/api/footer-logos": "pages/api/footer-logos.js",
-  "/api/blogs": "pages/api/blogs.js"
+  "/api/events": "pages/api/events.js",
+  "/api/blogs": "pages/api/blogs.js",
+  "/api/gallery": "pages/api/gallery.js"
 }
