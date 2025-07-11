@@ -1,8 +1,63 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Layout from '../../components/Layout';
 import { Package, Shirt, BookOpen, Briefcase, ShoppingBag } from 'lucide-react';
+import { Switch } from "@headlessui/react";
+import classNames from "classnames";
 
 const Amenities: React.FC = () => {
+
+  const [isCardView, setIsCardView] = useState(false);
+  
+
+
+  // Data source
+const cardData = [
+  {
+    title: "1. Uniforms",
+    items: "2 pairs of blue uniform & 1 pair of white uniform (Yearly once)",
+  },
+  {
+    title: "2. Shoes & Socks",
+    items: "1 pair black shoes, 1 pair white shoes & 4 pairs of socks",
+  },
+  {
+    title: "3. Text Books",
+    items: "1 set of textbooks for all subjects (Yearly once)",
+  },
+  {
+    title: "4. Notebooks & Stationery",
+    items: [
+      "12 x 200 pages long notebooks",
+      "12 x 100 pages king size notebooks",
+      "1 each: 200 pages 4-line, 3-line, 2-line notebooks",
+      "1 x 100 pages English cursive notebook",
+      "1 x 100 pages graph book",
+      "1 geometry box, 1 sketch pen, 1 set color pencils",
+      "12 blue pens, 12 red pens, 12 pencils",
+      "2 erasers, 2 sharpeners",
+      "25 blue refills, 10 red refills",
+      "1 set of name labels, 5 sets brown wrappers",
+      "10 files, 1 school bag, 1 aluminium trunk",
+    ],
+  },
+  {
+    title: "5. Toiletries (Monthly)",
+    items: [
+      "Mysore sandal soap - 1",
+      "Mysore detergent soap - 2",
+      "Mysore talcum powder - 1",
+      "Toothbrush & toothpaste - 1 each",
+      "Coconut oil box - 1",
+      "Whisper sanitary napkins for girls - 1 (Monthly)",
+    ],
+    full: true,
+  },
+];
+
+
+
+
+
   const amenities = [
     {
       title: "Uniforms",
@@ -104,51 +159,116 @@ const Amenities: React.FC = () => {
             </div>
             
             <div className="overflow-x-auto">
-              <table className="min-w-full bg-white rounded-lg overflow-hidden shadow-lg">
-                <thead className="bg-blue-600 text-white">
-                  <tr>
-                    <th className="py-3 px-6 text-left">Item</th>
-                    <th className="py-3 px-6 text-left">Distribution Time</th>
-                    <th className="py-3 px-6 text-left">Quantity</th>
-                    
+
+
+   
+            <section className="py-8 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Toggle Header */}
+        <div className="flex items-center justify-between mb-8">
+          <h2 className="text-3xl font-bold text-gray-800">Student Supply Distribution List</h2>
+          <div className="flex items-center space-x-2">
+            <span className="text-sm text-gray-600">Table View</span>
+            <Switch
+              checked={isCardView}
+              onChange={setIsCardView}
+              className={classNames(
+                "relative inline-flex h-6 w-11 items-center rounded-full transition",
+                isCardView ? "bg-blue-600" : "bg-gray-300"
+              )}
+            >
+              <span
+                className={classNames(
+                  "inline-block h-4 w-4 transform rounded-full bg-white transition",
+                  isCardView ? "translate-x-6" : "translate-x-1"
+                )}
+              />
+            </Switch>
+            <span className="text-sm text-gray-600">Card View</span>
+          </div>
+        </div>
+
+        {/* Conditional Rendering */}
+        {isCardView ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Card View Blocks (Same as before) */}
+            {cardData.map((section, idx) => (
+              <div
+                key={idx}
+                className={classNames(
+                  "bg-white rounded-2xl shadow p-6",
+                  section.full ? "md:col-span-2" : ""
+                )}
+              >
+                <h3 className="text-xl font-semibold text-blue-600 mb-2">{section.title}</h3>
+                {Array.isArray(section.items) ? (
+                  <ul className="list-disc pl-5 space-y-1 text-gray-700 text-sm">
+                    {section.items.map((item, i) => (
+                      <li key={i}>{item}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p>{section.items}</p>
+                )}
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="overflow-auto bg-white rounded-2xl shadow p-4">
+            <table className="min-w-full text-sm text-left text-gray-700 border">
+              <thead className="bg-blue-100 text-gray-800">
+                <tr>
+                  <th className="px-4 py-2 border">Sl. No</th>
+                  <th className="px-4 py-2 border">Category</th>
+                  <th className="px-4 py-2 border">Details</th>
+                </tr>
+              </thead>
+              <tbody>
+                {cardData.map((section, idx) => (
+                  <tr key={idx} className="hover:bg-gray-50">
+                    <td className="px-4 py-2 border">{idx + 1}</td>
+                    <td className="px-4 py-2 border">{section.title}</td>
+                    <td className="px-4 py-2 border">
+                      {Array.isArray(section.items) ? (
+                        <ul className="list-disc pl-5">
+                          {section.items.map((item, i) => (
+                            <li key={i}>{item}</li>
+                          ))}
+                        </ul>
+                      ) : (
+                        section.items
+                      )}
+                    </td>
                   </tr>
-                </thead>
-                <tbody className="divide-y divide-gray-200">
-                  <tr className="hover:bg-gray-50">
-                    <td className="py-4 px-6 font-medium">Uniforms</td>
-                    <td className="py-4 px-6">Beginning of academic year (June)</td>
-                    <td className="py-4 px-6">2 sets per student</td>
-                    
-                  </tr>
-                  <tr className="hover:bg-gray-50">
-                    <td className="py-4 px-6 font-medium">Shoes & Socks</td>
-                    <td className="py-4 px-6">Beginning of academic year (June)</td>
-                    <td className="py-4 px-6">2 pairs of shoes, 3 pairs of socks</td>
-                   
-                  </tr>
-                  <tr className="hover:bg-gray-50">
-                    <td className="py-4 px-6 font-medium">Books & Stationery</td>
-                    <td className="py-4 px-6">Beginning of each term</td>
-                    <td className="py-4 px-6">Complete set as per curriculum</td>
-                    
-                  </tr>
-                  <tr className="hover:bg-gray-50">
-                    <td className="py-4 px-6 font-medium">School Bags</td>
-                    <td className="py-4 px-6">Beginning of academic year (June)</td>
-                    <td className="py-4 px-6">1 bag per student</td>
-                    
-                  </tr>
-                  <tr className="hover:bg-gray-50">
-                    <td className="py-4 px-6 font-medium">Toiletries</td>
-                    <td className="py-4 px-6">Monthly distribution</td>
-                    <td className="py-4 px-6">Monthly supply as per requirement</td>
-                    
-                  </tr>
-                </tbody>
-              </table>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+      </div>
+    </section>
+  
+
+ 
+
+            
             </div>
           </div>
         </section>
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
 
         {/* Quality Assurance */}
         <section className="py-20">

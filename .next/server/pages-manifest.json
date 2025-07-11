@@ -2,16 +2,13 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/": "pages/index.js",
-  "/admin/home": "pages/admin/home.js",
-  "/admin/sections/[sectionName]": "pages/admin/sections/[sectionName].js",
-  "/api/campus-stats": "pages/api/campus-stats.js",
-  "/api/home-sections": "pages/api/home-sections.js",
-  "/api/contact-info": "pages/api/contact-info.js",
-  "/api/home-slider": "pages/api/home-slider.js",
-  "/api/footer-logos": "pages/api/footer-logos.js",
+  "/admin/login": "pages/admin/login.js",
+  "/schools/facility": "pages/schools/facility.js",
+  "/schools/amenities": "pages/schools/amenities.js",
   "/api/auth/me": "pages/api/auth/me.js",
+  "/api/contact-info": "pages/api/contact-info.js",
+  "/api/footer-logos": "pages/api/footer-logos.js",
   "/api/events": "pages/api/events.js",
-  "/api/gallery": "pages/api/gallery.js",
-  "/api/blogs": "pages/api/blogs.js"
+  "/api/blogs": "pages/api/blogs.js",
+  "/api/gallery": "pages/api/gallery.js"
 }
