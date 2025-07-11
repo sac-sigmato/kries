@@ -3,12 +3,7 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/admin/login": "pages/admin/login.js",
-  "/schools/facility": "pages/schools/facility.js",
-  "/schools/amenities": "pages/schools/amenities.js",
-  "/api/auth/me": "pages/api/auth/me.js",
-  "/api/contact-info": "pages/api/contact-info.js",
-  "/api/footer-logos": "pages/api/footer-logos.js",
-  "/api/events": "pages/api/events.js",
-  "/api/blogs": "pages/api/blogs.js",
-  "/api/gallery": "pages/api/gallery.js"
+  "/events": "pages/events.js",
+  "/": "pages/index.js",
+  "/schools/achievements": "pages/schools/achievements.js"
 }

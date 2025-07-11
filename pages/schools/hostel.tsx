@@ -65,7 +65,7 @@ const HostelCanteen: React.FC = () => {
               </div>
               <div>
                 <img
-                  src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=600"
+                  src="/c2.jpeg"
                   alt="Hostel Dormitory"
                   className="rounded-lg shadow-xl"
                 />
@@ -80,7 +80,7 @@ const HostelCanteen: React.FC = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="order-2 lg:order-1">
                 <img
-                  src="https://images.pexels.com/photos/1581384/pexels-photo-1581384.jpeg?auto=compress&cs=tinysrgb&w=600"
+                  src="/c1.jpeg"
                   alt="School Canteen"
                   className="rounded-lg shadow-xl"
                 />
@@ -203,7 +203,33 @@ const HostelCanteen: React.FC = () => {
                 <Twitter className="h-8 w-8 text-blue-400 mr-3" />
                 <h3 className="text-2xl font-bold text-gray-900">Live Food Quality Updates</h3>
               </div>
-              <p className="text-gray-600 mb-6">
+
+
+              <div className="lg:col-span-8 relative">
+        <div className="rounded-lg shadow-lg">
+          <div className="relative h-80">
+            <div className="overflow-hidden absolute inset-0 flex items-center">
+              <div className="flex animate-scroll space-x-4 whitespace-nowrap px-4">
+                {[
+                  "/f1.jpeg", "/f2.jpeg", "/f3.jpeg", "/f4.jpeg",
+                  "/f5.jpeg", "/f6.jpeg", "/f7.jpeg", "/f8.jpeg",
+                  "/f9.jpeg", "/f10.jpeg", "/f11.jpeg", "/f12.jpeg",
+                  "/f13.jpeg", "/f14.jpeg", "/f15.jpeg", "/f16.jpeg"
+                ].map((img, index) => (
+                  <img
+                    key={index}
+                    src={img}
+                    alt={`Food quality ${index + 1}`}
+                    className="h-80 w-80 object-cover rounded-lg"
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+              <p className="text-gray-600 mb-6 mt-4">
                 The Social Welfare Department of Karnataka is committed to transparency in our food service. Follow our Twitter handle for daily updates on meal quality, menu, and hostel conditions.
               </p>
               <div className="bg-gray-100 rounded-lg p-6">
