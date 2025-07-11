@@ -110,7 +110,7 @@ const Amenities: React.FC = () => {
                     <th className="py-3 px-6 text-left">Item</th>
                     <th className="py-3 px-6 text-left">Distribution Time</th>
                     <th className="py-3 px-6 text-left">Quantity</th>
-                    <th className="py-3 px-6 text-left">Replacement Policy</th>
+                    
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200">
@@ -118,31 +118,31 @@ const Amenities: React.FC = () => {
                     <td className="py-4 px-6 font-medium">Uniforms</td>
                     <td className="py-4 px-6">Beginning of academic year (June)</td>
                     <td className="py-4 px-6">2 sets per student</td>
-                    <td className="py-4 px-6">Damaged uniforms replaced on case-by-case basis</td>
+                    
                   </tr>
                   <tr className="hover:bg-gray-50">
                     <td className="py-4 px-6 font-medium">Shoes & Socks</td>
                     <td className="py-4 px-6">Beginning of academic year (June)</td>
                     <td className="py-4 px-6">2 pairs of shoes, 3 pairs of socks</td>
-                    <td className="py-4 px-6">Replaced if damaged before expected wear period</td>
+                   
                   </tr>
                   <tr className="hover:bg-gray-50">
                     <td className="py-4 px-6 font-medium">Books & Stationery</td>
                     <td className="py-4 px-6">Beginning of each term</td>
                     <td className="py-4 px-6">Complete set as per curriculum</td>
-                    <td className="py-4 px-6">Additional stationery provided as needed</td>
+                    
                   </tr>
                   <tr className="hover:bg-gray-50">
                     <td className="py-4 px-6 font-medium">School Bags</td>
                     <td className="py-4 px-6">Beginning of academic year (June)</td>
                     <td className="py-4 px-6">1 bag per student</td>
-                    <td className="py-4 px-6">Replaced every two years or if damaged</td>
+                    
                   </tr>
                   <tr className="hover:bg-gray-50">
                     <td className="py-4 px-6 font-medium">Toiletries</td>
                     <td className="py-4 px-6">Monthly distribution</td>
                     <td className="py-4 px-6">Monthly supply as per requirement</td>
-                    <td className="py-4 px-6">Additional items provided as needed</td>
+                    
                   </tr>
                 </tbody>
               </table>

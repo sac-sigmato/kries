@@ -87,25 +87,7 @@ const StudentDevelopment: React.FC = () => {
         </section>
 
         {/* Gallery Section */}
-        <section className="py-20 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Program Gallery</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12">
-              Glimpses of our students engaging in development activities.
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-              {programs.map((p, i) => (
-                <div key={i} className="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                  <img
-                    src={p.image}
-                    alt={p.title}
-                    className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+       
       </div>
     </Layout>
   );

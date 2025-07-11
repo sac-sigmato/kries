@@ -97,7 +97,7 @@ const Footer: React.FC = () => {
                       <img
                         src={logo.image_url}
                         alt={logo.name}
-                        className="h-12 w-auto object-contain filter brightness-0 invert opacity-70 hover:opacity-100 transition-opacity"
+                        className="h-12 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
                       />
                     </a>
                   ) : (

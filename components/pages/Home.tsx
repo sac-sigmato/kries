@@ -24,6 +24,17 @@ type StatItem = {
   colorClass: string;
 };
 
+declare global {
+  interface Window {
+    twttr: {
+      widgets: {
+        load: (element?: HTMLElement | null) => void;
+      };
+    };
+  }
+}
+
+
 const Home: React.FC = () => {
   const [sliderItems, setSliderItems] = useState<any[]>([]);
   const [sections, setSections] = useState<any[]>([]);
@@ -34,12 +45,30 @@ const Home: React.FC = () => {
   useEffect(() => {
     fetchHomeData();
 
-    const script = document.createElement("script");
-  script.setAttribute("src", "https://platform.twitter.com/widgets.js");
-  script.setAttribute("async", "true");
-  document.getElementById("twitter-embed")?.appendChild(script);
-  
+    const embedContainer = document.getElementById("twitter-embed");
+    if (!embedContainer) return;
+
+    // Avoid adding the script multiple times
+    if (!document.getElementById("twitter-wjs")) {
+      const script = document.createElement("script");
+      script.setAttribute("src", "https://platform.twitter.com/widgets.js");
+      script.setAttribute("id", "twitter-wjs");
+      script.setAttribute("async", "true");
+      script.onload = () => {
+        // Ensure widget initializes
+        if (window?.twttr?.widgets) {
+          window.twttr.widgets.load(embedContainer);
+        }
+      };
+      document.body.appendChild(script);
+    } else {
+      // Script already exists – manually load widgets
+      if (window?.twttr?.widgets) {
+        window.twttr.widgets.load(embedContainer);
+      }
+    }
   }, []);
+
 
   const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % sliderItems.length);
@@ -117,80 +146,80 @@ const Home: React.FC = () => {
     icon: React.ReactNode;
     colorClass: string;
   }[] = [
-    {
-      label: "of Campus",
-      colorClass: "text-teal-500",
-      icon: (
-        <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
-        </svg>
-      ),
-    },
-    {
-      label: "Students Studying",
-      colorClass: "text-blue-500",
-      icon: (
-        <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
-        </svg>
-      ),
-    },
-    {
-      label: "Education Heroes",
-      colorClass: "text-teal-500",
-      icon: (
-        <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-        </svg>
-      ),
-    },
-    {
-      label: "Alumni Network",
-      colorClass: "text-blue-500",
-      icon: (
-        <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z" />
-        </svg>
-      ),
-    },
-    {
-      label: "Free Education with Food & Lodging",
-      colorClass: "text-yellow-500",
-      icon: (
-        <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z" />
-        </svg>
-      ),
-    },
-    {
-      label: "Passing Percentage",
-      colorClass: "text-blue-500",
-      icon: (
-        <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
-        </svg>
-      ),
-    },
-    {
-      label: "Girl Safe Environment",
-      colorClass: "text-yellow-500",
-      icon: (
-        <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z" />
-        </svg>
-      ),
-    },
-    {
-      label: "CSR Projects Completed",
-      colorClass: "text-teal-500",
-      icon: (
-        <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M16 13h-3V3h-2v10H8l4 4 4-4zM4 19v2h16v-2H4z" />
-        </svg>
-      ),
-    },
-  ];
-  
+      {
+        label: "of Campus",
+        colorClass: "text-teal-500",
+        icon: (
+          <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+          </svg>
+        ),
+      },
+      {
+        label: "Students Studying",
+        colorClass: "text-blue-500",
+        icon: (
+          <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
+          </svg>
+        ),
+      },
+      {
+        label: "Education Heroes",
+        colorClass: "text-teal-500",
+        icon: (
+          <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+          </svg>
+        ),
+      },
+      {
+        label: "Alumni Network",
+        colorClass: "text-blue-500",
+        icon: (
+          <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z" />
+          </svg>
+        ),
+      },
+      {
+        label: "Free Education with Food & Lodging",
+        colorClass: "text-yellow-500",
+        icon: (
+          <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z" />
+          </svg>
+        ),
+      },
+      {
+        label: "Passing Percentage",
+        colorClass: "text-blue-500",
+        icon: (
+          <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+          </svg>
+        ),
+      },
+      {
+        label: "Girl Safe Environment",
+        colorClass: "text-yellow-500",
+        icon: (
+          <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z" />
+          </svg>
+        ),
+      },
+      {
+        label: "CSR Projects Completed",
+        colorClass: "text-teal-500",
+        icon: (
+          <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M16 13h-3V3h-2v10H8l4 4 4-4zM4 19v2h16v-2H4z" />
+          </svg>
+        ),
+      },
+    ];
+
   const [stats, setStats] = useState<StatItem[]>([]);
 
   useEffect(() => {
@@ -293,9 +322,9 @@ const Home: React.FC = () => {
   //     ),
   //   },
   // ];
-  
-  
-  
+
+
+
 
   if (loading) {
     return (
@@ -310,13 +339,12 @@ const Home: React.FC = () => {
       {/* Hero Slider Section */}
       <section className="relative h-screen overflow-hidden">
         {sliderItems.length > 0 ? (
-          <div className="relative h-full">
+          <div className="relative h-full hries">
             {sliderItems.map((slide, index) => (
               <div
                 key={slide._id}
-                className={`absolute inset-0 transition-opacity duration-1000 ${
-                  index === currentSlide ? "opacity-100" : "opacity-0"
-                }`}
+                className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? "opacity-100" : "opacity-0"
+                  }`}
               >
                 <div
                   className="h-full bg-cover bg-center bg-no-repeat"
@@ -358,11 +386,10 @@ const Home: React.FC = () => {
                   <button
                     key={index}
                     onClick={() => setCurrentSlide(index)}
-                    className={`w-3 h-3 rounded-full transition-colors ${
-                      index === currentSlide
+                    className={`w-3 h-3 rounded-full transition-colors ${index === currentSlide
                         ? "bg-white"
                         : "bg-white bg-opacity-50"
-                    }`}
+                      }`}
                   />
                 ))}
               </div>
@@ -644,76 +671,67 @@ const Home: React.FC = () => {
 
       {/* Food Quality & Transparency Section */}
       <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                Food Quality & Transparency
-              </h2>
-              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                The Social Welfare Department of Karnataka is taking a bold step
-                towards transparency, accountability, and social audit by
-                ensuring meal quality and hostels is closely monitored. This
-                initiative enhances public trust and provides real-time insights
-                into student nutrition, ensuring that meals served in
-                residential schools and hostels meet the highest standards of
-                quality and hygiene.
-              </p>
-              <a
-                href="https://x.com/kreiskrcrs661"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800"
-              >
-                Follow our Food Transparency Updates
-                <svg
-                  className="ml-2 w-5 h-5"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
-                </svg>
-              </a>
-            </div>
-            <div className="relative">
-              <div className="overflow-hidden rounded-lg shadow-lg">
-                {/* <div className="relative h-80 overflow-hidden">
-                  <div className="absolute inset-0 flex items-center">
-                    <div className="flex animate-scroll space-x-4 whitespace-nowrap px-4">
-                      {[
-                        "https://getmycollege.in/wp-content/uploads/2025/06/School-Hostel-Canteen-Pic.jpg?auto=compress&cs=tinysrgb&w=600",
-                        "https://getmycollege.in/wp-content/uploads/2025/06/School-Hostel-Pic.jpg?auto=compress&cs=tinysrgb&w=600",
-                        "https://getmycollege.in/wp-content/uploads/2025/06/School-Lab-3.jpg?auto=compress&cs=tinysrgb&w=600",
-                        "https://getmycollege.in/wp-content/uploads/2025/06/Student-Achievement-Pic.png?auto=compress&cs=tinysrgb&w=600",
-                      ].map((img, index) => (
-                        <img
-                          key={index}
-                          src={img}
-                          alt={`Food quality ${index + 1}`}
-                          className="h-80 w-80 object-cover rounded-lg"
-                        />
-                      ))}
-                    </div>
-                  </div>
-                </div> */}
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      {/* Left Text: Span 4 out of 12 */}
+      <div className="lg:col-span-4">
+        <h2 className="text-3xl font-bold text-gray-900 mb-6">
+          Food Quality & Transparency
+        </h2>
+        <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+          The Social Welfare Department of Karnataka is taking a bold step
+          towards transparency, accountability, and social audit by ensuring
+          meal quality and hostels is closely monitored. This initiative
+          enhances public trust and provides real-time insights into student
+          nutrition, ensuring that meals served in residential schools and
+          hostels meet the highest standards of quality and hygiene.
+        </p>
+        <a
+          href="https://x.com/kreiskrcrs661"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800"
+        >
+          Follow our Food Transparency Updates
+          <svg
+            className="ml-2 w-5 h-5"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+          </svg>
+        </a>
+      </div>
 
-              <div id="twitter-embed" className="overflow-hidden rounded-lg shadow-lg h-[500px] overflow-y-auto">
-                <a
-                  className="twitter-timeline"
-                  data-theme="light"
-                  data-height="500"
-                  href="https://x.com/kreiskrcrs661"
-                >
-                  Tweets by @kreiskrcrs661
-                </a>
-              </div>
-
+      {/* Right Image Carousel: Span 8 out of 12 */}
+      <div className="lg:col-span-8 relative">
+        <div className="rounded-lg shadow-lg">
+          <div className="relative h-80">
+            <div className="overflow-hidden absolute inset-0 flex items-center">
+              <div className="flex animate-scroll space-x-4 whitespace-nowrap px-4">
+                {[
+                  "/f1.jpeg", "/f2.jpeg", "/f3.jpeg", "/f4.jpeg",
+                  "/f5.jpeg", "/f6.jpeg", "/f7.jpeg", "/f8.jpeg",
+                  "/f9.jpeg", "/f10.jpeg", "/f11.jpeg", "/f12.jpeg",
+                  "/f13.jpeg", "/f14.jpeg", "/f15.jpeg", "/f16.jpeg"
+                ].map((img, index) => (
+                  <img
+                    key={index}
+                    src={img}
+                    alt={`Food quality ${index + 1}`}
+                    className="h-80 w-80 object-cover rounded-lg"
+                  />
+                ))}
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
+
     </div>
   );
 };

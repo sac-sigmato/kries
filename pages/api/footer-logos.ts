@@ -32,20 +32,11 @@ let footerLogos: any[] = [
     order_index: 3,
     created_at: new Date().toISOString()
   },
-  {
-    _id: '4',
-    name: 'Digital India',
-    image_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Government_of_India_logo.svg/200px-Government_of_India_logo.svg.png',
-    website_url: 'https://digitalindia.gov.in',
-    description: 'Digital India Initiative',
-    is_active: true,
-    order_index: 4,
-    created_at: new Date().toISOString()
-  },
+  
   {
     _id: '5',
     name: 'Skill India',
-    image_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Emblem_of_India.svg/200px-Emblem_of_India.svg.png',
+    image_url: 'https://getmycollege.in/wp-content/uploads/2025/06/india-gov-logo.png',
     website_url: 'https://www.skillindia.gov.in',
     description: 'Skill Development Initiative',
     is_active: true,
@@ -55,7 +46,7 @@ let footerLogos: any[] = [
   {
     _id: '6',
     name: 'Beti Bachao Beti Padhao',
-    image_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Government_of_India_logo.svg/200px-Government_of_India_logo.svg.png',
+    image_url: 'https://getmycollege.in/wp-content/uploads/2025/06/pm-india-logo.png',
     website_url: 'https://wcd.nic.in',
     description: 'Save the Girl Child, Educate the Girl Child',
     is_active: true,
@@ -65,7 +56,7 @@ let footerLogos: any[] = [
   {
     _id: '7',
     name: 'Swachh Bharat Mission',
-    image_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Emblem_of_India.svg/200px-Emblem_of_India.svg.png',
+    image_url: 'https://getmycollege.in/wp-content/uploads/2025/06/GIGW.jpeg',
     website_url: 'https://swachhbharatmission.gov.in',
     description: 'Clean India Mission',
     is_active: true,
@@ -75,7 +66,7 @@ let footerLogos: any[] = [
   {
     _id: '8',
     name: 'Make in India',
-    image_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Government_of_India_logo.svg/200px-Government_of_India_logo.svg.png',
+    image_url: 'https://getmycollege.in/wp-content/uploads/2025/06/WCAG.jpeg',
     website_url: 'https://www.makeinindia.com',
     description: 'Make in India Initiative',
     is_active: true,
@@ -85,7 +76,7 @@ let footerLogos: any[] = [
   {
     _id: '9',
     name: 'Ayushman Bharat',
-    image_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Emblem_of_India.svg/200px-Emblem_of_India.svg.png',
+    image_url: 'https://getmycollege.in/wp-content/uploads/2025/06/SSLcertificate.png',
     website_url: 'https://www.pmjay.gov.in',
     description: 'National Health Protection Scheme',
     is_active: true,
@@ -95,7 +86,17 @@ let footerLogos: any[] = [
   {
     _id: '10',
     name: 'Jan Aushadhi',
-    image_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Government_of_India_logo.svg/200px-Government_of_India_logo.svg.png',
+    image_url: 'https://getmycollege.in/wp-content/uploads/2025/06/w3c.png',
+    website_url: 'https://janaushadhi.gov.in',
+    description: 'Pradhan Mantri Bhartiya Janaushadhi Pariyojana',
+    is_active: true,
+    order_index: 10,
+    created_at: new Date().toISOString()
+  },
+  {
+    _id: '10',
+    name: 'Jan Aushadhi',
+    image_url: 'https://getmycollege.in/wp-content/uploads/2025/06/kp_kn.jpeg',
     website_url: 'https://janaushadhi.gov.in',
     description: 'Pradhan Mantri Bhartiya Janaushadhi Pariyojana',
     is_active: true,
