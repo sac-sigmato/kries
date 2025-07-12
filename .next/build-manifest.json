@@ -5,8 +5,8 @@
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/Hr5Ab6iOHmY7lhsbNcXDb/_buildManifest.js",
-    "static/Hr5Ab6iOHmY7lhsbNcXDb/_ssgManifest.js"
+    "static/J1sY9ZRVr5YdFYM_R1k1k/_buildManifest.js",
+    "static/J1sY9ZRVr5YdFYM_R1k1k/_ssgManifest.js"
   ],
   "rootMainFiles": [],
   "pages": {
@@ -17,7 +17,7 @@
       "static/chunks/8346-ddc8bcb682cdf76d.js",
       "static/chunks/618-ec350f0927b57c56.js",
       "static/chunks/6153-df3d924e8b0fa665.js",
-      "static/chunks/pages/index-748c8642a278b81a.js"
+      "static/chunks/pages/index-0a0b093fa46b9305.js"
     ],
     "/_app": [
       "static/chunks/webpack-e81585bb9a6b8f4d.js",
@@ -108,7 +108,7 @@
       "static/chunks/framework-840cff9d6bb95703.js",
       "static/chunks/main-c433c1ab786ffc9c.js",
       "static/chunks/8346-ddc8bcb682cdf76d.js",
-      "static/chunks/pages/admin/alerts-a6aca66b75965e91.js"
+      "static/chunks/pages/admin/alerts-1464bf43661ff555.js"
     ],
     "/admin/blogs": [
       "static/chunks/webpack-e81585bb9a6b8f4d.js",
@@ -272,7 +272,7 @@
       "static/chunks/main-c433c1ab786ffc9c.js",
       "static/chunks/8346-ddc8bcb682cdf76d.js",
       "static/chunks/6153-df3d924e8b0fa665.js",
-      "static/chunks/pages/connect/mentor-302e9d4766cd3380.js"
+      "static/chunks/pages/connect/mentor-e062c2f64afc79fc.js"
     ],
     "/contact": [
       "static/chunks/webpack-e81585bb9a6b8f4d.js",
@@ -288,7 +288,7 @@
       "static/chunks/main-c433c1ab786ffc9c.js",
       "static/chunks/8346-ddc8bcb682cdf76d.js",
       "static/chunks/6153-df3d924e8b0fa665.js",
-      "static/chunks/pages/events-a4067fc64590c7af.js"
+      "static/chunks/pages/events-ddb101f69357a115.js"
     ],
     "/faculty": [
       "static/chunks/webpack-e81585bb9a6b8f4d.js",
@@ -336,7 +336,7 @@
       "static/chunks/main-c433c1ab786ffc9c.js",
       "static/chunks/8346-ddc8bcb682cdf76d.js",
       "static/chunks/6153-df3d924e8b0fa665.js",
-      "static/chunks/pages/programs-4deb6e215d128690.js"
+      "static/chunks/pages/programs-61a9f199b421b6a4.js"
     ],
     "/results": [
       "static/chunks/webpack-e81585bb9a6b8f4d.js",
