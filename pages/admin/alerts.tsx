@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import AdminLayout from '../../components/admin/AdminLayout';
+import AdminLayout from '../../components/admin-comp/AdminLayout';
 import ProtectedRoute from '../../components/ProtectedRoute';
 import { Mail, Send, Users, AlertCircle, CheckCircle, Clock, Plus, Edit, Trash2 } from 'lucide-react';
 

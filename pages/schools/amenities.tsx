@@ -63,31 +63,31 @@ const cardData = [
       title: "Uniforms",
       icon: Shirt,
       description: "Each student receives 2 sets of school uniforms annually, designed for comfort and durability. The uniforms include shirts, pants/skirts, ties, belts, and sweaters for winter.",
-      image: "https://images.pexels.com/photos/5212703/pexels-photo-5212703.jpeg?auto=compress&cs=tinysrgb&w=600"
+      image: "/ind1.jpeg"
     },
     {
       title: "Shoes & Socks",
       icon: Package,
       description: "Students are provided with 2 pairs of quality shoes and 3 pairs of socks each year. The shoes are designed for comfort during long school hours and various activities.",
-      image: "https://images.pexels.com/photos/267202/pexels-photo-267202.jpeg?auto=compress&cs=tinysrgb&w=600"
+      image: "/School-lap-1.jpg"
     },
     {
       title: "Books & Stationery",
       icon: BookOpen,
       description: "Complete set of textbooks, notebooks, and essential stationery items including pens, pencils, erasers, rulers, and geometry boxes are provided to all students.",
-      image: "https://images.pexels.com/photos/256517/pexels-photo-256517.jpeg?auto=compress&cs=tinysrgb&w=600"
+      image: "/Schoo-event1.jpeg"
     },
     {
       title: "School Bags",
       icon: Briefcase,
       description: "Durable and ergonomically designed school bags are provided to all students, with compartments for books, water bottles, and other essentials.",
-      image: "https://images.pexels.com/photos/1139556/pexels-photo-1139556.jpeg?auto=compress&cs=tinysrgb&w=600"
+      image: "/School-prayer-2.jpeg"
     },
     {
       title: "Toiletries",
       icon: ShoppingBag,
       description: "Basic toiletries including soap, shampoo, toothpaste, toothbrush, washing soap, and other personal hygiene items are regularly provided to residential students.",
-      image: "https://images.pexels.com/photos/3321416/pexels-photo-3321416.jpeg?auto=compress&cs=tinysrgb&w=600"
+      image: "/c1.jpeg"
     }
   ];
 
@@ -95,16 +95,25 @@ const cardData = [
     <Layout>
       <div className="bg-white">
         {/* Hero Section */}
-        <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <h1 className="text-4xl md:text-6xl font-bold mb-6">Student Amenities</h1>
-              <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-                We provide all essential items to ensure our students can focus on their education without any concerns.
-              </p>
-            </div>
-          </div>
-        </section>
+        <section className="relative bg-blue-800 text-white py-24 overflow-hidden">
+  {/* Background Image */}
+  <div
+    className="absolute inset-0 bg-cover bg-center opacity-40"
+    style={{ backgroundImage: "url('/School-prayer-2.jpeg')" }} // ✅ replace with your image path
+  ></div>
+
+  {/* Gradient Overlay */}
+  <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-blue-700/80"></div>
+
+  {/* Content */}
+  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h1 className="text-4xl md:text-6xl font-bold mb-6">Student Amenities</h1>
+    <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+      We provide all essential items to ensure our students can focus on their education without any concerns.
+    </p>
+  </div>
+</section>
+
 
         {/* Amenities Overview */}
         <section className="py-20">

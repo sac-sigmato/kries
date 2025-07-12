@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import AdminLayout from '../../components/admin/AdminLayout';
+import AdminLayout from '../../components/admin-comp/AdminLayout';
 import ProtectedRoute from '../../components/ProtectedRoute';
 import { GraduationCap, Plus, Edit, Trash2, Download, Upload, Search } from 'lucide-react';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '../components/Layout';
-import Results from '../components/pages/Results';
+import Results from '../components/pages-comp/Results';
 
 export default function ResultsPage() {
   return (

@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import AdminLayout from '../../../components/admin/AdminLayout';
+import AdminLayout from '../../../components/admin-comp/AdminLayout';
 import ProtectedRoute from '../../../components/ProtectedRoute';
 import { ArrowLeft, Plus, Trash2 } from 'lucide-react';
 import Link from 'next/link';

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import AdminLayout from '../../components/admin/AdminLayout';
+import AdminLayout from '../../components/admin-comp/AdminLayout';
 import ProtectedRoute from '../../components/ProtectedRoute';
 import { Image, Plus, Trash2, Upload, FolderPlus, Eye, X } from 'lucide-react';
 

@@ -8,13 +8,13 @@ const SportsAchievements: React.FC = () => {
     {
       title: "State Level Kabaddi Championship",
       description: "Our school Kabaddi team won the State Level Championship, defeating 32 teams from across Karnataka. The team displayed exceptional teamwork and strategy throughout the tournament.",
-      image: "https://images.pexels.com/photos/3621104/pexels-photo-3621104.jpeg?auto=compress&cs=tinysrgb&w=600",
+      image: "/r.webp",
       year: "2023-24"
     },
     {
       title: "District Athletics Meet - 5 Gold Medals",
       description: "Our athletes secured 5 gold medals, 3 silver medals, and 4 bronze medals in various track and field events at the District Athletics Meet. Special mention to Arjun Singh who broke the district record in 800m race.",
-      image: "https://images.pexels.com/photos/3621121/pexels-photo-3621121.jpeg?auto=compress&cs=tinysrgb&w=600",
+      image: "/rr.webp",
       year: "2023-24"
     },
     {
@@ -191,7 +191,7 @@ const SportsAchievements: React.FC = () => {
         </section>
 
         {/* Sports Gallery */}
-        <section className="py-20 bg-gray-50">
+        {/* <section className="py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Sports Gallery</h2>
@@ -227,7 +227,7 @@ const SportsAchievements: React.FC = () => {
               </button>
             </div>
           </div>
-        </section>
+        </section> */}
       </div>
     </Layout>
   );

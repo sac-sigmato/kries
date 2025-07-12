@@ -1,6 +1,6 @@
 import React from 'react';
-import AdminLayout from '../../components/admin/AdminLayout';
-import AdminUsers from '../../components/admin/AdminUsers';
+import AdminLayout from '../../components/admin-comp/AdminLayout';
+import AdminUsers from '../../components/admin-comp/AdminUsers';
 import ProtectedRoute from '../../components/ProtectedRoute';
 
 export default function AdminUsersPage() {

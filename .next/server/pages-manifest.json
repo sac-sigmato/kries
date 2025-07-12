@@ -2,7 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/gallery": "pages/gallery.js",
+  "/about/faculties": "pages/about/faculties.js",
   "/admin/cms": "pages/admin/cms.js",
-  "/connect/csr": "pages/connect/csr.js"
+  "/admin/cms/csr": "pages/admin/cms/csr.js"
 }

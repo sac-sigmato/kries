@@ -8,25 +8,25 @@ const SocialInitiatives: React.FC = () => {
     {
       title: "Village Cleanliness Drive",
       description: "Our students organized a cleanliness drive in the neighboring villages, cleaning public spaces and creating awareness about waste management and hygiene practices among villagers.",
-      image: "https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg?auto=compress&cs=tinysrgb&w=600",
+      image: "/cs1.jpg",
       year: "2023-24"
     },
     {
       title: "Tree Plantation Campaign",
       description: "As part of our environmental awareness program, students planted over 500 saplings in the school campus and surrounding areas, contributing to a greener environment.",
-      image: "https://images.pexels.com/photos/4503751/pexels-photo-4503751.jpeg?auto=compress&cs=tinysrgb&w=600",
+      image: "/cs2.jpeg",
       year: "2023-24"
     },
     {
       title: "Digital Literacy for Village Elders",
       description: "Our students conducted digital literacy sessions for village elders, teaching them basic smartphone operations, digital payments, and how to access government services online.",
-      image: "https://images.pexels.com/photos/7516363/pexels-photo-7516363.jpeg?auto=compress&cs=tinysrgb&w=600",
+      image: "/cs3.jpg",
       year: "2023-24"
     },
     {
       title: "Health Awareness Camp",
       description: "In collaboration with local health authorities, our students organized a health awareness camp focusing on preventive healthcare, nutrition, and hygiene practices.",
-      image: "https://images.pexels.com/photos/6098051/pexels-photo-6098051.jpeg?auto=compress&cs=tinysrgb&w=600",
+      image: "/cs1.jpg",
       year: "2023-24"
     }
   ];

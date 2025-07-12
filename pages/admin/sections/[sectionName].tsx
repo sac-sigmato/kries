@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import AdminLayout from '../../../components/admin/AdminLayout';
-import SectionEditor from '../../../components/admin/SectionEditor';
+import AdminLayout from '../../../components/admin-comp/AdminLayout';
+import SectionEditor from '../../../components/admin-comp/SectionEditor';
 import ProtectedRoute from '../../../components/ProtectedRoute';
 
 export default function SectionEditorPage() {

@@ -79,16 +79,29 @@ const facilityData = [
     <Layout>
       <div className="bg-white">
         {/* Hero Section */}
-        <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <h1 className="text-4xl md:text-6xl font-bold mb-6">Infrastructure</h1>
-              <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-                Our state-of-the-art facilities provide an optimal environment for learning and development.
-              </p>
-            </div>
-          </div>
-        </section>
+       
+
+
+
+        <section className="relative bg-blue-800 text-white py-24 overflow-hidden">
+  {/* Background Image */}
+  <div
+    className="absolute inset-0 bg-cover bg-center opacity-40"
+    style={{ backgroundImage: "url('/School-lap-1.jpg')" }} // ✅ replace with your image path
+  ></div>
+
+  {/* Gradient Overlay */}
+  <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-blue-700/80"></div>
+
+  {/* Content */}
+  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h1 className="text-4xl md:text-6xl font-bold mb-6">Infrastructure</h1>
+    <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+    Our state-of-the-art facilities provide an optimal environment for learning and development.    </p>
+  </div>
+</section>
+
+
 
         {/* Main Facilities Section */}
         <section className="py-20">

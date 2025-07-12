@@ -108,10 +108,12 @@ const Header: React.FC = () => {
   return (
     <div style={{ fontSize: `${fontSize}px` }}>
       <header className="bg-white shadow-lg sticky top-0 z-50">
+      <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-blue-300 via-blue-200 to-transparent rounded-full blur-3xl opacity-50 pointer-events-none z-0" />
+
         {/* Top utility bar */}
         <div className="bg-gray-100 border-b border-gray-200">
           <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-end items-center h-10">
+            <div className="flex justify-end items-center">
               {/* Government Logo */}
               <div className="flex items-center">
                 {/* <img 
@@ -597,7 +599,7 @@ const Header: React.FC = () => {
       </header>
 
       {/* Announcement Banner */}
-      <div className="bg-gradient-to-r from-red-500 to-red-600 text-white py-2 shadow-md overflow-hidden announcement-banner">
+      <div className="bg-gradient-to-r from-red-500 to-[#c5855e] text-white py-2 shadow-md overflow-hidden announcement-banner">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="scroll-animation whitespace-nowrap">
             <span className="inline-flex items-center space-x-8">

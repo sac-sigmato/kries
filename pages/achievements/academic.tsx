@@ -8,25 +8,25 @@ const AcademicAchievements: React.FC = () => {
     {
       title: "SSLC Results Excellence",
       description: "Our school achieved 98.5% pass rate in SSLC examinations 2023-24, with 35 students securing distinction and 12 students securing first class.",
-      image: "https://images.pexels.com/photos/1205651/pexels-photo-1205651.jpeg?auto=compress&cs=tinysrgb&w=600",
+      image: "/kreis-3.jpg",
       year: "2023-24"
     },
     {
       title: "State Science Exhibition First Prize",
       description: "Our students won the first prize in the State Level Science Exhibition for their innovative project on 'Sustainable Agriculture using IoT'.",
-      image: "https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=600",
+      image: "/Schoo-event1.jpeg",
       year: "2023-24"
     },
     {
       title: "Mathematics Olympiad Success",
       description: "Five students qualified for the National Mathematics Olympiad, with Rajesh Kumar securing a gold medal at the state level.",
-      image: "https://images.pexels.com/photos/3184317/pexels-photo-3184317.jpeg?auto=compress&cs=tinysrgb&w=600",
+      image: "/School_Prayer.jpeg",
       year: "2023-24"
     },
     {
       title: "100% JEE/NEET Qualification",
       description: "All 15 students who appeared for JEE/NEET entrance coaching qualified in the preliminary examinations, with 5 securing ranks under 5000.",
-      image: "https://images.pexels.com/photos/3184644/pexels-photo-3184644.jpeg?auto=compress&cs=tinysrgb&w=600",
+      image: "/Computer_Lab-1.jpeg",
       year: "2023-24"
     }
   ];

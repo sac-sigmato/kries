@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '../components/Layout';
-import Contact from '../components/pages/Contact';
+import Contact from '../components/pages-comp/Contact';
 
 export default function ContactPage() {
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
-import AdminLayout from '../../../../components/admin/AdminLayout';
-import FacultyList from '../../../../components/admin/FacultyList';
+import AdminLayout from '../../../../components/admin-comp/AdminLayout';
+import FacultyList from '../../../../components/admin-comp/FacultyList';
 import ProtectedRoute from '../../../../components/ProtectedRoute';
 
 export default function FacultyListPage() {

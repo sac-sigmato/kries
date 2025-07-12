@@ -1,6 +1,6 @@
 import React from 'react';
-import AdminLayout from '../../components/admin/AdminLayout';
-import AdminDashboard from '../../components/admin/AdminDashboard';
+import AdminLayout from '../../components/admin-comp/AdminLayout';
+import AdminDashboard from '../../components/admin-comp/AdminDashboard';
 import ProtectedRoute from '../../components/ProtectedRoute';
 
 export default function AdminDashboardPage() {
