@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from '../../components/Layout';
 import { BookOpen, Code, Briefcase, Users, Star } from 'lucide-react';
+import InternalPageHeader from '@/components/pages-comp/InternalPageHeader';
 
 const StudentDevelopment: React.FC = () => {
   const programs = [
@@ -42,14 +43,13 @@ const StudentDevelopment: React.FC = () => {
     <Layout>
       <div className="bg-white">
         {/* Hero Section */}
-        <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">Student Development Program</h1>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-              Helping students grow academically, socially, and personally through innovative learning experiences.
-            </p>
-          </div>
-        </section>
+      
+
+        <InternalPageHeader
+          title="Student Development Program"
+          description=" Helping students grow academically, socially, and personally through innovative learning experiences.."
+          backgroundImageUrl="/g2.jpeg"
+        />
 
         {/* Program Overview Cards */}
         <section className="py-20">

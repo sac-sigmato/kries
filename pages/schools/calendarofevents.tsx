@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from '../../components/Layout';
 import { CalendarDays, Download, Stethoscope, Bus, BookOpenCheck } from 'lucide-react';
+import InternalPageHeader from '@/components/pages-comp/InternalPageHeader';
 
 interface EventItem {
   title: string;
@@ -59,7 +60,17 @@ const CalendarOfEvents: React.FC = () => {
     <Layout>
       <div className="bg-white">
         {/* Hero Section */}
-        <section className="bg-gradient-to-r from-green-600 to-green-800 text-white py-20">
+
+
+        <InternalPageHeader
+          title="Calendar of Events"
+          description="Stay informed about all important academic and co-curricular activities throughout the year."
+          backgroundImageUrl="/g2.jpeg"
+        />
+
+
+
+        {/* <section className="bg-gradient-to-r from-green-600 to-green-800 text-white py-20">
           <div className="max-w-7xl mx-auto px-4 text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-4">Calendar of Events</h1>
             <p className="text-xl text-green-100 max-w-2xl mx-auto">
@@ -73,7 +84,7 @@ const CalendarOfEvents: React.FC = () => {
               <Download className="w-4 h-4 mr-2" /> Download Full Academic Calendar
             </a>
           </div>
-        </section>
+        </section> */}
 
         {/* What's Next Banner */}
         <section className="bg-yellow-50 border-t border-b py-4 text-center text-sm text-yellow-900">

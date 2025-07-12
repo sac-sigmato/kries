@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from '../../components/Layout';
 import { Award, Star, TrendingUp, Users } from 'lucide-react';
+import SSLCToppersSection from '@/components/pages-comp/SSLCToppers';
 
 const AcademicAchievements: React.FC = () => {
   // Sample data for academic achievements
@@ -108,40 +109,8 @@ const AcademicAchievements: React.FC = () => {
         </section>
 
         {/* SSLC Toppers Section */}
-        <section className="py-20 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">SSLC Toppers</h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Recognizing our top performers in the SSLC examinations.
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[
-                { name: "Priya Sharma", marks: 625, percentage: 98.5, year: "2023-24", photo: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=300" },
-                { name: "Rajesh Kumar", marks: 620, percentage: 97.8, year: "2023-24", photo: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=300" },
-                { name: "Anita Reddy", marks: 618, percentage: 97.5, year: "2023-24", photo: "https://images.pexels.com/photos/1181519/pexels-photo-1181519.jpeg?auto=compress&cs=tinysrgb&w=300" }
-              ].map((topper, index) => (
-                <div key={index} className="bg-white rounded-xl shadow-lg p-6 text-center">
-                  <div className="mb-4">
-                    <img 
-                      src={topper.photo} 
-                      alt={topper.name} 
-                      className="w-32 h-32 object-cover rounded-full mx-auto border-4 border-blue-100"
-                    />
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{topper.name}</h3>
-                  <div className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold inline-block mb-2">
-                    {topper.percentage}%
-                  </div>
-                  <p className="text-gray-600">Total Marks: {topper.marks}/625</p>
-                  <p className="text-gray-500 text-sm mt-2">Academic Year: {topper.year}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <SSLCToppersSection/>
+
 
         {/* Academic Year Results */}
         <section className="py-20">
