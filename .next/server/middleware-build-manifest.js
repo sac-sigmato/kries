@@ -19,20 +19,15 @@ self.__BUILD_MANIFEST = {
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/admin": [
+    "/achievements/cultural": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/admin.js"
+      "static/chunks/pages/achievements/cultural.js"
     ],
-    "/schools/calendarofevents": [
+    "/connect/alumni": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/schools/calendarofevents.js"
-    ],
-    "/schools/statistics": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/schools/statistics.js"
+      "static/chunks/pages/connect/alumni.js"
     ]
   },
   "ampFirstPages": []

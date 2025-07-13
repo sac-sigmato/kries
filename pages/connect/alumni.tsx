@@ -61,7 +61,27 @@ const AlumniConnect: React.FC = () => {
   ];
   const [showForm, setShowForm] = useState(false);
 
-  const featuredAlumni = [
+  const alumniList = [
+    { name: "Anu", studying: "BSc Nursing", college: "SNR College Kolar", classOf: 2022 },
+    { name: "Bhavya R", studying: "MBBS", college: "Sri Atal Bihari College, Shivajinagar", classOf: 2022 },
+    { name: "Gaganashree", studying: "Fashion Designing", college: "Franklin Institute Bangalore", classOf: 2022 },
+    { name: "Ganavi", studying: "BSc Agriculture", college: "GKVK, Chintamani", classOf: 2022 },
+    { name: "Nethravati", studying: "Engineering", college: "Vemana Institute of Technology, Bangalore", classOf: 2022 },
+    { name: "Rakshitha KR", studying: "Law", college: "Basaveshwara Law College", classOf: 2022 },
+    { name: "Sanjana R", studying: "BSc", college: "Pragathi First Grade College", classOf: 2022 },
+    { name: "Vanajakshi CK", studying: "BCom", college: "First Grade College, Hoskote", classOf: 2022 },
+    { name: "Lavanya", studying: "Engineering", college: "RC College, Bangalore", classOf: 2022 },
+    { name: "Mohita M", studying: "BBM", college: "Presidency University, Bangalore", classOf: 2022 },
+    { name: "Bhanupriya", studying: "BCA", college: "Presidency University, Bangalore", classOf: 2022 },
+    { name: "Anushree", studying: "BA", college: "Govt. First Grade College, Chintamani", classOf: 2022 },
+    { name: "Navyashree", studying: "BCom", college: "Maharani College, Bangalore", classOf: 2022 },
+    { name: "Sandhya L", studying: "BSc", college: "Dolphin Degree College", classOf: 2022 },
+    { name: "Chandrika", studying: "BSc Nursing", college: "Channegowda Nursing College", classOf: 2022 },
+  ];
+  const boyImages = ["/al5.webp", "/al2.webp", "/al5.webp", "/al1.webp"];
+  const girlImages = ["/al1.webp", "/al2.webp", "/al4.webp", "/al5.webp"]; // can be cycled or one
+
+  const featuredAlumni2 = [
     {
       id: 1,
       name: "Dr. Bhaskar Babu G",
@@ -70,7 +90,7 @@ const AlumniConnect: React.FC = () => {
       qualification: "Ph.D. in Education Administration",
       experience: "25 years",
       specialization: "Educational Leadership, Rural Education Policy",
-      image: "/al1.webp",
+      image: "/al9.webp",
       email: "director@kreis.kar.nic.in",
       phone: "+91 80 2234 5678",
       achievements: [
@@ -87,7 +107,7 @@ const AlumniConnect: React.FC = () => {
       qualification: "M.Ed., Ph.D. in Curriculum Development",
       experience: "20 years",
       specialization: "Curriculum Design, Teacher Training",
-      image: "/al2.webp",
+      image: "/al8.webp",
       email: "academic@kreis.kar.nic.in",
       phone: "+91 80 2234 5679",
       achievements: [
@@ -99,7 +119,7 @@ const AlumniConnect: React.FC = () => {
     
     {
       id: 4,
-      name: "Suresh Reddy",
+      name: "Neha Rao",
       position: "Sr Product Manager",
       department: "Technology",
       qualification: "MBA, B.Tech",
@@ -173,7 +193,7 @@ const AlumniConnect: React.FC = () => {
       qualification: "M.P.Ed., Sports Coaching Certification",
       experience: "14 years",
       specialization: "Sports Training, Physical Fitness, Athletic Development",
-      image: "/al8.webp",
+      image: "/al2.webp",
       email: "sports@kreis.kar.nic.in",
       phone: "+91 80 2234 5684",
       achievements: [
@@ -190,7 +210,7 @@ const AlumniConnect: React.FC = () => {
       qualification: "M.A. History, M.A. Political Science, B.Ed.",
       experience: "17 years",
       specialization: "Indian History, Civics, Social Studies Methodology",
-      image: "/al9.webp",
+      image: "/al1.webp",
       email: "socialscience@kreis.kar.nic.in",
       phone: "+91 80 2234 5685",
       achievements: [
@@ -269,8 +289,43 @@ const AlumniConnect: React.FC = () => {
           </div>
         </section>
 
+
+       
+
+<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+  {alumniList.map((alum, idx) => {
+    // Define male indexes
+    const maleIndexes = [5, 6, 7, 8]; // as per your mapping
+    const isMale = maleIndexes.includes(idx);
+
+    // Assign image
+    const imageSrc = isMale
+      ? boyImages[maleIndexes.indexOf(idx)] // get exact boy image
+      : girlImages[idx % girlImages.length]; // cycle girl images
+
+    return (
+      <div
+        key={idx}
+        className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center"
+      >
+        <img
+          src={imageSrc}
+          alt={alum.name}
+          className="w-24 h-24 rounded-full object-cover mb-4 border-2 border-blue-600"
+        />
+        <h3 className="text-lg font-bold text-gray-900 mb-1">{alum.name}</h3>
+        <p className="text-sm text-blue-700 font-medium mb-1">{alum.studying}</p>
+        <p className="text-sm text-gray-600 mb-2">{alum.college}</p>
+        <div className="text-sm text-gray-500 font-medium">🎓 Class of {alum.classOf}</div>
+      </div>
+    );
+  })}
+</div>
+
+
+
         {/* Featured Alumni Section */}
-        <section className="py-20">
+        {/* <section className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -307,7 +362,7 @@ const AlumniConnect: React.FC = () => {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Benefits Section */}
         <section className="py-20 bg-gray-50">

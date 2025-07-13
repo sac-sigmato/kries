@@ -2,14 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/schools/calendarofevents": "pages/schools/calendarofevents.js",
-  "/schools/achievements": "pages/schools/achievements.js",
-  "/api/auth/me": "pages/api/auth/me.js",
-  "/api/contact-info": "pages/api/contact-info.js",
-  "/api/blogs": "pages/api/blogs.js",
-  "/api/footer-logos": "pages/api/footer-logos.js",
-  "/api/gallery": "pages/api/gallery.js",
-  "/api/events": "pages/api/events.js",
-  "/admin": "pages/admin.js",
-  "/schools/statistics": "pages/schools/statistics.js"
+  "/achievements/cultural": "pages/achievements/cultural.js",
+  "/connect/alumni": "pages/connect/alumni.js",
+  "/achievements/sports": "pages/achievements/sports.js"
 }

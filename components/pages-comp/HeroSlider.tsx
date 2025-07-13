@@ -50,8 +50,8 @@ const HeroSlider = () => {
   }, [sliderItems]);
 
   return (
-    <section className="relative h-[360px] sm:h-[480px] md:h-[550px] overflow-hidden">
-      {loading ? (
+<section className="relative h-[360px] sm:h-[480px] md:h-[550px] lg:h-[550px] xl:h-[550px] overflow-hidden">
+{loading ? (
         <div className="h-[550px] flex items-center justify-center bg-gray-100">
           <div className="w-10 h-10 border-4 border-blue-500 border-t-transparent rounded-full animate-spin" />
         </div>
@@ -60,14 +60,15 @@ const HeroSlider = () => {
           {sliderItems.map((slide, index) => (
             <div
               key={slide.id}
-              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-                index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
-              }`}
+              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                }`}
             >
-              <div
-                className="h-[550px] w-full bg-cover bg-center"
-                style={{ backgroundImage: `url(${slide.image_url})` }}
-              >
+              <div className="relative h-[550px] w-full overflow-hidden">
+              <img
+                  src={slide.image_url}
+                  alt={slide.title}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
                 {/* Gradient only at bottom for text */}
                 {/* <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" /> */}
 
@@ -94,18 +95,17 @@ const HeroSlider = () => {
 
           {/* Dots */}
           {sliderItems.length > 1 && (
-           <div className="absolute top-1/2 right-4 transform -translate-y-1/2 flex flex-col space-y-2 z-30">
-           {sliderItems.map((_, i) => (
-             <button
-               key={i}
-               onClick={() => setCurrentSlide(i)}
-               className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                 i === currentSlide ? 'bg-white' : 'bg-white/50'
-               }`}
-             />
-           ))}
-         </div>
-         
+            <div className="absolute top-1/2 right-4 transform -translate-y-1/2 flex flex-col space-y-2 z-30">
+              {sliderItems.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrentSlide(i)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${i === currentSlide ? 'bg-white' : 'bg-white/50'
+                    }`}
+                />
+              ))}
+            </div>
+
           )}
         </div>
       ) : (

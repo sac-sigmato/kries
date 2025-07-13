@@ -49,7 +49,6 @@ export default function SSLCPassSection() {
             <thead className="bg-blue-100">
               <tr>
                 <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">S.NO</th>
-                <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">SATS Number</th>
                 <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Academic Year</th>
                 <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Percentage</th>
               </tr>
@@ -58,7 +57,6 @@ export default function SSLCPassSection() {
               {sslcData.map((row, i) => (
                 <tr key={i} className="hover:bg-blue-50 transition">
                   <td className="px-6 py-4 text-sm text-gray-800 font-medium">{i + 1}</td>
-                  <td className="px-6 py-4 text-sm text-gray-700">{row.sats}</td>
                   <td className="px-6 py-4 text-sm text-gray-700">{row.year}</td>
                   <td className="px-6 py-4 text-sm font-bold text-green-600">{row.percentage}%</td>
                 </tr>

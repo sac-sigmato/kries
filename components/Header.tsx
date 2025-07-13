@@ -1,7 +1,8 @@
-import React, { useState, useContext, createContext } from 'react';
+import React, { useState, useContext, createContext, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { Menu, X, Plus, Minus, Globe, LogIn, Users, Briefcase, Heart, ChevronDown, FileText } from 'lucide-react';
+import GoogleTranslate from './pages-comp/useGoogleTranslate';
 
 // Language and Font Context
 interface AppContextType {
@@ -17,6 +18,16 @@ const AppContext = createContext<AppContextType>({
   setLanguage: () => { },
   setFontSize: () => { },
 });
+
+declare global {
+  interface Window {
+    googleTranslateElementInit?: () => void;
+    google?: any;
+  }
+}
+
+
+
 
 export const useAppContext = () => useContext(AppContext);
 
@@ -37,8 +48,9 @@ const Header: React.FC = () => {
   const router = useRouter();
   const { language, fontSize, setLanguage, setFontSize } = useAppContext();
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-
-
+  
+  const [currentLang, setCurrentLang] = useState('en');
+  
   const navItems = [
     { path: '/', label: { en: 'Home', kn: 'ಮುಖ್ಯ' } },
     { path: '/about', label: { en: 'About', kn: 'ನಮ್ಮ ಬಗ್ಗೆ' } },
@@ -101,9 +113,12 @@ const Header: React.FC = () => {
     }
   };
 
-  const toggleLanguage = () => {
-    setLanguage(language === 'en' ? 'kn' : 'en');
-  };
+  
+  
+  
+
+
+
 
   return (
     <div style={{ fontSize: `${fontSize}px` }}>
@@ -144,33 +159,20 @@ const Header: React.FC = () => {
               {/* Right side - Controls and Login */}
               <div className="flex items-center space-x-4">
                 {/* Font Size Controls */}
-                <div className="flex items-center space-x-2">
-                  <button
-                    onClick={decreaseFontSize}
-                    className="p-1 text-gray-600 hover:text-gray-800 transition-colors"
-                    title="Decrease font size"
-                  >
-                    <Minus className="h-3 w-3" />
-                  </button>
-                  <span className="text-xs text-gray-600">A</span>
-                  <button
-                    onClick={increaseFontSize}
-                    className="p-1 text-gray-600 hover:text-gray-800 transition-colors"
-                    title="Increase font size"
-                  >
-                    <Plus className="h-3 w-3" />
-                  </button>
-                </div>
+                
 
                 {/* Language Switcher */}
-                <button
+                {/* <button
                   onClick={toggleLanguage}
                   className="flex items-center space-x-1 text-xs text-gray-600 hover:text-gray-800 transition-colors"
                   title="Switch language"
                 >
                   <Globe className="h-3 w-3" />
-                  <span>{language === "en" ? "ಕನ್ನಡ" : "English"}</span>
-                </button>
+                  <span>{currentLang === 'en' ? "ಕನ್ನಡ" : "English"}</span>
+                  </button> */}
+
+                  <GoogleTranslate />
+
 
                 {/* Login Dropdown */}
                 <div className="relative">
@@ -597,7 +599,7 @@ const Header: React.FC = () => {
 
         {/* Custom CSS for flashing animation */}
       </header>
-
+      <div id="google_translate_element" className="hidden" />
       {/* Announcement Banner */}
       <div className="bg-gradient-to-r from-red-500 to-[#c5855e] text-white py-2 shadow-md overflow-hidden announcement-banner">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
