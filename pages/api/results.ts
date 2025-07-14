@@ -37,7 +37,32 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           return res.status(500).json({ message: 'Failed to create result' });
         }
 
-        return res.status(201).json(newResult);
+       // ✅ Email Notification (if email is present in payload)
+  if (newResult.email) {
+    try {
+      const { Resend } = await import('resend');
+      const resend = new Resend("re_SUwH5UtS_MPyDv5vux4xS31SJSvFjLNwt");
+
+      await resend.emails.send({
+        from: 'KRC School <no-reply@kreis.school>',
+        to: "nuthan.raghunath@sigmato.com",
+        subject: '🎓 Your Result has been Published!',
+        html: `
+          <h2>Dear ${newResult.student_name},</h2>
+          <p>Your result for <strong>${newResult.exam_type.replace(/_/g, ' ')}</strong> (${newResult.academic_year}) has been published.</p>
+          <p><strong>Percentage:</strong> ${newResult.percentage}%<br/><strong>Grade:</strong> ${newResult.grade}</p>
+          <p>Student ID: ${newResult.student_id}</p>
+          <br/>
+          <p>Regards,<br/>Kittur Rani Chennamma School</p>
+        `,
+      });
+    } catch (err) {
+      console.error('Failed to send result email:', err);
+      // Continue without throwing; don't block result creation
+    }
+  }
+
+  return res.status(201).json(newResult);
 
       case 'PUT':
         const { id } = req.query;

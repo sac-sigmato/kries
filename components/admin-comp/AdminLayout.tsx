@@ -39,7 +39,7 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
 
   const menuItems = [
     { path: '/admin', label: 'Dashboard', icon: LayoutDashboard },
-    { path: '/admin/home', label: 'Home Page', icon: Home },
+    // { path: '/admin/home', label: 'Home Page', icon: Home },
     { path: '/admin/cms', label: 'CMS', icon: Layers },
     { path: '/admin/events', label: 'Events', icon: Calendar },
     { path: '/admin/results', label: 'Results', icon: GraduationCap },

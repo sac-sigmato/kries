@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import AdminLayout from '../../components/admin-comp/AdminLayout';
 import ProtectedRoute from '../../components/ProtectedRoute';
-import { GraduationCap, Plus, Edit, Trash2, Download, Upload, Search } from 'lucide-react';
+import { GraduationCap, Plus, Edit, Trash2, Download, Upload, Search, X } from 'lucide-react';
 
 interface Result {
   id: string;
@@ -33,6 +33,8 @@ const AdminResultsPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [filterClass, setFilterClass] = useState('');
   const [filterExamType, setFilterExamType] = useState('');
+  const [showImportDialog, setShowImportDialog] = useState(false);
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
 
   const [formData, setFormData] = useState({
     student_name: '',
@@ -77,6 +79,28 @@ const AdminResultsPage: React.FC = () => {
       console.error('Error fetching results:', error);
     } finally {
       setLoading(false);
+    }
+  };
+
+
+  const handleImportSubmit = async () => {
+    if (!selectedFile) return;
+    const formData = new FormData();
+    formData.append('file', selectedFile);
+
+    try {
+      const response = await fetch('/api/results/import', {
+        method: 'POST',
+        body: formData,
+      });
+      if (response.ok) {
+        await fetchResults();
+        setShowImportDialog(false);
+        setSelectedFile(null);
+        alert('Results imported successfully');
+      }
+    } catch (error) {
+      console.error('Import failed', error);
     }
   };
 
@@ -130,8 +154,13 @@ const AdminResultsPage: React.FC = () => {
       });
 
       if (response.ok) {
-        await fetchResults();
-        resetForm();
+       
+          await fetchResults();
+        
+         
+          resetForm();
+       
+        
       }
     } catch (error) {
       console.error('Error saving result:', error);
@@ -248,7 +277,10 @@ const AdminResultsPage: React.FC = () => {
                 <Download className="h-4 w-4 mr-2" />
                 Export
               </button>
-              <button className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors flex items-center">
+              <button
+                className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors flex items-center"
+                onClick={() => setShowImportDialog(true)}
+              >
                 <Upload className="h-4 w-4 mr-2" />
                 Import
               </button>
@@ -261,6 +293,11 @@ const AdminResultsPage: React.FC = () => {
               </button>
             </div>
           </div>
+
+
+
+
+          
 
           {/* Filters */}
           <div className="bg-white rounded-lg shadow-md p-6">
@@ -318,6 +355,42 @@ const AdminResultsPage: React.FC = () => {
               </div>
             </div>
           </div>
+
+
+          {showImportDialog && (
+            <div className="fixed inset-0 bg-black bg-opacity-40 z-50 flex items-center justify-center">
+              <div className="bg-white rounded-lg shadow-lg p-6 w-full max-w-md relative">
+                <button
+                  onClick={() => setShowImportDialog(false)}
+                  className="absolute top-2 right-2 text-gray-500 hover:text-gray-800"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+                <h2 className="text-lg font-bold mb-4 text-gray-800">Import Results from Excel</h2>
+                <input
+                  type="file"
+                  accept=".xlsx,.xls"
+                  onChange={(e) => setSelectedFile(e.target.files?.[0] || null)}
+                  className="mb-4 border border-gray-300 p-2 rounded w-full"
+                />
+                <div className="flex justify-end space-x-2">
+                  <button
+                    onClick={() => setShowImportDialog(false)}
+                    className="bg-gray-300 text-gray-700 px-4 py-2 rounded hover:bg-gray-400"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    onClick={handleImportSubmit}
+                    className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+                    disabled={!selectedFile}
+                  >
+                    Upload
+                  </button>
+                </div>ƒ
+              </div>
+            </div>
+          )}
 
           {/* Result Form */}
           {showForm && (

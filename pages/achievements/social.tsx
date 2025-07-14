@@ -140,94 +140,10 @@ const SocialInitiatives: React.FC = () => {
         </section>
 
         {/* Student Leadership */}
-        <section className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">Student Leadership in Social Initiatives</h2>
-                <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                  We believe in student-led social initiatives that empower them to identify community needs, plan interventions, and implement solutions. This approach not only benefits the community but also develops leadership, empathy, and problem-solving skills in our students.
-                </p>
-                <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                  Our Social Service Club coordinates these activities with guidance from faculty mentors. Students are encouraged to propose new initiatives based on their observations and interactions with the community.
-                </p>
-                <div className="bg-green-50 p-6 rounded-lg">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">Join Our Initiatives</h3>
-                  <p className="text-gray-700 mb-4">We welcome community members, parents, and alumni to participate in and support our social initiatives.</p>
-                  <button className="bg-green-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-green-700 transition-colors">
-                    Get Involved
-                  </button>
-                </div>
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                {[
-                  "https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg?auto=compress&cs=tinysrgb&w=600",
-                  "https://images.pexels.com/photos/4503751/pexels-photo-4503751.jpeg?auto=compress&cs=tinysrgb&w=600",
-                  "https://images.pexels.com/photos/7516363/pexels-photo-7516363.jpeg?auto=compress&cs=tinysrgb&w=600",
-                  "https://images.pexels.com/photos/6098051/pexels-photo-6098051.jpeg?auto=compress&cs=tinysrgb&w=600"
-                ].map((image, index) => (
-                  <div key={index} className="overflow-hidden rounded-lg shadow-md">
-                    <img 
-                      src={image} 
-                      alt={`Social initiative ${index + 1}`} 
-                      className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
+    
 
         {/* Testimonials */}
-        <section className="py-20 bg-green-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Community Testimonials</h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                What community members say about our social initiatives.
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[
-                {
-                  name: "Ramesh Patil",
-                  role: "Village Head, Devanahalli",
-                  testimonial: "The cleanliness drive organized by the school students has transformed our village. Their enthusiasm and dedication have inspired our community members to maintain cleanliness.",
-                  image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=300"
-                },
-                {
-                  name: "Lakshmi Devi",
-                  role: "Senior Citizen, Balepura",
-                  testimonial: "At my age, I never thought I would learn to use a smartphone. Thanks to the digital literacy program by these young students, I can now video call my grandchildren and use digital payment apps.",
-                  image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=300"
-                },
-                {
-                  name: "Dr. Suresh Kumar",
-                  role: "Medical Officer, PHC Devanahalli",
-                  testimonial: "The health awareness camp organized by the school was extremely effective. The students' creative approach to communicating health information made a significant impact on the community.",
-                  image: "https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=300"
-                }
-              ].map((testimonial, index) => (
-                <div key={index} className="bg-white p-8 rounded-xl shadow-lg">
-                  <div className="flex items-center mb-6">
-                    <img
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      className="w-16 h-16 rounded-full object-cover mr-4"
-                    />
-                    <div>
-                      <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
-                      <p className="text-green-600 text-sm">{testimonial.role}</p>
-                    </div>
-                  </div>
-                  <p className="text-gray-600 italic">"{testimonial.testimonial}"</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+     
       </div>
     </Layout>
   );

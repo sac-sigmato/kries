@@ -78,8 +78,7 @@ const AlumniConnect: React.FC = () => {
     { name: "Sandhya L", studying: "BSc", college: "Dolphin Degree College", classOf: 2022 },
     { name: "Chandrika", studying: "BSc Nursing", college: "Channegowda Nursing College", classOf: 2022 },
   ];
-  const boyImages = ["/al5.webp", "/al2.webp", "/al5.webp", "/al1.webp"];
-  const girlImages = ["/al1.webp", "/al2.webp", "/al4.webp", "/al5.webp"]; // can be cycled or one
+  const Images = ["/al13.jpg", "/al14.jpg", "/al15.jpg", "/al16.jpg","/al17.jpg","/al18.jpg","/al19.jpg","/al20.jpg","/al21.jpg","/al22.jpg","/al24.jpg","/al1.webp", "/al2.webp", "/al4.webp", "/al5.webp"]; // can be cycled or one
 
   const featuredAlumni2 = [
     {
@@ -292,16 +291,9 @@ const AlumniConnect: React.FC = () => {
 
        
 
-<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 max-w-7xl mx-auto sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
   {alumniList.map((alum, idx) => {
-    // Define male indexes
-    const maleIndexes = [5, 6, 7, 8]; // as per your mapping
-    const isMale = maleIndexes.includes(idx);
-
-    // Assign image
-    const imageSrc = isMale
-      ? boyImages[maleIndexes.indexOf(idx)] // get exact boy image
-      : girlImages[idx % girlImages.length]; // cycle girl images
+    const imageSrc = Images[idx % Images.length]; // just cycle through the Images array
 
     return (
       <div
@@ -321,6 +313,70 @@ const AlumniConnect: React.FC = () => {
     );
   })}
 </div>
+
+<section className="p-6 max-w-7xl mx-auto overflow-x-auto">
+  <h2 className="text-2xl font-semibold mb-4">Alumni Students - 2021-22</h2>
+  <div className="overflow-auto rounded-md border border-gray-300">
+    <table className="min-w-full border-collapse border text-sm text-left">
+      <thead className="bg-gray-100 text-gray-700">
+        <tr>
+          <th className="border p-2">Sl No</th>
+          <th className="border p-2">Student Name</th>
+          <th className="border p-2">Passing Year</th>
+          <th className="border p-2">Studying In</th>
+          <th className="border p-2">Phone Number</th>
+          <th className="border p-2">College Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td className="border p-2">1</td><td className="border p-2">Ahalya</td><td className="border p-2">2021-22</td><td className="border p-2">BSc</td><td className="border p-2">9148436572</td><td className="border p-2">Pragathi First Grade College, Vijayapura</td></tr>
+        <tr><td className="border p-2">2</td><td className="border p-2">Aishwarya</td><td className="border p-2">2021-22</td><td className="border p-2">BA</td><td className="border p-2">9740301278</td><td className="border p-2">Government First Grade College, Kolar</td></tr>
+        <tr><td className="border p-2">3</td><td className="border p-2">Ananya</td><td className="border p-2">2021-22</td><td className="border p-2">BCOM</td><td className="border p-2"></td><td className="border p-2">Maruthi College, Hosakote</td></tr>
+        <tr><td className="border p-2">4</td><td className="border p-2">Anu A</td><td className="border p-2">2021-22</td><td className="border p-2">BSc Nursing</td><td className="border p-2">8123556246</td><td className="border p-2">SNR College and Hospital, Kolar</td></tr>
+        <tr><td className="border p-2">5</td><td className="border p-2">Anushree H S</td><td className="border p-2">2021-22</td><td className="border p-2">BA</td><td className="border p-2">7676344708</td><td className="border p-2">Govt First Grade College, Chintamani</td></tr>
+        <tr><td className="border p-2">6</td><td className="border p-2">Archana</td><td className="border p-2">2021-22</td><td className="border p-2">BA</td><td className="border p-2">9731711245</td><td className="border p-2">Chinthamani Govt Girls College</td></tr>
+        <tr><td className="border p-2">7</td><td className="border p-2">Bhanupriya N B</td><td className="border p-2">2021-22</td><td className="border p-2">BCA</td><td className="border p-2">9353724244</td><td className="border p-2">Presidency University, Rajanakunte</td></tr>
+        <tr><td className="border p-2">8</td><td className="border p-2">Bhavya R</td><td className="border p-2">2021-22</td><td className="border p-2">MBBS</td><td className="border p-2">7022590480</td><td className="border p-2">Shri Atal Bihari Vajpayee Medical College, Shivajinagar</td></tr>
+        <tr><td className="border p-2">9</td><td className="border p-2">Bhumika N R</td><td className="border p-2">2021-22</td><td className="border p-2">BSc</td><td className="border p-2">7676404283</td><td className="border p-2">First Grade College, Kolar</td></tr>
+        <tr><td className="border p-2">10</td><td className="border p-2">Chaithanya</td><td className="border p-2">2021-22</td><td className="border p-2">BCOM</td><td className="border p-2">7411606503</td><td className="border p-2">Sree Aditya Degree College, Hosakote</td></tr>
+        <tr><td className="border p-2">11</td><td className="border p-2">Chandrika R</td><td className="border p-2">2021-22</td><td className="border p-2">BSc Nursing</td><td className="border p-2">9148354070</td><td className="border p-2">Sri Channe Gowda College of Nursing</td></tr>
+<tr><td className="border p-2">12</td><td className="border p-2">Gaganashree S</td><td className="border p-2">2021-22</td><td className="border p-2">Diploma in Fashion</td><td className="border p-2">6366593449</td><td className="border p-2">Frankfinn Institute, MG Road</td></tr>
+<tr><td className="border p-2">13</td><td className="border p-2">Ganavi S</td><td className="border p-2">2021-22</td><td className="border p-2">BSc Ag</td><td className="border p-2">9741707603</td><td className="border p-2">GVKK Chintamani</td></tr>
+<tr><td className="border p-2">14</td><td className="border p-2">Gowthami N</td><td className="border p-2">2021-22</td><td className="border p-2"></td><td className="border p-2"></td><td className="border p-2">GFGC Devanahalli</td></tr>
+<tr><td className="border p-2">15</td><td className="border p-2">Keerthi M</td><td className="border p-2">2021-22</td><td className="border p-2"></td><td className="border p-2"></td><td className="border p-2"></td></tr>
+<tr><td className="border p-2">16</td><td className="border p-2">Krupa C V</td><td className="border p-2">2021-22</td><td className="border p-2">BCOM</td><td className="border p-2"></td><td className="border p-2">GFGC Hosakote</td></tr>
+<tr><td className="border p-2">17</td><td className="border p-2">Lavanya H N</td><td className="border p-2">2021-22</td><td className="border p-2">BE</td><td className="border p-2">9901988293</td><td className="border p-2">RC College, Bengaluru</td></tr>
+<tr><td className="border p-2">18</td><td className="border p-2">Likhitha D N</td><td className="border p-2">2021-22</td><td className="border p-2"></td><td className="border p-2">8453844744</td><td className="border p-2"></td></tr>
+<tr><td className="border p-2">19</td><td className="border p-2">Likhitha K</td><td className="border p-2">2021-22</td><td className="border p-2">MBBS</td><td className="border p-2">8618497537</td><td className="border p-2">Shri Atal Bihari Vajpayee Medical College, Shivajinagar</td></tr>
+<tr><td className="border p-2">20</td><td className="border p-2">Mathira B A</td><td className="border p-2">2021-22</td><td className="border p-2"></td><td className="border p-2"></td><td className="border p-2"></td></tr>
+<tr><td className="border p-2">21</td><td className="border p-2">Manushree R</td><td className="border p-2">2021-22</td><td className="border p-2">Diploma in Engineering</td><td className="border p-2">7795210492</td><td className="border p-2">Sri Venkateshwara Polytechnic, Bannerghatta</td></tr>
+<tr><td className="border p-2">22</td><td className="border p-2">Meghana R</td><td className="border p-2">2021-22</td><td className="border p-2"></td><td className="border p-2">9535141767</td><td className="border p-2">Government Engineering College, Chamarajanagara</td></tr>
+<tr><td className="border p-2">23</td><td className="border p-2">Mohitha N</td><td className="border p-2">2021-22</td><td className="border p-2">BBM</td><td className="border p-2">9945141947</td><td className="border p-2">Presidency University, Rajanakunte</td></tr>
+<tr><td className="border p-2">24</td><td className="border p-2">Nandini E</td><td className="border p-2">2021-22</td><td className="border p-2"></td><td className="border p-2">9901617950</td><td className="border p-2"></td></tr>
+<tr><td className="border p-2">25</td><td className="border p-2">Navyashree Y</td><td className="border p-2">2021-22</td><td className="border p-2">BCOM</td><td className="border p-2">8722997756</td><td className="border p-2">Maha Rani College</td></tr>
+<tr><td className="border p-2">26</td><td className="border p-2">Nethravathi K</td><td className="border p-2">2021-22</td><td className="border p-2">BE</td><td className="border p-2">8951791541</td><td className="border p-2">Vemana Institute of Technology, Koramangala</td></tr>
+<tr><td className="border p-2">27</td><td className="border p-2">Nethravathi M</td><td className="border p-2">2021-22</td><td className="border p-2">BE</td><td className="border p-2">8867790364</td><td className="border p-2">SVCE Bangalore</td></tr>
+<tr><td className="border p-2">28</td><td className="border p-2">Nithyashree M</td><td className="border p-2">2021-22</td><td className="border p-2">BCA</td><td className="border p-2">7338254668</td><td className="border p-2">CBIT Kolar</td></tr>
+<tr><td className="border p-2">29</td><td className="border p-2">Preethi N</td><td className="border p-2">2021-22</td><td className="border p-2">BSc</td><td className="border p-2"></td><td className="border p-2">GFGC Devanahalli</td></tr>
+<tr><td className="border p-2">30</td><td className="border p-2">Pruthi V</td><td className="border p-2">2021-22</td><td className="border p-2">MBBS (Coaching)</td><td className="border p-2">8867054368</td><td className="border p-2">Vaidhya Academy</td></tr>
+<tr><td className="border p-2">31</td><td className="border p-2">Rakshitha K R</td><td className="border p-2">2021-22</td><td className="border p-2">LLB</td><td className="border p-2">6360297889</td><td className="border p-2">Basaveswara Law College, Kolar</td></tr>
+<tr><td className="border p-2">32</td><td className="border p-2">Ruchitha B A</td><td className="border p-2">2021-22</td><td className="border p-2"></td><td className="border p-2">8618506060</td><td className="border p-2">Pragathi First Grade College, Vijayapura</td></tr>
+<tr><td className="border p-2">33</td><td className="border p-2">Sakshi</td><td className="border p-2">2021-22</td><td className="border p-2">BSc</td><td className="border p-2">7829296379</td><td className="border p-2">First Grade Degree College, Sri Kurpura</td></tr>
+<tr><td className="border p-2">34</td><td className="border p-2">Sandhyala</td><td className="border p-2">2021-22</td><td className="border p-2">BSc</td><td className="border p-2">9380003632</td><td className="border p-2">Dolphins Degree College, Sidlagatta</td></tr>
+<tr><td className="border p-2">35</td><td className="border p-2">Sanjana R</td><td className="border p-2">2021-22</td><td className="border p-2">BSc</td><td className="border p-2">8618873442</td><td className="border p-2">Pragathi First Grade College</td></tr>
+<tr><td className="border p-2">36</td><td className="border p-2">Sanjana S</td><td className="border p-2">2021-22</td><td className="border p-2">BSc</td><td className="border p-2">9108602335</td><td className="border p-2">Women’s College, Chintamani</td></tr>
+<tr><td className="border p-2">37</td><td className="border p-2">Sireesha B S</td><td className="border p-2">2021-22</td><td className="border p-2"></td><td className="border p-2"></td><td className="border p-2"></td></tr>
+<tr><td className="border p-2">38</td><td className="border p-2">Sunanda M</td><td className="border p-2">2021-22</td><td className="border p-2">BSc Nursing</td><td className="border p-2">9035677266</td><td className="border p-2">St. John College, Bangalore</td></tr>
+<tr><td className="border p-2">39</td><td className="border p-2">Sushma N</td><td className="border p-2">2021-22</td><td className="border p-2"></td><td className="border p-2"></td><td className="border p-2">Inspire College</td></tr>
+<tr><td className="border p-2">40</td><td className="border p-2">Swathi K</td><td className="border p-2">2021-22</td><td className="border p-2">BSc</td><td className="border p-2">9880292040</td><td className="border p-2">Gnana Ganga College, Bengaluru</td></tr>
+<tr><td className="border p-2">41</td><td className="border p-2">Trishla C S</td><td className="border p-2">2021-22</td><td className="border p-2">BSc</td><td className="border p-2"></td><td className="border p-2">First Grade Degree College, Hosakote</td></tr>
+<tr><td className="border p-2">42</td><td className="border p-2">Vanajakshi C K</td><td className="border p-2">2021-22</td><td className="border p-2">BCOM</td><td className="border p-2"></td><td className="border p-2">First Grade Degree College, Hosakote</td></tr>
+
+      </tbody>
+    </table>
+  </div>
+</section>
+
 
 
 

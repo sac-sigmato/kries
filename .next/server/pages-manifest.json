@@ -2,7 +2,6 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/achievements/cultural": "pages/achievements/cultural.js",
-  "/connect/alumni": "pages/connect/alumni.js",
-  "/achievements/sports": "pages/achievements/sports.js"
+  "/achievements/social": "pages/achievements/social.js",
+  "/connect/alumni": "pages/connect/alumni.js"
 }
