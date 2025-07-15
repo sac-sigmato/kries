@@ -251,11 +251,11 @@ const About: React.FC = () => {
                 education.
               </p>
             </div>
-            <div className="relative">
+            <div className="relative]">
               <img
-                src="https://getmycollege.in/wp-content/uploads/2025/06/School-Main-Block-Pic-1-1024x768.png?auto=compress&cs=tinysrgb&w=800"
+                src="/about.jpeg"
                 alt="Students in classroom"
-                className="rounded-lg shadow-xl"
+                className="rounded-lg shadow-xl h-[350px] w-full object-cover"
               />
               <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-lg shadow-xl">
                 <div className="flex items-center space-x-4">

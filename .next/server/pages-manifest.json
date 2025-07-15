@@ -2,6 +2,13 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/achievements/social": "pages/achievements/social.js",
-  "/connect/alumni": "pages/connect/alumni.js"
+  "/": "pages/index.js",
+  "/about/kreis": "pages/about/kreis.js",
+  "/api/blogs": "pages/api/blogs.js",
+  "/api/auth/me": "pages/api/auth/me.js",
+  "/api/contact-info": "pages/api/contact-info.js",
+  "/api/footer-logos": "pages/api/footer-logos.js",
+  "/api/events": "pages/api/events.js",
+  "/api/gallery": "pages/api/gallery.js",
+  "/api/faculty": "pages/api/faculty.js"
 }
