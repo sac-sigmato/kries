@@ -63,31 +63,31 @@ const cardData = [
       title: "Uniforms",
       icon: Shirt,
       description: "Each student receives 2 sets of school uniforms annually, designed for comfort and durability. The uniforms include shirts, pants/skirts, ties, belts, and sweaters for winter.",
-      image: "/ind1.jpeg"
+      image: "/stud.webp"
     },
     {
       title: "Shoes & Socks",
       icon: Package,
       description: "Students are provided with 2 pairs of quality shoes and 3 pairs of socks each year. The shoes are designed for comfort during long school hours and various activities.",
-      image: "/School-lap-1.jpg"
+      image: "/ss.jpeg"
     },
     {
       title: "Books & Stationery",
       icon: BookOpen,
       description: "Complete set of textbooks, notebooks, and essential stationery items including pens, pencils, erasers, rulers, and geometry boxes are provided to all students.",
-      image: "/Schoo-event1.jpeg"
+      image: "/studbook.webp"
     },
     {
       title: "School Bags",
       icon: Briefcase,
       description: "Durable and ergonomically designed school bags are provided to all students, with compartments for books, water bottles, and other essentials.",
-      image: "/School-prayer-2.jpeg"
+      image: "/schoolbags.webp"
     },
     {
       title: "Toiletries",
       icon: ShoppingBag,
       description: "Basic toiletries including soap, shampoo, toothpaste, toothbrush, washing soap, and other personal hygiene items are regularly provided to residential students.",
-      image: "/c1.jpeg"
+      image: "/toil.webp"
     }
   ];
 

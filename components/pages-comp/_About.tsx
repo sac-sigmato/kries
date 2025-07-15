@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { Users, Award, Globe, BookOpen, CheckCircle, Calendar, MapPin, Phone, Mail, GraduationCap } from 'lucide-react';
+import AboutSlider from './AboutSlider';
 
 interface FacultyMember {
   id: number;
@@ -17,6 +18,8 @@ interface FacultyMember {
   achievements: string[];
   bio?: string;
 }
+
+
 
 const About: React.FC = () => {
   const [facultyMembers, setFacultyMembers] = useState<FacultyMember[]>([]);
@@ -251,7 +254,7 @@ const About: React.FC = () => {
                 education.
               </p>
             </div>
-            <div className="relative]">
+            {/* <div className="relative">
               <img
                 src="/about.jpeg"
                 alt="Students in classroom"
@@ -268,7 +271,9 @@ const About: React.FC = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
+
+<AboutSlider />
           </div>
         </div>
       </section>

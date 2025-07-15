@@ -43,7 +43,7 @@ const calendarEvents: EventItem[] = [
     description:
       'Our educational trips are thoughtfully planned to combine learning, exploration, and fun. These trips help students gain real-world knowledge and social skills.',
     image:
-      '/cl4.jpg', date: 'July 2024 & Jan 2025',
+      '/tour.webp', date: 'July 2024 & Jan 2025',
     type: 'trip',
   },
 ];
