@@ -1,119 +1,155 @@
 import React from 'react';
-import { useData } from '../../contexts/DataContext';
-import { Users, FileText, Calendar, Image, TrendingUp, Eye } from 'lucide-react';
 
-const AdminDashboard: React.FC = () => {
-  const { contentSections, blogPosts, events, gallery } = useData();
+const InfoCard = ({ title, data }) => (
+  <div className="bg-white rounded-lg shadow-md p-6 space-y-4">
+    <h3 className="text-xl font-semibold text-gray-800 border-b pb-2">{title}</h3>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {data.map((item, idx) => (
+        <div key={idx} className="border p-3 rounded-md bg-gray-50">
+          <p className="text-sm text-gray-500">{item.label}</p>
+          <p className="text-lg font-bold text-gray-900">{item.value}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+);
 
-  const stats = [
-    {
-      title: 'Total Blog Posts',
-      value: blogPosts.length,
-      icon: FileText,
-      color: 'bg-blue-500',
-      change: '+12%'
-    },
-    {
-      title: 'Upcoming Events',
-      value: events.length,
-      icon: Calendar,
-      color: 'bg-green-500',
-      change: '+8%'
-    },
-    {
-      title: 'Gallery Images',
-      value: gallery.length,
-      icon: Image,
-      color: 'bg-purple-500',
-      change: '+15%'
-    },
-    {
-      title: 'Content Sections',
-      value: contentSections.length,
-      icon: Users,
-      color: 'bg-orange-500',
-      change: '+5%'
-    }
-  ];
-
-  const recentActivity = [
-    { action: 'New blog post published', time: '2 hours ago', type: 'blog' },
-    { action: 'Event updated', time: '4 hours ago', type: 'event' },
-    { action: 'Gallery image added', time: '6 hours ago', type: 'gallery' },
-    { action: 'Content section modified', time: '1 day ago', type: 'content' }
-  ];
-
+const AdminFullDashboard = () => {
   return (
-    <div className="space-y-6">
-      <div>
-        <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
-        <p className="text-gray-600 mt-2">Welcome to your admin dashboard</p>
-      </div>
+    <div className="space-y-6 p-6 bg-gray-100 min-h-screen">
+      <h1 className="text-3xl font-bold text-gray-900">School Dashboard Overview</h1>
 
-      {/* Stats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {stats.map((stat, index) => (
-          <div key={index} className="bg-white rounded-lg shadow-md p-6">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-sm font-medium text-gray-600">{stat.title}</p>
-                <p className="text-3xl font-bold text-gray-900">{stat.value}</p>
-              </div>
-              <div className={`${stat.color} p-3 rounded-full`}>
-                <stat.icon className="h-6 w-6 text-white" />
-              </div>
-            </div>
-            <div className="mt-4 flex items-center">
-              <TrendingUp className="h-4 w-4 text-green-500 mr-1" />
-              <span className="text-sm text-green-500 font-medium">{stat.change}</span>
-              <span className="text-sm text-gray-500 ml-1">from last month</span>
-            </div>
-          </div>
-        ))}
-      </div>
+      <InfoCard
+        title="Student Details & Attendance"
+        data={[
+          { label: 'Total Student Count', value: 205 },
+          { label: 'Student Attendance', value: 'Daily Present' },
+          { label: 'Health Checkup Count', value: 238 },
+        ]}
+      />
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Recent Activity */}
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">Recent Activity</h2>
-          <div className="space-y-4">
-            {recentActivity.map((activity, index) => (
-              <div key={index} className="flex items-center space-x-3">
-                <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                <div className="flex-1">
-                  <p className="text-sm text-gray-900">{activity.action}</p>
-                  <p className="text-xs text-gray-500">{activity.time}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+      <InfoCard
+        title="Results"
+        data={[
+          { label: 'Pass Percentage (SSLC)', value: '100%' },
+          { label: 'Topper Marks & %', value: '614 (98.24%)' },
+          { label: 'Distinctions in SSLC', value: '17 Students' },
+          { label: 'CET Qualified', value: 20 },
+          { label: 'NEET Qualified', value: 3 },
+        ]}
+      />
 
-        {/* Quick Actions */}
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">Quick Actions</h2>
-          <div className="grid grid-cols-2 gap-4">
-            <button className="p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
-              <FileText className="h-8 w-8 text-blue-500 mx-auto mb-2" />
-              <p className="text-sm font-medium text-gray-900">New Blog Post</p>
-            </button>
-            <button className="p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
-              <Calendar className="h-8 w-8 text-green-500 mx-auto mb-2" />
-              <p className="text-sm font-medium text-gray-900">Add Event</p>
-            </button>
-            <button className="p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
-              <Image className="h-8 w-8 text-purple-500 mx-auto mb-2" />
-              <p className="text-sm font-medium text-gray-900">Upload Image</p>
-            </button>
-            <button className="p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
-              <Eye className="h-8 w-8 text-orange-500 mx-auto mb-2" />
-              <p className="text-sm font-medium text-gray-900">View Site</p>
-            </button>
-          </div>
-        </div>
-      </div>
+      <InfoCard
+        title="Staff Details & Attendance"
+        data={[
+          { label: 'Teaching Staff Count', value: 8 },
+          { label: 'Non-Teaching Staff Count', value: 4 },
+          { label: 'Vacant Positions', value: 0 },
+        ]}
+      />
+
+      <InfoCard
+        title="Infrastructure Status"
+        data={[
+          { label: 'Building Type', value: 'Own' },
+          { label: 'Campus Area', value: '6.9 Acres' },
+          { label: 'Classrooms', value: 6 },
+          { label: 'Science Laboratories', value: 3 },
+          { label: 'Computer Lab', value: 1 },
+          { label: 'STEM Lab', value: 1 },
+          { label: 'Computers', value: 25 },
+          { label: 'Library Books', value: 2500 },
+          { label: 'Smart Classroom', value: 1 },
+          { label: 'Smart Board', value: 1 },
+          { label: 'Water Purifiers', value: 4 },
+          { label: 'Boys Toilets', value: 0 },
+          { label: 'Girls Toilets', value: 40 },
+          { label: 'Internet Connectivity', value: 'Yes' },
+          { label: 'CCTV Cameras', value: 8 },
+          { label: 'Fire & Safety Equipment', value: '3 Sets' },
+          { label: 'Electric Poles', value: 6 },
+          { label: 'Bulbs - Solar', value: 8 },
+          { label: 'Bulbs - Street Light', value: 5 },
+        ]}
+      />
+
+      <InfoCard
+        title="Residential School Facility"
+        data={[
+          { label: 'Students in Hostel', value: 205 },
+          { label: 'Room Occupancy', value: 15 },
+          { label: 'Daily Hostel Attendance', value: 205 },
+          { label: 'Bed Cots (2 Tier)', value: 100 },
+          { label: 'Beds & Bedsheets', value: 250 },
+          { label: 'Pillows & Blankets', value: 250 },
+          { label: 'Bathrooms for Boys', value: 0 },
+          { label: 'Bathrooms for Girls', value: 40 },
+          { label: 'Hot Water Supply', value: 'Yes' },
+          { label: 'Staff Nurse', value: 1 },
+          { label: 'Emergency Ambulance', value: 'No' },
+        ]}
+      />
+
+      <InfoCard
+        title="Canteen"
+        data={[
+          { label: 'In-House Canteen', value: 'Yes' },
+          { label: 'Seating Capacity', value: 250 },
+          { label: 'Canteen Staff', value: 5 },
+        ]}
+      />
+
+      <InfoCard
+        title="Garden & Campus Cleanliness"
+        data={[
+          { label: 'Trees Planted', value: 1500 },
+          { label: 'Gardeners', value: 0 },
+          { label: 'Borewells', value: 1 },
+          { label: 'Borewell Working', value: 'Yes' },
+          { label: 'Dry & Wet Dustbins', value: 4 },
+        ]}
+      />
+
+      <InfoCard
+        title="Sports Activities"
+        data={[
+          { label: 'Basketball Court', value: 1 },
+          { label: 'Volleyball Court', value: 1 },
+          { label: 'Kho-Kho Court', value: 1 },
+          { label: 'Long Jump Court', value: 1 },
+          { label: '100m Race Track', value: 1 },
+          { label: 'Yoga & Karate Classes', value: 'Yes' },
+        ]}
+      />
+
+      <InfoCard
+        title="Alumni Engagement"
+        data={[
+          { label: 'Alumni Registered', value: 155 },
+          { label: 'Alumni Contributions', value: 'Rs. 0/-' },
+          { label: 'Mentoring Sessions', value: 'No' },
+        ]}
+      />
+
+      <InfoCard
+        title="CSR & Fund Utilization"
+        data={[
+          { label: 'CSR Fund Inflows', value: 'Rs. 9,00,000/-' },
+          { label: 'CSR Contributions', value: 'STEM Lab, Computer Lab, Smart Board' },
+        ]}
+      />
+
+      <InfoCard
+        title="Achievements"
+        data={[
+          { label: 'Academic Achievements', value: 'SSLC District Level Toppers: 3' },
+          { label: 'Sports Achievements', value: 'Kho-Kho Division Level' },
+          { label: 'Cultural Achievements', value: 'District Level' },
+          { label: 'Staff Achievements', value: 'State Level Resource Person (Maths & Social Science)' },
+        ]}
+      />
     </div>
   );
 };
 
-export default AdminDashboard;
+export default AdminFullDashboard;

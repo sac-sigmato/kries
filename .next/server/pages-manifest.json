@@ -2,6 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/schools/calendarofevents": "pages/schools/calendarofevents.js",
-  "/about/kreis": "pages/about/kreis.js"
+  "/": "pages/index.js",
+  "/admin/cms": "pages/admin/cms.js",
+  "/admin": "pages/admin.js"
 }
