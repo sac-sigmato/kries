@@ -3,10 +3,12 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/schools/hostel": "pages/schools/hostel.js",
-  "/api/contact-info": "pages/api/contact-info.js",
-  "/api/blogs": "pages/api/blogs.js",
+  "/api/events": "pages/api/events.js",
   "/api/gallery": "pages/api/gallery.js",
-  "/api/footer-logos": "pages/api/footer-logos.js",
+  "/api/blogs": "pages/api/blogs.js",
+  "/api/contact-info": "pages/api/contact-info.js",
   "/api/auth/me": "pages/api/auth/me.js",
-  "/api/events": "pages/api/events.js"
+  "/api/footer-logos": "pages/api/footer-logos.js",
+  "/connect/mentor": "pages/connect/mentor.js",
+  "/connect/alumni": "pages/connect/alumni.js"
 }

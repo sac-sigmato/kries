@@ -22,6 +22,16 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
+    "/connect/alumni": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/connect/alumni.js"
+    ],
+    "/connect/mentor": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/connect/mentor.js"
+    ],
     "/schools/hostel": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",

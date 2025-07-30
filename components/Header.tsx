@@ -1,7 +1,7 @@
-import React, { useState, useContext, createContext, useEffect } from 'react';
+import React, { useState, useContext, createContext } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { Menu, X, Plus, Minus, Globe, LogIn, Users, Briefcase, Heart, ChevronDown, FileText } from 'lucide-react';
+import { Menu, X, LogIn, Users, Briefcase, Heart, ChevronDown } from 'lucide-react';
 import GoogleTranslate from './pages-comp/useGoogleTranslate';
 
 // Language and Font Context
@@ -46,10 +46,10 @@ const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showLoginDropdown, setShowLoginDropdown] = useState(false);
   const router = useRouter();
-  const { language, fontSize, setLanguage, setFontSize } = useAppContext();
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const { language, fontSize } = useAppContext();
+  const [, setOpenDropdown] = useState<string | null>(null);
   
-  const [currentLang, setCurrentLang] = useState('en');
+ 
   
   const navItems = [
     { path: '/', label: { en: 'Home', kn: 'ಮುಖ್ಯ' } },
@@ -65,6 +65,7 @@ const Header: React.FC = () => {
   ];
 
   const connectPages = [
+    { path: 'https://kreisportal.karnataka.gov.in/kreis4/Dashboard_District_live.aspx',isExternal:true, label: { en: 'KREIS Attendance', kn: 'ಹಾಜರಾತಿ' } },
     { path: '/connect/alumni', label: { en: 'Alumni Connect', kn: 'ಹಳೆಯ ವಿದ್ಯಾರ್ಥಿ ಸಂಪರ್ಕ' } },
     { path: '/connect/mentor', label: { en: 'Mentor Connect', kn: 'ಮಾರ್ಗದರ್ಶಕ ಸಂಪರ್ಕ' } },
     { path: '/connect/csr', label: { en: 'CSR Connect', kn: 'CSR ಸಂಪರ್ಕ' } },
@@ -101,17 +102,7 @@ const Header: React.FC = () => {
       description: { en: 'System Administration', kn: 'ಸಿಸ್ಟಮ್ ಆಡಳಿತ' }
     },
   ];
-  const increaseFontSize = () => {
-    if (fontSize < 24) {
-      setFontSize(fontSize + 2);
-    }
-  };
 
-  const decreaseFontSize = () => {
-    if (fontSize > 12) {
-      setFontSize(fontSize - 2);
-    }
-  };
 
   
   
@@ -144,6 +135,7 @@ const Header: React.FC = () => {
                   <Link
                     key={page.path}
                     href={page.path}
+                    target={page.isExternal ? '_blank' : '_self'}
                     className={`text-sm font-medium transition-colors hover:text-blue-600 ${router.pathname === page.path ||
                       (router.pathname.startsWith("/achievements") &&
                         page.path === "/achievements")
