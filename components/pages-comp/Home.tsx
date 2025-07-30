@@ -9,13 +9,15 @@ import {
   ContactSection,
   SchoolFacilitySection} from '../HomeSections';
 import HeroSlider from './HeroSlider';
+import { StatItem } from './StatisticsSection';
+import DetailedStatisticsTabs from './DetailedStatisticsTabs';
 
-type StatItem = {
-  label: string;
-  value: string;
-  icon: React.ReactNode;
-  colorClass: string;
-};
+// type StatItem = {
+//   label: string;
+//   value: string;
+//   icon: React.ReactNode;
+//   colorClass: string;
+// };
 
 declare global {
   interface Window {
@@ -134,6 +136,146 @@ const Home: React.FC = () => {
     }
   };
 
+
+
+
+  const statTabsData = [
+    {
+      title: 'Student',
+      icon: '🎓',
+      data: [
+        { label: 'Total Student Count', value: '205' },
+        { label: 'Student Attendance', value: '98%' },
+        { label: 'Health Checkup Conducted', value: '238' },
+      ],
+    },
+    {
+      title: 'Results',
+      icon: '🧪',
+      data: [
+        { label: 'SSLC Pass Percentage', value: '100%' },
+        { label: 'Topper Marks', value: '614 (98.24%)' },
+        { label: 'Distinctions in SSLC', value: '17 Students' },
+        { label: 'Students Qualified for CET', value: '20' },
+        { label: 'Students Qualified for NEET', value: '03' },
+      ],
+    },
+    {
+      title: 'Staff',
+      icon: '👨‍🏫',
+      data: [
+        { label: 'Teaching Staff Count', value: '08' },
+        { label: 'Non-Teaching Staff Count', value: '04' },
+        { label: 'Vacant Positions', value: '0' },
+      ],
+    },
+    {
+      title: 'Infrastructure',
+      icon: '🏫',
+      data: [
+        { label: 'Building Type', value: 'Own' },
+        { label: 'Campus Area', value: '6.9 Acres' },
+        { label: 'No. of Classrooms', value: '06' },
+        { label: 'Science Laboratories', value: '03' },
+        { label: 'Computer Laboratory', value: '01' },
+        { label: 'STEM Laboratory', value: '01' },
+        { label: 'No. of Computers', value: '25' },
+        { label: 'Library Books', value: '2500' },
+        { label: 'Smart Classroom', value: '01' },
+        { label: 'Smart Board', value: '01' },
+        { label: 'Drinking Water Purifiers', value: '04' },
+        { label: 'Boys Toilets', value: '00' },
+        { label: 'Girls Toilets', value: '40' },
+        { label: 'Internet Connectivity', value: 'Yes' },
+        { label: 'CCTV Cameras', value: '08' },
+        { label: 'Fire & Safety Equipment', value: '03 Sets' },
+        { label: 'Electricity Poles in Campus', value: '06' },
+        { label: 'Bulbs in Campus', value: 'Solar Light - 08, Street Light - 05' },
+      ],
+    },
+    {
+      title: 'Hostel',
+      icon: '🛏️',
+      data: [
+        { label: 'Students in Hostel', value: '205' },
+        { label: 'Room Occupancy Status', value: '15' },
+        { label: 'Daily Hostel Attendance', value: '205' },
+        { label: 'Bed Cots (2 Tier)', value: '100' },
+        { label: 'Beds & Bedsheets', value: '250' },
+        { label: 'Pillows & Blankets', value: '250' },
+        { label: 'Bathrooms for Boys', value: '00' },
+        { label: 'Bathrooms for Girls', value: '40' },
+        { label: 'Hot Water Supply', value: 'Yes' },
+        { label: 'Staff Nurse for Health Checkup', value: '01' },
+        { label: 'Emergency Ambulance in Campus', value: 'No' },
+      ],
+    },
+    {
+      title: 'Canteen',
+      icon: '🍽️',
+      data: [
+        { label: 'In-House Canteen', value: 'Yes' },
+        { label: 'Overall Seating Capacity', value: '250' },
+        { label: 'Canteen Staff', value: '05' },
+      ],
+    },
+    {
+      title: 'Garden',
+      icon: '🌱',
+      data: [
+        { label: 'Trees Planted', value: '1500' },
+        { label: 'Gardener Count', value: '00' },
+        { label: 'Borewells', value: '01' },
+        { label: 'Borewell Working Condition', value: 'Yes' },
+        { label: 'Dry & Wet Dustbins', value: '04' },
+      ],
+    },
+    {
+      title: 'Sports',
+      icon: '🏅',
+      data: [
+        { label: 'Basket Ball Court', value: '01' },
+        { label: 'Volley Ball Court', value: '01' },
+        { label: 'Kho-Kho Court', value: '01' },
+        { label: 'Long Jump Court', value: '01' },
+        { label: '100M Running Track', value: '01' },
+        { label: 'Yoga & Karate Classes', value: '01' },
+      ],
+    },
+    {
+      title: 'Alumni',
+      icon: '👥',
+      data: [
+        { label: 'Alumni Registrations', value: '155' },
+        { label: 'Alumni Contributions', value: '₹ 0/-' },
+        { label: 'Mentoring Sessions', value: 'No' },
+      ],
+    },
+    {
+      title: 'CSR',
+      icon: '💰',
+      data: [
+        { label: 'CSR Fund Inflows', value: '₹ 9,00,000/-' },
+        { label: 'CSR Contributions', value: 'STEM Lab, Computer Lab, Smart Board' },
+      ],
+    },
+    {
+      title: 'Achievements',
+      icon: '🏆',
+      data: [
+        { label: 'Academic Achievements', value: 'SSLC District Toppers: 03 Students' },
+        { label: 'Sports Achievements', value: 'Kho-Kho Division Level' },
+        { label: 'Cultural Achievements', value: 'District Level' },
+        { label: 'Staff Achievements', value: 'State Level Resource Person in Maths & Social Science' },
+      ],
+    },
+  ];
+
+  
+
+
+  
+
   const statMeta: {
     label: string;
     icon: React.ReactNode;
@@ -250,44 +392,11 @@ const Home: React.FC = () => {
       {/* Hero Slider Section */}
      <HeroSlider/>
 
-     
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {stats.slice(0, 4).map((item, i) => (
-              <div
-                key={i}
-                className="bg-white p-6 rounded-lg shadow-md text-center"
-              >
-                <div className={`${item.colorClass} mb-4 flex justify-center`}>
-                  {item.icon}
-                </div>
-                <h3 className="text-4xl font-bold text-gray-900 mb-2">
-                  {item.value}
-                </h3>
-                <p className="text-gray-600">{item.label}</p>
-              </div>
-            ))}
-          </div>
+   
+     <DetailedStatisticsTabs sections={statTabsData} />
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-6">
-            {stats.slice(4).map((item, i) => (
-              <div
-                key={i + 4}
-                className="bg-white p-6 rounded-lg shadow-md text-center"
-              >
-                <div className={`${item.colorClass} mb-4 flex justify-center`}>
-                  {item.icon}
-                </div>
-                <h3 className="text-4xl font-bold text-gray-900 mb-2">
-                  {item.value}
-                </h3>
-                <p className="text-gray-600">{item.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* <StatisticsSection stats={stats} /> */}
+
 
       {/* Ministers Section */}
       <section className="py-12 bg-gradient-to-b from-[#f9fafb] via-[#e8f1fa] to-[#d9eaf8]">
