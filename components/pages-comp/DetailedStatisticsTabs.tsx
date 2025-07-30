@@ -3,8 +3,8 @@ import React, { useEffect, useState } from 'react';
 type StatItem = {
   label: string;
   value: string;
-  icon: React.ReactNode;
-  colorClass: string;
+  icon?: React.ReactNode;
+  colorClass?: string;
 };
 
 interface StatGroup {

@@ -9,7 +9,7 @@ import {
   ContactSection,
   SchoolFacilitySection} from '../HomeSections';
 import HeroSlider from './HeroSlider';
-import { StatItem } from './StatisticsSection';
+
 import DetailedStatisticsTabs from './DetailedStatisticsTabs';
 
 // type StatItem = {
@@ -355,25 +355,25 @@ const Home: React.FC = () => {
       },
     ];
 
-  const [stats, setStats] = useState<StatItem[]>([]);
+  // const [stats, setStats] = useState<StatItem[]>([]);
 
-  useEffect(() => {
-    fetch("/api/campus-stats")
-      .then((res) => res.json())
-      .then((data: { label: string; value: string }[]) => {
-        const final = statMeta.map((meta) => {
-          const matched = data.find((d) => d.label === meta.label);
-          return {
-            label: meta.label,
-            value: matched?.value || "-",
-            icon: meta.icon,
-            colorClass: meta.colorClass,
-          };
-        });
-        setStats(final);
-      })
-      .catch(console.error);
-  }, []);
+  // useEffect(() => {
+  //   fetch("/api/campus-stats")
+  //     .then((res) => res.json())
+  //     .then((data: { label: string; value: string }[]) => {
+  //       const final = statMeta.map((meta) => {
+  //         const matched = data.find((d) => d.label === meta.label);
+  //         return {
+  //           label: meta.label,
+  //           value: matched?.value || "-",
+  //           icon: meta.icon,
+  //           colorClass: meta.colorClass,
+  //         };
+  //       });
+  //       setStats(final);
+  //     })
+  //     .catch(console.error);
+  // }, []);
 
   
 

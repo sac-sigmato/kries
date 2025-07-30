@@ -1,6 +1,17 @@
 import React from 'react';
 
-const InfoCard = ({ title, data }) => (
+
+interface InfoItem {
+  label: string;
+  value: string | number;
+}
+
+interface InfoCardProps {
+  title: string;
+  data: InfoItem[];
+}
+
+const InfoCard: React.FC<InfoCardProps> = ({ title, data }) => (
   <div className="bg-white rounded-lg shadow-md p-6 space-y-4">
     <h3 className="text-xl font-semibold text-gray-800 border-b pb-2">{title}</h3>
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
