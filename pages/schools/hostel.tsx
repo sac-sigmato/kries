@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from '../../components/Layout';
 import { Home, Coffee, CheckCircle, Twitter } from 'lucide-react';
+import HostelGallery from '@/components/pages-comp/HostelGallery';
 
 const HostelCanteen: React.FC = () => {
   const weeklyMenu = [
@@ -20,7 +21,7 @@ const HostelCanteen: React.FC = () => {
         <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <h1 className="text-4xl md:text-6xl font-bold mb-6">Hostel & Canteen</h1>
+              <h1 className="text-4xl md:text-6xl font-bold mb-6">Residential Facility</h1>
               <p className="text-xl text-blue-100 max-w-3xl mx-auto">
                 Providing comfortable accommodation and nutritious meals for our residential students.
               </p>
@@ -35,7 +36,7 @@ const HostelCanteen: React.FC = () => {
               <div>
                 <div className="flex items-center mb-6">
                   <Home className="h-8 w-8 text-blue-600 mr-3" />
-                  <h2 className="text-3xl font-bold text-gray-900">Hostel Facilities</h2>
+                  <h2 className="text-3xl font-bold text-gray-900">Facilities</h2>
                 </div>
                 <p className="text-lg text-gray-600 mb-6 leading-relaxed">
                   Our residential hostels provide a comfortable and safe living environment for students. Separate hostels for boys and girls are equipped with modern amenities and supervised by dedicated wardens who ensure the well-being of all students.
@@ -65,7 +66,7 @@ const HostelCanteen: React.FC = () => {
               </div>
               <div>
                 <img
-                  src="/c2.jpeg"
+                  src="/hostel/Hostel1.jpeg"
                   alt="Hostel Dormitory"
                   className="rounded-lg shadow-xl"
                 />
@@ -119,6 +120,10 @@ const HostelCanteen: React.FC = () => {
             </div>
           </div>
         </section>
+
+
+        <HostelGallery />
+
 
         {/* Today's Menu Section */}
         <section className="py-20">

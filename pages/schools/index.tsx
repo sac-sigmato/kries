@@ -14,7 +14,7 @@ const SchoolsIndex: React.FC = () => {
       image: "https://images.pexels.com/photos/1595391/pexels-photo-1595391.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
-      title: "Hostel & Canteen",
+      title: "Residential Facility",
       description: "Learn about our comfortable residential facilities and nutritious meal services for students.",
       icon: Home,
       color: "bg-green-100 text-green-600",

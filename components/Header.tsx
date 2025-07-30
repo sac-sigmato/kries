@@ -414,7 +414,7 @@ const Header: React.FC = () => {
                             href="/schools/hostel"
                             className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                           >
-                            Hostel & Canteen
+                            Residential Facility
                           </Link>
                          
                           <Link
@@ -522,7 +522,7 @@ const Header: React.FC = () => {
                           href="/schools/hostel"
                           className="block px-3 py-1 text-sm text-gray-600 hover:text-blue-600"
                         >
-                          Hostel & Canteen
+                          Residential Facility
                         </Link>
                         <Link
                           href="/schools/development"

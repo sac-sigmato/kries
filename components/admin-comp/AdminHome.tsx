@@ -92,7 +92,7 @@ const AdminHome: React.FC = () => {
     { 
       name: 'school_facility', 
       label: 'School Facility', 
-      description: 'Infrastructure, laboratories, hostel & canteen, playground',
+      description: 'Infrastructure, laboratories, Residential Facility, playground',
       preview: 'Four-column grid showing facility categories with icons'
     },
     { 

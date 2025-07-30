@@ -585,7 +585,7 @@ export const SchoolFacilitySection: React.FC<SectionProps> = ({ section }) => (
             icon: "🔬",
           },
           {
-            title: "Hostel & Canteen",
+            title: "Residential Facility",
             description:
               "Comfortable residential facilities with nutritious meals, separate hostels for boys and girls with proper supervision and care.",
             image:

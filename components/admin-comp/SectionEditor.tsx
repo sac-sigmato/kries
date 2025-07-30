@@ -119,9 +119,9 @@ const SectionEditor: React.FC<SectionEditorProps> = ({ sectionName }) => {
     },
     'school_facility': {
       label: 'School Facility',
-      description: 'Infrastructure, laboratories, hostel & canteen, playground',
+      description: 'Infrastructure, laboratories, Residential Facility, playground',
       fields: ['title', 'content'],
-      preview: 'Four-column grid: Infrastructure, Laboratories, Hostel & Canteen, Playground with icons and descriptions'
+      preview: 'Four-column grid: Infrastructure, Laboratories, Residential Facility, Playground with icons and descriptions'
     },
     'achievements_activities': {
       label: 'Achievements & Activities',
