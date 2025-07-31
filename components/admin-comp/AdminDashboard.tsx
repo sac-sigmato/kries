@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 
 interface InfoItem {
@@ -10,6 +10,9 @@ interface InfoCardProps {
   title: string;
   data: InfoItem[];
 }
+
+
+
 
 const InfoCard: React.FC<InfoCardProps> = ({ title, data }) => (
   <div className="bg-white rounded-lg shadow-md p-6 space-y-4">
@@ -25,10 +28,202 @@ const InfoCard: React.FC<InfoCardProps> = ({ title, data }) => (
   </div>
 );
 
+const districtsData = {
+  'Bengaluru South': {
+    Chamarajapete: [
+      'Dr. B.R. Ambedkar Govt Prematric Boys Hostel',
+      'Morarji Desai Residential School',
+    ],
+    Jayanagara: [
+      'Dr. B.R. Ambedkar Govt Prematric Girls Hostel',
+      'Kittur Rani Chennamma Girls School',
+    ],
+  },
+  Mysuru: {
+    Hunsur: [
+      'KREIS Morarji Desai School Hunsur',
+      'KREIS Boys Hostel Hunsur',
+    ],
+    Nanjangud: [
+      'Morarji Desai Residential School Nanjangud',
+      'Post-Matric Hostel Nanjangud',
+    ],
+  },
+  Dharwad: {
+    Hubli: [
+      'KREIS Residential School Hubli',
+      'KREIS Girls Hostel Hubli',
+    ],
+    Kalghatgi: [
+      'Morarji Desai School Kalghatgi',
+      'Dr. B.R. Ambedkar Hostel Kalghatgi',
+    ],
+  },
+  Kalaburagi: {
+    Afzalpur: [
+      'Morarji Desai Residential School Afzalpur',
+      'KREIS Hostel for Boys Afzalpur',
+    ],
+    KalaburagiSouth: [
+      'KREIS Girls Hostel Kalaburagi',
+      'Kittur Rani Chennamma School Kalaburagi',
+    ],
+  },
+  Belagavi: {
+    Gokak: [
+      'KREIS School Gokak',
+      'Dr. B.R. Ambedkar Hostel Gokak',
+    ],
+    Bailhongal: [
+      'Morarji Desai School Bailhongal',
+      'KREIS Girls Hostel Bailhongal',
+    ],
+  },
+  Vijayapura: {
+    Indi: [
+      'KREIS Residential School Indi',
+      'SC/ST Boys Hostel Indi',
+    ],
+    VijayapuraRural: [
+      'KREIS Post-Matric Hostel Vijayapura',
+      'Dr. B.R. Ambedkar School Vijayapura',
+    ],
+  },
+  Ballari: {
+    Sandur: [
+      'Morarji Desai School Sandur',
+      'KREIS Girls Hostel Sandur',
+    ],
+    BallariCity: [
+      'KREIS Boys Hostel Ballari',
+      'Vivekananda School Ballari',
+    ],
+  },
+  Mandya: {
+    Pandavapura: [
+      'Morarji Desai School Pandavapura',
+      'KREIS Girls Hostel Pandavapura',
+    ],
+    Maddur: [
+      'KREIS Residential School Maddur',
+      'Post-Matric Hostel Maddur',
+    ],
+  },
+  Udupi: {
+    Kundapura: [
+      'KREIS Residential School Kundapura',
+      'KREIS Girls Hostel Kundapura',
+    ],
+    UdupiCity: [
+      'Morarji Desai School Udupi',
+      'Post-Matric Hostel Udupi',
+    ],
+  },
+  Chikkamagaluru: {
+    Tarikere: [
+      'Morarji Desai Residential School Tarikere',
+      'Dr. B.R. Ambedkar Hostel Tarikere',
+    ],
+    ChikkamagaluruRural: [
+      'KREIS Girls Hostel Chikkamagaluru',
+      'Morarji Desai School Chikkamagaluru',
+    ],
+  },
+} as const;
+
 const AdminFullDashboard = () => {
+  const [district, setDistrict] = useState('');
+  const [taluk, setTaluk] = useState('');
+  const [school, setSchool] = useState('');
+  const [, setShowDashboard] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setShowDashboard(true);
+  };
+
   return (
     <div className="space-y-6 p-6 bg-gray-100 min-h-screen">
+      {/* 📌 Form Section */}
+      <form
+        className="bg-white p-6 rounded-md shadow-md grid grid-cols-1 md:grid-cols-4 gap-4 items-end"
+        onSubmit={handleSubmit}
+      >
+        <div>
+          <label className="block font-medium mb-1">District*</label>
+          <select
+            className="w-full border rounded px-4 py-2"
+            value={district}
+            onChange={(e) => {
+              setDistrict(e.target.value);
+              setTaluk('');
+              setSchool('');
+              setShowDashboard(false);
+            }}
+          >
+            <option value="">Select District</option>
+            {Object.keys(districtsData).map((d) => (
+              <option key={d} value={d}>{d}</option>
+            ))}
+          </select>
+        </div>
+
+        <div>
+          <label className="block font-medium mb-1">Taluk*</label>
+          <select
+            className="w-full border rounded px-4 py-2"
+            value={taluk}
+            onChange={(e) => {
+              setTaluk(e.target.value);
+              setSchool('');
+              setShowDashboard(false);
+            }}
+            disabled={!district}
+          >
+            <option value="">Select Taluk</option>
+            {district &&
+  Object.keys(districtsData[district as keyof typeof districtsData]).map((talukName) => (
+    <option key={talukName} value={talukName}>{talukName}</option>
+  ))}
+
+          </select>
+        </div>
+
+        <div>
+          <label className="block font-medium mb-1">School/Hostel*</label>
+          <select
+            className="w-full border rounded px-4 py-2"
+            value={school}
+            onChange={(e) => {
+              setSchool(e.target.value);
+              setShowDashboard(false);
+            }}
+            disabled={!taluk}
+          >
+            <option value="">Select School</option>
+            {district &&
+              taluk &&
+              (districtsData as any)?.[district]?.[taluk]?.map((s: string) => (
+                <option key={s} value={s}>{s}</option>
+              ))
+              
+              }
+          </select>
+        </div>
+
+        <button
+          type="submit"
+          className="bg-yellow-500 text-white font-bold py-2 px-6 rounded hover:bg-yellow-600 transition"
+          disabled={!school}
+        >
+          REVIEW
+        </button>
+      </form>
       <h1 className="text-3xl font-bold text-gray-900">School Dashboard Overview</h1>
+      
+      <p className="text-gray-600 text-lg">
+  District: <strong>{district}</strong> | Taluk: <strong>{taluk}</strong> | School/Hostel: <strong>{school}</strong>
+</p>
 
       <InfoCard
         title="Student Details & Attendance"
